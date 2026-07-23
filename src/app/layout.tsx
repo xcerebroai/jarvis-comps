@@ -7,10 +7,28 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const SITE_URL = "https://comps.xcerebro.ai";
+
+const TITLE = "Jarvis Comps — Instant ARV. Real comps. No guesswork.";
+const DESCRIPTION =
+  "Paste an address, get an ARV opinion backed by real sold comps in seconds.";
+
 export const metadata: Metadata = {
-  title: "Jarvis Comps — Instant ARV. Real comps. No guesswork.",
-  description:
-    "Paste an address, get an ARV opinion backed by real sold comps in seconds.",
+  metadataBase: new URL(SITE_URL),
+  title: TITLE,
+  description: DESCRIPTION,
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: SITE_URL,
+    siteName: "Jarvis Comps",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 };
 
 export default function RootLayout({

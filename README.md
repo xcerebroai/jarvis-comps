@@ -134,7 +134,7 @@ element pointing at:
 
 ```html
 <iframe
-  src="https://YOUR-DOMAIN/embed"
+  src="https://comps.xcerebro.ai/embed"
   style="width:100%;height:900px;border:0;"
   title="Jarvis Comps"
 ></iframe>
