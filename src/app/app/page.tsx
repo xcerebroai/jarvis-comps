@@ -31,8 +31,8 @@ export default async function AppPage() {
           Run comps on a property
         </h1>
         <p className="mt-2 max-w-xl text-sm text-slate-400">
-          Paste a full address — street, city, state, ZIP. Jarvis pulls the
-          subject and recent sold comps, then prices it by qualified $/sqft.
+          Paste the address however you have it. Jarvis pulls the subject and
+          recent sold comps, then prices it by qualified $/sqft.
         </p>
         <div className="mt-8">
           <CompsTool />

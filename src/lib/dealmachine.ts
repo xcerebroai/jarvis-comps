@@ -2,7 +2,7 @@
 // Docs: https://api.docs.dealmachine.com
 //
 // Flow for an ARV run:
-//   1. POST /v1/enrichment/address  -> match the address, get dm_property_id
+//   1. resolveProperty()            -> match a free-text address, get dm_property_id
 //   2. POST /v1/comps               -> subject details + sold comps around it
 //
 // Response types below reflect the actual API payloads (verified live against
@@ -86,23 +86,119 @@ interface AddressEnrichmentResponse {
   totals: { submitted: number; matched: number; unmatched: number };
 }
 
+interface AddressParts {
+  street: string;
+  city: string;
+  state: string;
+  zip: string;
+}
+
 /**
- * Look up a property by free-form address. `contact_audience: "none"` keeps
- * the request to property data only (no people credits).
+ * Look up a property. `contact_audience: "none"` keeps the request to
+ * property data only (no people credits).
  */
-export async function enrichAddress(
-  fullAddress: string,
+async function enrichAddress(
+  input: { full_address: string } | AddressParts,
 ): Promise<AddressEnrichmentMatch | null> {
-  const body = {
-    data: [{ full_address: fullAddress }],
-    contact_audience: "none",
-  };
   const res = await dmFetch<AddressEnrichmentResponse>("/enrichment/address", {
     method: "POST",
-    body: JSON.stringify(body),
+    body: JSON.stringify({ data: [input], contact_audience: "none" }),
   });
   const match = res.data[0];
   return match?.matched ? match : null;
+}
+
+// ---------- GET /v1/addresses/autocomplete ----------
+
+export interface AddressSuggestion {
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+  full_address: string;
+}
+
+interface AutocompleteResponse {
+  data: Array<{
+    kind: string;
+    label: string;
+    address?: Partial<AddressSuggestion>;
+  }>;
+}
+
+/**
+ * DealMachine's own address normalizer. Handles the messy input clients
+ * actually paste — missing ZIP, unit numbers, stray commas, lowercase — and
+ * returns a canonical street/city/state/zip. Returns null for input it can't
+ * recognize as an address at all.
+ */
+export async function autocompleteAddress(
+  query: string,
+): Promise<AddressSuggestion | null> {
+  const res = await dmFetch<AutocompleteResponse>(
+    `/addresses/autocomplete?q=${encodeURIComponent(query)}`,
+  );
+  const hit = res.data?.find(
+    (r) => r.kind === "address" && r.address?.zip && r.address?.address,
+  );
+  if (!hit?.address) return null;
+  const a = hit.address;
+  return {
+    address: a.address!,
+    city: a.city ?? "",
+    state: a.state ?? "",
+    zip: a.zip!,
+    full_address: a.full_address ?? hit.label,
+  };
+}
+
+export type ResolveFailure = "unrecognized" | "no_property_record";
+
+export interface ResolvedProperty {
+  match: AddressEnrichmentMatch;
+  /** DealMachine's canonical address for what it matched. */
+  matchedAddress: string;
+  /** True when we had to normalize the input before it would match. */
+  normalized: boolean;
+}
+
+/**
+ * Resolve a single free-text address string a client pasted.
+ *
+ * Fast path: hand the raw string straight to DealMachine — their matcher is
+ * the source of truth. Their matcher hard-requires a ZIP though, and real
+ * pasted input often lacks one (or carries a unit number, or stray commas),
+ * so on a miss we normalize through their autocomplete endpoint and retry
+ * with structured fields.
+ */
+export async function resolveProperty(
+  raw: string,
+): Promise<ResolvedProperty | { error: ResolveFailure }> {
+  const direct = await enrichAddress({ full_address: raw });
+  if (direct?.dm_property_id) {
+    return {
+      match: direct,
+      matchedAddress: direct.full_address ?? raw,
+      normalized: false,
+    };
+  }
+
+  const suggestion = await autocompleteAddress(raw);
+  if (!suggestion) return { error: "unrecognized" };
+
+  const retry = await enrichAddress({
+    street: suggestion.address,
+    city: suggestion.city,
+    state: suggestion.state,
+    zip: suggestion.zip,
+  });
+  if (!retry?.dm_property_id) return { error: "no_property_record" };
+
+  return {
+    match: retry,
+    matchedAddress: retry.full_address ?? suggestion.full_address,
+    normalized: true,
+  };
 }
 
 // ---------- POST /v1/comps ----------

@@ -17,6 +17,10 @@ export interface SubjectSummary {
 
 export interface CompsApiResponse {
   subject: SubjectSummary;
+  /** DealMachine's canonical address for what it matched. */
+  matchedAddress: string;
+  /** True when the pasted input had to be normalized before it matched. */
+  addressWasNormalized: boolean;
   outcome: ArvOutcome;
   /** DealMachine's model estimate — reference only, never our ARV. */
   dmReferenceEstimate: number | null;

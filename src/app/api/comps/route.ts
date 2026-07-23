@@ -7,14 +7,18 @@ import { getSessionUser } from "@/lib/auth";
 import { hasActiveEntitlement } from "@/lib/entitlements";
 import {
   DealMachineError,
-  enrichAddress,
+  resolveProperty,
   fetchComps,
   type DmComp,
 } from "@/lib/dealmachine";
 import { computeArv, type CompInput } from "@/lib/arv";
 
 const schema = z.object({
-  address: z.string().trim().min(8, "Enter a full street address"),
+  address: z
+    .string()
+    .trim()
+    .min(5, "Enter a street address")
+    .max(200, "That address is too long"),
 });
 
 function toCompInput(c: DmComp): CompInput {
@@ -61,18 +65,17 @@ export async function POST(req: Request) {
   }
 
   try {
-    const match = await enrichAddress(parsed.data.address);
-    if (!match?.dm_property_id) {
-      return NextResponse.json(
-        {
-          error:
-            "No property found at that address. Include street, city, state, and ZIP (e.g. “138 W Mariposa Dr, San Antonio, TX 78212”).",
-        },
-        { status: 404 },
-      );
+    const resolved = await resolveProperty(parsed.data.address);
+    if ("error" in resolved) {
+      const error =
+        resolved.error === "unrecognized"
+          ? "We couldn’t match that address. Check the spelling, or add the city and ZIP (e.g. “138 W Mariposa Dr, San Antonio, TX 78212”)."
+          : "We found that address, but there’s no property record for it. Try the street address without a unit number.";
+      return NextResponse.json({ error }, { status: 404 });
     }
+    const { match, matchedAddress, normalized } = resolved;
 
-    const compsResult = await fetchComps(match.dm_property_id);
+    const compsResult = await fetchComps(match.dm_property_id!);
     if (!compsResult) {
       return NextResponse.json(
         { error: "Comp data is unavailable for that property." },
@@ -111,6 +114,8 @@ export async function POST(req: Request) {
 
     return NextResponse.json({
       subject,
+      matchedAddress,
+      addressWasNormalized: normalized,
       outcome,
       dmReferenceEstimate,
       totalSoldCompsFetched: soldComps.length,

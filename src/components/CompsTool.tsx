@@ -43,7 +43,7 @@ function ConfidenceBadge({ level }: { level: ConfidenceLevel }) {
 function buildSummaryText(data: CompsApiResponse): string {
   const { subject, outcome } = data;
   const lines: string[] = [];
-  lines.push(`ARV OPINION — ${subjectLine(subject)}`);
+  lines.push(`ARV OPINION — ${data.matchedAddress || subjectLine(subject)}`);
   lines.push("");
   if (outcome.ok) {
     const r = outcome.result;
@@ -175,7 +175,17 @@ function Results({ data }: { data: CompsApiResponse }) {
     <div className="space-y-6">
       {/* Subject + ARV headline */}
       <div className="rounded-2xl border border-navy-700 bg-navy-850 p-5 sm:p-7">
-        <div className="text-sm text-slate-400">{subjectLine(subject)}</div>
+        <div className="text-xs text-slate-500">
+          Showing results for:{" "}
+          <span className="text-slate-300">{data.matchedAddress}</span>
+        </div>
+        {data.addressWasNormalized && (
+          <div className="mt-1 text-xs text-amber-300/80">
+            We adjusted what you pasted to match this property — check it&rsquo;s
+            the right one.
+          </div>
+        )}
+        <div className="mt-2 text-sm text-slate-400">{subjectLine(subject)}</div>
         <div className="mt-1 text-xs text-slate-500">{subj.join(" · ")}</div>
 
         {outcome.ok ? (
@@ -292,7 +302,7 @@ export default function CompsTool() {
           type="text"
           value={address}
           onChange={(e) => setAddress(e.target.value)}
-          placeholder="123 Main St, San Antonio, TX 78212"
+          placeholder="Paste any address — e.g. 138 W Mariposa Dr, San Antonio, TX 78212"
           autoComplete="street-address"
           className="w-full flex-1 rounded-xl border border-navy-700 bg-navy-850 px-4 py-3.5 text-base text-slate-100 placeholder:text-slate-500 focus:border-accent/60 focus:outline-none focus:ring-2 focus:ring-accent/20"
         />
