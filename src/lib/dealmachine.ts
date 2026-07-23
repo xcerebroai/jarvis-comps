@@ -126,30 +126,136 @@ interface AutocompleteResponse {
   }>;
 }
 
+/** How many autocomplete suggestions to expand into enrichment candidates. */
+export const MAX_SUGGESTIONS = 3;
+
 /**
  * DealMachine's own address normalizer. Handles the messy input clients
  * actually paste — missing ZIP, unit numbers, stray commas, lowercase — and
- * returns a canonical street/city/state/zip. Returns null for input it can't
- * recognize as an address at all.
+ * returns canonical street/city/state/zip parts. Empty array when it can't
+ * recognize the input as an address at all.
+ *
+ * Note its geocoder does NOT always agree with the property index; see
+ * STREET_SUFFIXES below.
  */
-export async function autocompleteAddress(
+export async function autocompleteAddresses(
   query: string,
-): Promise<AddressSuggestion | null> {
+  limit = MAX_SUGGESTIONS,
+): Promise<AddressSuggestion[]> {
   const res = await dmFetch<AutocompleteResponse>(
     `/addresses/autocomplete?q=${encodeURIComponent(query)}`,
   );
-  const hit = res.data?.find(
-    (r) => r.kind === "address" && r.address?.zip && r.address?.address,
-  );
-  if (!hit?.address) return null;
-  const a = hit.address;
+  return (res.data ?? [])
+    .filter((r) => r.kind === "address" && r.address?.zip && r.address?.address)
+    .slice(0, limit)
+    .map((hit) => ({
+      address: hit.address!.address!,
+      city: hit.address!.city ?? "",
+      state: hit.address!.state ?? "",
+      zip: hit.address!.zip!,
+      full_address: hit.address!.full_address ?? hit.label,
+    }));
+}
+
+/**
+ * Trailing street-type tokens. DealMachine's property index and its
+ * autocomplete geocoder disagree about these: autocomplete will happily
+ * append a suffix that the property index doesn't carry.
+ *
+ * Real example — 7115 Glen Grove, San Antonio TX 78239 is stored as
+ * "7115 GLEN GRV", where "Grove" IS the suffix. Autocomplete returns
+ * "7115 Glen Grove Drive", inventing a "Drive" that makes enrichment miss.
+ * So when the canonical street fails we retry with the trailing suffix
+ * dropped.
+ */
+/*
+ * Deliberately conservative. Only tokens a geocoder routinely *appends* are
+ * listed. Words that just as often ARE the street name — Grove, Park, Trail,
+ * Run, Bend, Cove, Ridge, Point, Meadow, Plaza — are excluded, because
+ * stripping those is worse than useless: "7115 Glen Grove" would become
+ * "7115 Glen" and could match a different parcel entirely.
+ */
+const STREET_SUFFIXES = new Set([
+  "aly", "alley", "ave", "avenue", "blvd", "boulevard", "cir", "circle",
+  "crossing", "ct", "court", "dr", "drive", "expy", "expressway", "highway",
+  "hwy", "ln", "lane", "pkwy", "parkway", "pl", "place", "rd", "road", "st",
+  "street", "ter", "terrace", "way", "xing",
+]);
+
+/** Drop one trailing street-type token, or null if there isn't one. */
+export function stripTrailingSuffix(street: string): string | null {
+  const parts = street.trim().split(/\s+/);
+  if (parts.length < 3) return null; // keep at least "<number> <name>"
+  const last = parts[parts.length - 1].toLowerCase().replace(/\.$/, "");
+  if (!STREET_SUFFIXES.has(last)) return null;
+  return parts.slice(0, -1).join(" ");
+}
+
+const ZIP_RE = /\b\d{5}\b/;
+
+export type AddressCandidate =
+  | { kind: "raw"; label: string; payload: { full_address: string } }
+  | { kind: "structured"; label: string; payload: AddressParts };
+
+/**
+ * The raw pasted string as a candidate — only when it already carries a ZIP.
+ * Enrichment hard-requires one, so trying it without is a guaranteed miss.
+ */
+export function buildRawCandidate(raw: string): AddressCandidate | null {
+  const trimmed = raw.trim();
+  if (!ZIP_RE.test(trimmed)) return null;
   return {
-    address: a.address!,
-    city: a.city ?? "",
-    state: a.state ?? "",
-    zip: a.zip!,
-    full_address: a.full_address ?? hit.label,
+    kind: "raw",
+    label: trimmed,
+    payload: { full_address: trimmed },
   };
+}
+
+/**
+ * Street variants for one autocomplete suggestion, in try-order:
+ *   1. autocomplete's canonical street
+ *   2. that street with a trailing street-type token removed
+ */
+export function buildSuggestionCandidates(
+  suggestion: AddressSuggestion,
+): AddressCandidate[] {
+  const base = {
+    city: suggestion.city,
+    state: suggestion.state,
+    zip: suggestion.zip,
+  };
+  const out: AddressCandidate[] = [];
+  const seen = new Set<string>();
+  for (const street of [
+    suggestion.address,
+    stripTrailingSuffix(suggestion.address),
+  ]) {
+    if (!street) continue;
+    const key = street.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({
+      kind: "structured",
+      label: `${street}, ${base.city}, ${base.state} ${base.zip}`,
+      payload: { street, ...base },
+    });
+  }
+  return out;
+}
+
+/**
+ * Full ordered candidate list for one pasted address. First match wins, so
+ * the most faithful interpretation of what the client typed goes first.
+ */
+export function buildAddressCandidates(
+  raw: string,
+  suggestions: AddressSuggestion[],
+): AddressCandidate[] {
+  const rawCandidate = buildRawCandidate(raw);
+  return [
+    ...(rawCandidate ? [rawCandidate] : []),
+    ...suggestions.flatMap(buildSuggestionCandidates),
+  ];
 }
 
 export type ResolveFailure = "unrecognized" | "no_property_record";
@@ -165,40 +271,91 @@ export interface ResolvedProperty {
 /**
  * Resolve a single free-text address string a client pasted.
  *
- * Fast path: hand the raw string straight to DealMachine — their matcher is
- * the source of truth. Their matcher hard-requires a ZIP though, and real
- * pasted input often lacks one (or carries a unit number, or stray commas),
- * so on a miss we normalize through their autocomplete endpoint and retry
- * with structured fields.
+ * Tries candidates in order and stops at the first match. The raw string
+ * goes first when it carries a ZIP, since DealMachine's matcher is the
+ * source of truth and that path costs one call. Otherwise we expand
+ * autocomplete's suggestions into street variants — including a
+ * suffix-stripped form, because autocomplete's geocoder and the property
+ * index disagree about street suffixes (see STREET_SUFFIXES).
+ *
+ * Every attempt is logged so misses are diagnosable from Vercel logs
+ * without needing to reproduce them.
  */
 export async function resolveProperty(
   raw: string,
 ): Promise<ResolvedProperty | { error: ResolveFailure }> {
-  const direct = await enrichAddress({ full_address: raw });
-  if (direct?.dm_property_id) {
-    return {
-      match: direct,
-      matchedAddress: direct.full_address ?? raw,
-      normalized: false,
-    };
+  const attempts: Array<{ candidate: string; outcome: string }> = [];
+
+  // Fast path: raw string already carries a ZIP, so it's worth one direct
+  // call before spending an autocomplete round-trip.
+  const rawCandidate = buildRawCandidate(raw);
+  if (rawCandidate) {
+    const direct = await enrichAddress(rawCandidate.payload);
+    if (direct?.dm_property_id) {
+      attempts.push({ candidate: rawCandidate.label, outcome: "matched" });
+      logResolution({
+        input: raw,
+        attempts,
+        matched: direct.dm_property_id,
+        matchedAddress: direct.full_address,
+      });
+      return {
+        match: direct,
+        matchedAddress: direct.full_address ?? raw,
+        normalized: false,
+      };
+    }
+    attempts.push({ candidate: rawCandidate.label, outcome: "no_match" });
   }
 
-  const suggestion = await autocompleteAddress(raw);
-  if (!suggestion) return { error: "unrecognized" };
+  const suggestions = await autocompleteAddresses(raw);
+  if (!suggestions.length) {
+    logResolution({ input: raw, attempts, matched: null, suggestions: [] });
+    return { error: "unrecognized" };
+  }
 
-  const retry = await enrichAddress({
-    street: suggestion.address,
-    city: suggestion.city,
-    state: suggestion.state,
-    zip: suggestion.zip,
+  for (const suggestion of suggestions) {
+    for (const candidate of buildSuggestionCandidates(suggestion)) {
+      const match = await enrichAddress(candidate.payload);
+      if (match?.dm_property_id) {
+        attempts.push({ candidate: candidate.label, outcome: "matched" });
+        logResolution({
+          input: raw,
+          attempts,
+          matched: match.dm_property_id,
+          matchedAddress: match.full_address,
+        });
+        return {
+          match,
+          // DealMachine's property index is the source of truth for display,
+          // not autocomplete's label.
+          matchedAddress: match.full_address ?? suggestion.full_address,
+          normalized: true,
+        };
+      }
+      attempts.push({ candidate: candidate.label, outcome: "no_match" });
+    }
+  }
+
+  logResolution({
+    input: raw,
+    attempts,
+    matched: null,
+    suggestions: suggestions.map((s) => s.full_address),
   });
-  if (!retry?.dm_property_id) return { error: "no_property_record" };
+  return { error: "no_property_record" };
+}
 
-  return {
-    match: retry,
-    matchedAddress: retry.full_address ?? suggestion.full_address,
-    normalized: true,
-  };
+function logResolution(entry: {
+  input: string;
+  attempts: Array<{ candidate: string; outcome: string }>;
+  matched: string | null;
+  matchedAddress?: string;
+  suggestions?: string[];
+}) {
+  const payload = JSON.stringify({ event: "address_resolution", ...entry });
+  if (entry.matched) console.info(payload);
+  else console.warn(payload);
 }
 
 // ---------- POST /v1/comps ----------
