@@ -1,13 +1,13 @@
 // Jarvis Comps — Prisma schema
-// Dev: SQLite. For Railway/production Postgres, change provider to "postgresql"
-// and set DATABASE_URL accordingly (see README "Deploying to Railway").
+// Postgres (Railway). Schema is synced on deploy via `prisma db push`
+// (see railway.json); no committed migration history.
 
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 

@@ -12,7 +12,7 @@ sub-account via iframe (`/embed`) and later gated behind Stripe.
 ## Stack
 
 - Next.js (App Router) + TypeScript + Tailwind
-- Prisma 6 — SQLite in dev, portable to Postgres for deploy
+- Prisma 6 + Postgres
 - Custom email/password session auth (users are provisioned, no self-signup)
 - DealMachine API for property + sold comp data (server-side only)
 
@@ -41,7 +41,7 @@ only* and never used in the ARV math.
 ```bash
 npm install
 cp .env.example .env         # then fill in values (see below)
-npx prisma migrate dev       # creates SQLite dev.db
+npx prisma db push           # syncs schema to your Postgres DB
 npm run user:create -- you@example.com yourpassword --admin
 npm run dev
 ```
@@ -51,7 +51,7 @@ npm run dev
 | Var | What |
 | --- | --- |
 | `DEALMACHINE_API_KEY` | DealMachine secret key (`dm_sk_live_...`). Server-side only — never exposed to the client. |
-| `DATABASE_URL` | `file:./dev.db` locally; Postgres URL in production. |
+| `DATABASE_URL` | Postgres connection URL (local Postgres in dev, Railway Postgres in production). |
 | `SESSION_SECRET` | Random string (`openssl rand -hex 32`). Reserved for cookie/token signing. |
 
 A demo admin exists in the dev DB: `demo@jarviscomps.com` / `jarvis-demo-2026`.
@@ -78,9 +78,7 @@ npm test        # vitest — covers the comp qualification + ARV engine
 1. Create a Railway project from this repo — `railway.json` handles build
    (`npm run build`) and start (`prisma db push` + `next start`; Railway
    injects `PORT`).
-2. Add a **Postgres** service, then in `prisma/schema.prisma` change
-   `provider = "sqlite"` → `provider = "postgresql"` and commit. (SQLite on
-   Railway is ephemeral — use Postgres for anything real.)
+2. Add a **Postgres** service to the project.
 3. Set service variables:
    - `DATABASE_URL` → `${{Postgres.DATABASE_URL}}`
    - `DEALMACHINE_API_KEY`, `SESSION_SECRET`
@@ -88,10 +86,10 @@ npm test        # vitest — covers the comp qualification + ARV engine
    against the prod `DATABASE_URL`):
    `npm run user:create -- client@email.com theirpassword`
 
-Note on migrations: the committed migration history is SQLite-flavored, so
-production uses `prisma db push` (schema sync) instead of `migrate deploy`.
-If you want real Postgres migrations, delete `prisma/migrations` and run
-`npx prisma migrate dev` once against a Postgres URL to regenerate.
+Note on migrations: there is no committed migration history — both deploy
+and local dev use `prisma db push` (schema sync). If you want real
+migrations later, run `npx prisma migrate dev` against a Postgres URL to
+start a history.
 
 ## Integration seams
 
