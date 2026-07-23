@@ -1,6 +1,6 @@
 // Jarvis Comps — Prisma schema
-// Postgres (Railway). Schema is synced on deploy via `prisma db push`
-// (see railway.json); no committed migration history.
+// Postgres (Neon). Schema is synced with `prisma db push`; no committed
+// migration history.
 
 generator client {
   provider = "prisma-client-js"
@@ -16,8 +16,8 @@ model User {
   email        String    @unique
   passwordHash String
   isAdmin      Boolean   @default(false)
-  // Stripe seam: when subscription gating lands, this flips based on webhook
-  // events ("active" | "past_due" | "canceled"). See src/lib/entitlements.ts.
+  // Access flag, set manually by an admin: "active" grants the product,
+  // anything else revokes it. See src/lib/entitlements.ts.
   entitlement  String    @default("active")
   createdAt    DateTime  @default(now())
   sessions     Session[]

@@ -1,4 +1,5 @@
-// Provision a user (until Stripe-driven provisioning lands).
+// Provision a user. This is how access is granted — see "Billing and access"
+// in the README.
 // Usage: npm run user:create -- <email> <password> [--admin]
 
 import { PrismaClient } from "@prisma/client";

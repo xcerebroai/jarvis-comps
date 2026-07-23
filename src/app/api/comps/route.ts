@@ -1,5 +1,5 @@
 // POST /api/comps — { address } in, subject + qualified comps + ARV +
-// confidence out. Auth-gated; entitlement check is the Stripe seam.
+// confidence out. Auth-gated and entitlement-gated.
 
 import { NextResponse } from "next/server";
 import { z } from "zod";
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   }
   if (!hasActiveEntitlement(user)) {
     return NextResponse.json(
-      { error: "Your subscription is not active. Contact support to restore access." },
+      { error: "Your access is not active. Contact support to restore it." },
       { status: 403 },
     );
   }

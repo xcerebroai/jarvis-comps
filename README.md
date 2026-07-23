@@ -7,7 +7,8 @@ subject property and recent sold comps from DealMachine and produces a
 deterministic, comp-backed ARV opinion with a confidence grade.
 
 Built as a white-label SaaS add-on, designed to be embedded inside a GHL
-sub-account via iframe (`/embed`) and later gated behind Stripe.
+sub-account via iframe (`/embed`), with access provisioned manually per
+client.
 
 ## Stack
 
@@ -51,7 +52,7 @@ npm run dev
 | Var | What |
 | --- | --- |
 | `DEALMACHINE_API_KEY` | DealMachine secret key (`dm_sk_live_...`). Server-side only — never exposed to the client. |
-| `DATABASE_URL` | Postgres connection URL (local Postgres in dev, Railway Postgres in production). |
+| `DATABASE_URL` | Postgres connection URL (local Postgres in dev, Neon in production). |
 | `SESSION_SECRET` | Random string (`openssl rand -hex 32`). Reserved for cookie/token signing. |
 
 A demo admin exists in the dev DB: `demo@jarviscomps.com` / `jarvis-demo-2026`.
@@ -73,39 +74,48 @@ npm test        # vitest — covers the comp qualification + ARV engine
 | `/embed` | Same tool with chrome stripped, for iframe embedding (GHL) |
 | `POST /api/comps` | `{ address }` → subject + qualified comps + ARV + confidence |
 
-## Deploying to Railway
+## Deploying to Vercel + Neon
 
-1. Create a Railway project from this repo — `railway.json` handles build
-   (`npm run build`) and start (`prisma db push` + `next start`; Railway
-   injects `PORT`).
-2. Add a **Postgres** service to the project.
-3. Set service variables:
-   - `DATABASE_URL` → `${{Postgres.DATABASE_URL}}`
-   - `DEALMACHINE_API_KEY`, `SESSION_SECRET`
-4. Deploy, then provision users from a shell on the service (or locally
-   against the prod `DATABASE_URL`):
-   `npm run user:create -- client@email.com theirpassword`
+1. Create a **Neon** Postgres database and copy its pooled connection string.
+2. Import this repo into Vercel. No build config is needed — `npm run build`
+   runs `prisma generate` before `next build`, and `postinstall` runs it
+   again, so Vercel's dependency cache can't serve a stale Prisma client.
+3. Set environment variables on the Vercel project:
+   - `DATABASE_URL` — the Neon connection string
+   - `DEALMACHINE_API_KEY`
+   - `SESSION_SECRET`
+4. Push the schema to Neon once, from your machine:
+   `DATABASE_URL="<neon-url>" npx prisma db push`
+5. Provision users the same way (see **Billing and access** below).
 
-Note on migrations: there is no committed migration history — both deploy
-and local dev use `prisma db push` (schema sync). If you want real
-migrations later, run `npx prisma migrate dev` against a Postgres URL to
-start a history.
+Note on migrations: there is no committed migration history — schema changes
+go out with `prisma db push`. If you want real migrations later, run
+`npx prisma migrate dev` against a Postgres URL to start a history.
 
-## Integration seams
+## Billing and access
 
-### Stripe (not built yet — the seam is ready)
+Billing is **manual**. There is no payment processor wired into the app, and
+none is planned — access is granted and revoked by an admin.
 
-- `User.entitlement` (`"active" | "past_due" | "canceled"`) is the gate, and
-  `src/lib/entitlements.ts → hasActiveEntitlement()` is the **single
-  checkpoint** — `/api/comps` already refuses users whose entitlement isn't
-  active.
-- When Stripe lands: add Stripe customer/subscription IDs to `User`, and a
-  webhook route that flips `entitlement` on
-  `customer.subscription.updated/deleted`. Nothing else needs to change.
-- User provisioning on purchase = create the User row (see
-  `scripts/create-user.ts` for the shape) and email credentials.
+The flow:
 
-### GHL embed
+1. Client buys the add-on and is invoiced through GHL.
+2. Once paid, an admin provisions their account:
+   `DATABASE_URL="<neon-url>" npm run user:create -- client@email.com theirpassword`
+   (add `--admin` for staff accounts). Send them the credentials.
+3. On churn or non-payment, revoke access by flipping their entitlement:
+   `UPDATE "User" SET entitlement = 'inactive' WHERE email = 'client@email.com';`
+   or delete the row outright. Either takes effect on their next request.
+
+`User.entitlement` is the gate — `"active"` grants the product, anything else
+revokes it — and `src/lib/entitlements.ts → hasActiveEntitlement()` is the
+single checkpoint enforcing it. `/api/comps` already refuses any user whose
+entitlement isn't active, so revoking is immediate and total.
+
+Re-running `user:create` for an existing email resets that user's password
+and admin flag, which is also how you handle a password reset.
+
+## GHL embed
 
 `/embed` is the integration point. In GHL, add a custom menu link / iframe
 element pointing at:
