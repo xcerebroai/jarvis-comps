@@ -69,10 +69,12 @@ npm test        # vitest — covers the comp qualification + ARV engine
 | --- | --- |
 | `/` | Marketing landing page |
 | `/signin` | Email/password sign-in |
+| `/signup` | Invite-code redemption → self-service account creation |
 | `/app` | Auth-gated dashboard: address in → ARV + comps out, copy-summary button |
 | `/account` | Email, access status, sign out |
 | `/embed` | Same tool with chrome stripped, for iframe embedding (GHL) |
 | `POST /api/comps` | `{ address }` → subject + qualified comps + ARV + confidence |
+| `POST /api/auth/signup` | Redeems a code and creates the account in one transaction |
 
 ## Deploying to Vercel + Neon
 
@@ -100,12 +102,22 @@ none is planned — access is granted and revoked by an admin.
 The flow:
 
 1. Client buys the add-on and is invoiced through GHL.
-2. Once paid, an admin provisions their account:
-   `DATABASE_URL="<neon-url>" npm run user:create -- client@email.com theirpassword`
-   (add `--admin` for staff accounts). Send them the credentials.
-3. On churn or non-payment, revoke access by flipping their entitlement:
+2. Once paid, mint an invite code and send it to them:
+   `npm run invite:create` (or `-- 5` for a batch).
+3. They redeem it at `/signup`, choosing their own email and password. The
+   code is single-use and burns on redemption, so it can't be shared or
+   replayed. Accounts are created with `entitlement = "active"`.
+4. On churn or non-payment, revoke access by flipping their entitlement:
    `UPDATE "User" SET entitlement = 'inactive' WHERE email = 'client@email.com';`
    or delete the row outright. Either takes effect on their next request.
+
+There is no open sign-up — without a valid unused code, no account can be
+created. Unknown and already-used codes return the same message, so the form
+never reveals which codes exist.
+
+`npm run user:create -- <email> <password> [--admin]` remains the manual
+fallback: it bypasses invite codes entirely, and is how you create staff/admin
+accounts and reset a forgotten password (re-run it with the same email).
 
 `User.entitlement` is the gate — `"active"` grants the product, anything else
 revokes it — and `src/lib/entitlements.ts → hasActiveEntitlement()` is the

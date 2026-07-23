@@ -109,6 +109,12 @@ export default function SignInPage() {
             <SignInForm />
           </Suspense>
         </div>
+        <p className="mt-6 text-center text-sm text-slate-400">
+          Have an invite code?{" "}
+          <Link href="/signup" className="text-accent hover:underline">
+            Create your account
+          </Link>
+        </p>
       </div>
     </div>
   );

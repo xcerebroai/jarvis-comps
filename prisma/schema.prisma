@@ -23,6 +23,17 @@ model User {
   sessions     Session[]
 }
 
+model InviteCode {
+  code         String    @id
+  createdAt    DateTime  @default(now())
+  // Burned on redemption. A non-null usedAt means the code is spent; the
+  // atomic claim in src/lib/invites.ts guards on usedAt being null.
+  usedAt       DateTime?
+  usedByUserId String?
+
+  @@index([usedAt])
+}
+
 model Session {
   token     String   @id
   userId    String

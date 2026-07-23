@@ -28,6 +28,19 @@ export async function hashPassword(password: string): Promise<string> {
   return bcrypt.hash(password, 12);
 }
 
+/** Issue a session for an already-authenticated user and set the cookie. */
+export async function createSession(userId: string): Promise<void> {
+  const token = randomBytes(32).toString("hex");
+  await db.session.create({
+    data: {
+      token,
+      userId,
+      expiresAt: new Date(Date.now() + SESSION_TTL_DAYS * 24 * 60 * 60 * 1000),
+    },
+  });
+  (await cookies()).set(SESSION_COOKIE, token, cookieOptions());
+}
+
 export async function signIn(
   email: string,
   password: string,
@@ -43,15 +56,7 @@ export async function signIn(
   const valid = await bcrypt.compare(password, user.passwordHash);
   if (!valid) return null;
 
-  const token = randomBytes(32).toString("hex");
-  await db.session.create({
-    data: {
-      token,
-      userId: user.id,
-      expiresAt: new Date(Date.now() + SESSION_TTL_DAYS * 24 * 60 * 60 * 1000),
-    },
-  });
-  (await cookies()).set(SESSION_COOKIE, token, cookieOptions());
+  await createSession(user.id);
   return user;
 }
 
