@@ -70,7 +70,7 @@ npm test        # vitest — covers the comp qualification + ARV engine
 | `/` | Marketing landing page |
 | `/signin` | Email/password sign-in |
 | `/signup` | Invite-code redemption → self-service account creation |
-| `/app` | Auth-gated dashboard: address in → ARV + comps out, copy-summary button |
+| `/app` | Auth-gated dashboard: address in → ARV + comps out, with copy summary, copy JSON, and download Markdown report actions |
 | `/account` | Email, access status, sign out |
 | `/embed` | Same tool with chrome stripped, for iframe embedding (GHL) |
 | `POST /api/comps` | `{ address }` → subject + qualified comps + ARV + confidence |
