@@ -5,6 +5,7 @@ import {AcquisitionRepository} from './acquisition-repository';
 const client=new PrismaClient({datasourceUrl:'postgresql://quentinflores@localhost:55439/postgres?host=/tmp/jarvis-acq-test-pg-socket'});
 const repo=new AcquisitionRepository({query:async<T>(sql:string,params:unknown[])=>client.$queryRawUnsafe<T[]>(sql,...params)});
 const c={agency:'SYNTHETIC-a',location:'SYNTHETIC-l',actor:'SYNTHETIC-human'};
+async function main(){
 try {
  assert.equal(await repo.loadAnalysis({...c,location:'SYNTHETIC-other'},'SYNTHETIC-1'),null);
  const replay=await repo.persist(c,'request1','digest1',{propertyId:'SYNTHETIC-house',valueUsd:'999'});
@@ -15,6 +16,18 @@ try {
  assert.equal(await repo.consumeReview(c,review.id,'wrongpacket','v2'),false);
  assert.equal(await repo.consumeReview(c,review.id,'newpacket','v2'),true);
  assert.equal(await repo.consumeReview(c,review.id,'newpacket','v2'),false);
+ const expires=new Date(Date.now()+60000).toISOString();
+ const policy={id:'SYNTHETIC-policy',version:'policy-v1',approvedBy:c.actor,expiresAt:expires,revoked:false};
+ await client.$executeRawUnsafe('UPDATE "AcquisitionSettings" SET "offerPolicy"=$3::jsonb WHERE agency=$1 AND location=$2',c.agency,c.location,JSON.stringify(policy));
+ const bound=await repo.saveReview(c,'policy-packet','SYNTHETIC-2','v2',expires,{id:policy.id,version:policy.version});
+ await assert.rejects(repo.saveReview(c,'policy-packet','SYNTHETIC-2','v2',expires,{id:policy.id,version:policy.version}));
+ await client.$executeRawUnsafe('UPDATE "AcquisitionSettings" SET "offerPolicy"=$3::jsonb WHERE agency=$1 AND location=$2',c.agency,c.location,JSON.stringify({...policy,revoked:true}));
+ assert.equal(await repo.consumeReview(c,bound.id,'policy-packet','v2'),false);
+ await client.$executeRawUnsafe('UPDATE "AcquisitionSettings" SET "offerPolicy"=$3::jsonb WHERE agency=$1 AND location=$2',c.agency,c.location,JSON.stringify({...policy,version:'policy-v2'}));
+ assert.equal(await repo.consumeReview(c,bound.id,'policy-packet','v2'),false);
+ await assert.rejects(repo.saveReview(c,'changed-policy','SYNTHETIC-2','v2',expires,{id:policy.id,version:policy.version}),/membership required/);
+ await client.$executeRawUnsafe('UPDATE "AcquisitionSettings" SET "offerPolicy"=$3::jsonb WHERE agency=$1 AND location=$2',c.agency,c.location,JSON.stringify(policy));
+ assert.equal(await repo.consumeReview(c,bound.id,'policy-packet','v2'),true);
  const guarded=await repo.saveReview(c,'guarded','SYNTHETIC-2','v2',new Date(Date.now()+60000).toISOString());
  await client.$executeRawUnsafe('UPDATE "AcquisitionSettings" SET selected=FALSE WHERE agency=$1 AND location=$2',c.agency,c.location);
  assert.equal(await repo.consumeReview(c,guarded.id,'guarded','v2'),false);
@@ -26,3 +39,6 @@ try {
  await repo.hold(c,'SYNTHETIC-house','opt_out');assert.equal(await repo.consumeReview(c,guarded.id,'guarded','v2'),false);await repo.hold(c,'SYNTHETIC-house','human_takeover');assert.equal((await repo.isHeld(c,'SYNTHETIC-house'))?.reason,'opt_out');
  console.log('PASS: actual parameterized Postgres repository tenant isolation, canonical idempotency, conflict, stale review, wrong digest, exact single use, opt-out precedence, deselection, disabled reviewer/caller and human takeover. SYNTHETIC local socket only.');
 } finally {await client.$disconnect();}
+
+}
+void main().catch(error=>{console.error(error);process.exitCode=1;});

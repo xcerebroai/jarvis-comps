@@ -1,6 +1,13 @@
 import {createHash,randomBytes,randomUUID} from 'node:crypto';
 import type {BoundSql} from './acquisition-repository';
-export const credentialOriginAllowed=(origin:string|null)=>origin==='https://comps.xcerebro.ai';
+export function credentialOriginAllowed(origin:string|null,configured=process.env.JARVIS_ACQUISITIONS_TRUSTED_ORIGINS??''){
+ if(!origin)return false;
+ const exact=(value:string)=>{try{const u=new URL(value);return u.protocol==='https:'&&u.origin===value&&!u.username&&!u.password&&!u.hostname.includes('*');}catch{return false;}};
+ const additional=configured?configured.split(',').map(x=>x.trim()):[];
+ // Invalid configuration fails closed rather than accepting a partial list.
+ if(additional.some(x=>!exact(x))||!exact(origin))return false;
+ return ['https://comps.xcerebro.ai',...additional].includes(origin);
+}
 export const JARVIS_PREMIUM_LOCATION='SesCoVXlNu7qTSBol1gs';
 /** Called only by an authenticated active admin via the same-origin setup UI. */
 export async function issueAnalysisCredential(sql:BoundSql,adminId:string,agency:string,expiresAt:string,now=Date.now()){
