@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {AcquisitionRepository} from './acquisition-repository';
+import type {BoundSql} from './acquisition-repository';
+const c={agency:'SYNTHETIC-agency',location:'SYNTHETIC-location',actor:'SYNTHETIC-actor'};
+function fake(rows:unknown[]){const calls:{sql:string;parameters:unknown[]}[]=[];const sql:BoundSql={query:async<T>(statement:string,parameters:unknown[])=>{calls.push({sql:statement,parameters});return rows as T[];}};return {repo:new AcquisitionRepository(sql),calls};}
+test('tenant boundaries and untrusted values are bound parameters',async()=>{const f=fake([]);await f.repo.loadAnalysis(c,"x';DROP TABLE anything;--");assert.deepEqual(f.calls[0].parameters,[c.agency,c.location,"x';DROP TABLE anything;--"]);assert.ok(!f.calls[0].sql.includes('DROP TABLE'));assert.match(f.calls[0].sql,/agency=\$1 AND location=\$2/);});
+test('idempotent persistence returns canonical result and rejects conflicting body',async()=>{const canonical={status:'SYNTHETIC-original'};const f=fake([{id:'SYNTHETIC-id',version:'SYNTHETIC-v1',requestDigest:'same',result:canonical}]);assert.equal((await f.repo.persist(c,'SYNTHETIC-request','same',{status:'SYNTHETIC-new'})).result,canonical);await assert.rejects(f.repo.persist(c,'SYNTHETIC-request','changed',{}),/Idempotency conflict/);assert.match(f.calls[0].sql,/ON CONFLICT \(agency,location,"requestId"\)/);});
+test('review consumption is atomic, exact, single use and tenant scoped',async()=>{const f=fake([]);assert.equal(await f.repo.consumeReview(c,'SYNTHETIC-review','SYNTHETIC-digest','SYNTHETIC-v1'),false);const q=f.calls[0];assert.deepEqual(q.parameters,[c.agency,c.location,'SYNTHETIC-review','SYNTHETIC-digest','SYNTHETIC-v1',c.actor]);for(const clause of ['"usedAt" IS NULL','revoked=FALSE','"expiresAt">CURRENT_TIMESTAMP','a.version=r."analysisVersion"'])assert.ok(q.sql.includes(clause));});
