@@ -1,0 +1,9 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {issueAnalysisCredential,JARVIS_PREMIUM_LOCATION,credentialOriginAllowed} from './acquisition-issuance';
+import type {BoundSql} from './acquisition-repository';
+test('issuance stores hash only, exact premium tenant and analysis scope',async()=>{let values:unknown[]=[],statement='';const sql:BoundSql={query:async<T>(s:string,p:unknown[])=>{statement=s;values=p;return [{id:'SYNTHETIC-id'}] as T[];}};const expires=new Date(Date.now()+3600000).toISOString(),r=await issueAnalysisCredential(sql,'SYNTHETIC-admin','SYNTHETIC-agency',expires);assert.equal(values[1],createHash('sha256').update(r.token).digest('hex'));assert.ok(!values.includes(r.token));assert.equal(values[3],JARVIS_PREMIUM_LOCATION);assert.match(statement,/owner.role='owner_admin'/);assert.match(statement,/ARRAY\['acquisitions:analyze'\]/);});
+test('missing owner membership, past and excessive expiry cannot issue',async()=>{const sql:BoundSql={query:async<T>()=>[] as T[]};await assert.rejects(issueAnalysisCredential(sql,'SYNTHETIC-admin','SYNTHETIC-agency',new Date(Date.now()+3600000).toISOString()),/membership required/);await assert.rejects(issueAnalysisCredential(sql,'SYNTHETIC-admin','SYNTHETIC-agency','2020-01-01T00:00:00Z'),/explicit expiry/);await assert.rejects(issueAnalysisCredential(sql,'SYNTHETIC-admin','SYNTHETIC-agency',new Date(Date.now()+91*86400000).toISOString()),/explicit expiry/);});
+
+test('credential CSRF gate rejects absent, null and foreign origins',()=>{for(const origin of [null,'null','https://evil.invalid','https://comps.xcerebro.ai.evil.invalid','http://comps.xcerebro.ai'])assert.equal(credentialOriginAllowed(origin),false);assert.equal(credentialOriginAllowed('https://comps.xcerebro.ai'),true);});
