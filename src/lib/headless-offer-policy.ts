@@ -1,14 +1,4 @@
 import {createHash} from 'node:crypto';
-export type Terms={closingDate:string;depositUsd:number;inspectionDays:number;assignmentAllowed:boolean;financing:string;sellerConcessionsUsd:number};
-export type Packet={propertyId:string;recipientId:string;asset:string;strategy:string;priceUsd:number;terms:Terms;analysisId:string;analysisVersion:string};
-export type StandingPolicy={id:string;version:string;approvedBy:string;expiresAt:string;revoked:boolean;propertyId:string;recipientId:string;asset:string;strategy:string;minPriceUsd:number;maxPriceUsd:number;terms:Terms};
-const object=(x:unknown):x is Record<string,unknown>=>Boolean(x&&typeof x==='object'&&!Array.isArray(x));
-const exact=(x:Record<string,unknown>,keys:string[])=>Object.keys(x).length===keys.length&&keys.every(k=>Object.hasOwn(x,k));
-const text=(x:unknown):x is string=>typeof x==='string'&&x.trim().length>0&&x.length<=200;
-const money=(x:unknown):x is number=>typeof x==='number'&&Number.isFinite(x)&&x>=0&&Number.isSafeInteger(Math.round(x*100))&&Math.abs(x*100-Math.round(x*100))<1e-6;
-export function validTerms(x:unknown):x is Terms{return object(x)&&exact(x,['closingDate','depositUsd','inspectionDays','assignmentAllowed','financing','sellerConcessionsUsd'])&&typeof x.closingDate==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(x.closingDate)&&Number.isFinite(Date.parse(x.closingDate))&&new Date(x.closingDate).toISOString().slice(0,10)===x.closingDate&&money(x.depositUsd)&&Number.isInteger(x.inspectionDays)&&Number(x.inspectionDays)>=0&&typeof x.assignmentAllowed==='boolean'&&text(x.financing)&&money(x.sellerConcessionsUsd);}
-export function validPacket(x:unknown):x is Packet{return object(x)&&exact(x,['propertyId','recipientId','asset','strategy','priceUsd','terms','analysisId','analysisVersion'])&&['propertyId','recipientId','analysisId','analysisVersion'].every(k=>text(x[k]))&&['house','land','small_multifamily','commercial_multifamily'].includes(String(x.asset))&&['wholesale','flip','rental','creative'].includes(String(x.strategy))&&money(x.priceUsd)&&x.priceUsd>0&&validTerms(x.terms);}
+import type {Packet} from './acquisition-packet-validation';
+export * from './acquisition-packet-validation';
 export function packetDigest(p:Packet){return createHash('sha256').update(JSON.stringify({propertyId:p.propertyId,recipientId:p.recipientId,asset:p.asset,strategy:p.strategy,priceUsd:p.priceUsd,terms:{closingDate:p.terms.closingDate,depositUsd:p.terms.depositUsd,inspectionDays:p.terms.inspectionDays,assignmentAllowed:p.terms.assignmentAllowed,financing:p.terms.financing,sellerConcessionsUsd:p.terms.sellerConcessionsUsd},analysisId:p.analysisId,analysisVersion:p.analysisVersion})).digest('hex');}
-export function withinStandingPolicy(p:Packet,s:StandingPolicy,now=Date.now()){
- return validPacket(p)&&s.revoked===false&&text(s.id)&&text(s.version)&&text(s.approvedBy)&&Number.isFinite(Date.parse(s.expiresAt))&&Date.parse(s.expiresAt)>now&&money(s.minPriceUsd)&&money(s.maxPriceUsd)&&s.minPriceUsd>0&&s.minPriceUsd<=s.maxPriceUsd&&validTerms(s.terms)&&['propertyId','recipientId','asset','strategy'].every(k=>p[k as keyof Packet]===s[k as keyof StandingPolicy])&&p.priceUsd>=s.minPriceUsd&&p.priceUsd<=s.maxPriceUsd&&Object.keys(p.terms).every(k=>p.terms[k as keyof Terms]===s.terms[k as keyof Terms]);
-}

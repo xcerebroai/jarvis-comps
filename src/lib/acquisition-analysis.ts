@@ -31,7 +31,7 @@ function median(values: number[]): number {
 }
 export function analyzeHouseValue(
   subject: AcquisitionSubject, records: AcquisitionComp[], policy: AcquisitionPolicy,
-  now: Date, synthetic: boolean,
+  now: Date, synthetic: boolean, basis: 'renovated_arv'|'comparable_market_value' = 'renovated_arv',
 ) {
   requireReview(typeof synthetic === 'boolean', 'Explicit synthetic state required');
   requireReview(subject.asset === 'house', 'Land and multifamily require separate reviewed methods');
@@ -54,7 +54,7 @@ export function analyzeHouseValue(
     else if (!c.source?.reference || !c.source.retrievedAt || !/[zZ]|[+-]\d\d:\d\d$/.test(c.source.retrievedAt) ||
       !Number.isFinite(sourceHours) || sourceHours<0 || sourceHours>policy.maxSourceAgeHours ||
       c.source.synthetic!==synthetic || (!synthetic && c.source.provider!=='DealMachine')) reason='Invalid source provenance';
-    else if (!c.saleVerified || !c.renovatedComparable || /estimated/i.test(c.saleType) || !policy.verifiedSaleTypes.includes(c.saleType)) reason='Unverified market sale or renovated comparability';
+    else if (!c.saleVerified || (basis==='renovated_arv'&&!c.renovatedComparable) || /estimated/i.test(c.saleType) || !policy.verifiedSaleTypes.includes(c.saleType)) reason='Unverified market sale or renovated comparability';
     else if (!finite(c.salePrice,true) || !finite(c.sqft,true) || !finite(c.distanceMiles) ||
       !Number.isFinite(ageDays) || ageDays<0 || ageDays>policy.maxAgeDays) reason='Invalid/stale/future sale facts';
     else if (c.propertyType!==subject.propertyType || c.distanceMiles>policy.radiusMiles ||
@@ -67,7 +67,7 @@ export function analyzeHouseValue(
   const cents = Math.round(perSqft*subject.sqft*100);
   requireReview(Number.isSafeInteger(cents) && cents>0, 'Value exceeds valid monetary precision');
   return {
-    status:'INTERNAL_REVIEW' as const, method:'house_verified_renovated_sales',
+    status:'INTERNAL_REVIEW' as const, method:basis==='renovated_arv'?'house_verified_renovated_sales':'house_verified_market_sales',
     propertyId:subject.id, valueUsd:(cents/100).toFixed(2), synthetic,
     label:synthetic?'SYNTHETIC — TEST ONLY':'SOURCE-BACKED INTERNAL REVIEW',
     calculation:{formula:'median verified sale dollars/sqft × subject sqft',medianPerSqft:perSqft,subjectSqft:subject.sqft},
