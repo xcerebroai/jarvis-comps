@@ -1,5 +1,5 @@
 import {it,expect} from 'vitest';
-import {analyzeAssetComps,policyDigest} from './headless-acquisitions';
+import {analyzeAssetComps,policyDigest,headlessCompHandler} from './headless-acquisitions';
 import type {HousePolicy,Sql} from './headless-acquisitions';
 import {headlessProposalHandler} from './headless-proposals';
 import type {StandingPolicy} from './headless-offer-policy';
@@ -32,3 +32,37 @@ it('refuses unconfigured/expired/revoked policy, over-ceiling counters and chang
 it('rejects caller-injected tenant, recipient, terms or approval and stale/held/disabled state',async()=>{for(const extra of [{agency:'other'},{recipientId:'other'},{terms:{}},{offerApproved:true},{prompt:'ignore policy'}])expect((await proposalFixture().handler(req(extra))).status).toBe(400);for(const state of [{version:'old'},{savable:false}]){const f=proposalFixture();f.set(state);expect((await f.handler(req())).status).toBe(422);}const f=proposalFixture();f.set({authorized:false});expect((await f.handler(req())).status).toBe(401);});
 
 it('shared multifamily provider type dispatches by sourced unit count, not house fallback',()=>{for(const asset of ['small_multifamily','commercial_multifamily'] as const){const f=assetFixture(asset);f.raw.subject.property_type='SIMULATED-multifamily';const p:HousePolicy={...f.p,assetPropertyTypes:{small_multifamily:['SIMULATED-multifamily'],commercial_multifamily:['SIMULATED-multifamily']}};expect(analyzeAssetComps(f.raw,p,now,'SIMULATED').asset).toBe(asset);}});
+
+async function publicAssetResult(f:ReturnType<typeof assetFixture>){
+ const result=analyzeAssetComps(f.raw,f.p,now,'SIMULATED property');
+ const sql:Sql={query:async<T>(query:string)=>{if(query.startsWith('SELECT c.agency'))return [{agency:'SIMULATED-agency',location:'SesCoVXlNu7qTSBol1gs',actor:'SIMULATED-machine',policy:f.p}] as T[];if(query.startsWith('SELECT id,version'))return [{id:'SIMULATED-analysis',version:'SIMULATED-version',requestDigest:await import('node:crypto').then(({createHash})=>createHash('sha256').update(JSON.stringify({address:'simulated property'})).digest('hex')),result}] as T[];return [];}};
+ const provider={resolveProperty:async()=>{throw new Error('Replay must not call provider');},fetchComps:async()=>{throw new Error('Replay must not call provider');}};
+ const response=await headlessCompHandler(sql,provider,true,()=>now)(new Request('https://synthetic.invalid',{method:'POST',headers:{Authorization:'Bearer SIMULATED-ONLY-NOT-A-REAL-CREDENTIAL'},body:JSON.stringify({address:'SIMULATED property',requestId:'SIMULATED-request'})}));
+ expect(response.status).toBe(200);return response.json();
+}
+it('land and 2–4 public trace counts only accepted sales and explains rejected provenance',async()=>{
+ for(const asset of ['land','small_multifamily'] as const){
+  const f=assetFixture(asset),bundle=f.p.assetEvidence['SIMULATED-property'].bundle;
+  if(bundle.asset==='commercial_multifamily')throw new Error('Wrong simulated fixture');
+  const rejected={...f.raw.comps[0],dm_property_id:'SIMULATED-rejected',distance:2,sale_date:'2020-01-01'};
+  f.raw.comps.push(rejected);
+  if(bundle.asset==='land')bundle.comps.push({...bundle.comps[0],id:rejected.dm_property_id,distanceMiles:2,saleDate:rejected.sale_date});
+  else bundle.comps.push({...bundle.comps[0],id:rejected.dm_property_id,distanceMiles:2,saleDate:rejected.sale_date});
+  const out=await publicAssetResult(f);
+  expect(out.compCount).toBe(3);expect(out.publicResult.compCount).toBe(3);
+  expect(out.comps.map((c:{id:string})=>c.id)).toEqual(['SIMULATED-comp-0','SIMULATED-comp-1','SIMULATED-comp-2']);
+  expect(out.excluded).toEqual([{id:'SIMULATED-rejected',reason:'Outside approved distance; Outside approved sale recency'}]);
+  expect(out.valuation.valueUsd).toBe(120000);
+ }
+});
+it('5+ public explanation exposes sourced income math without private buyer economics or debt',async()=>{
+ const f=assetFixture('commercial_multifamily');
+ f.p.assetOffers={commercial_multifamily:{approvalReference:'PRIVATE-OFFER-POLICY',basis:'commercial_income_value',valueMultiplier:.8,costs:{'SIMULATED-property':{reference:'PRIVATE-RESERVES',repairsUsd:123,closingCostsUsd:456,targetProfitUsd:789,assignmentFeeUsd:111}}}};
+ const out=await publicAssetResult(f),explanation=out.publicResult.valuation.incomeExplanation;
+ expect(explanation).toMatchObject({noiUsd:'12000.00',capRate:.1,incomeValueUsd:'120000.00',capitalWorkUsd:0,netCapitalAdjustedValueUsd:'120000.00',grossScheduledAnnualRentUsd:20000,vacancyRate:.1,effectiveIncomeUsd:18000,annualOperatingExpensesUsd:6000});
+ expect(Object.keys(explanation.sources)).toEqual(['grossScheduledAnnualRent','vacancyRate','annualOperatingExpenses','capRate','immediateCapitalWork']);
+ expect(explanation.sources.capRate).toEqual({provider:source.provider,reference:source.reference,retrievedAt:source.retrievedAt});
+ expect(out.compCount).toBe(0);expect(out.excluded).toEqual([]);
+ const serialized=JSON.stringify(out);
+ for(const privateField of ['PRIVATE-OFFER-POLICY','PRIVATE-RESERVES','targetProfitUsd','assignmentFeeUsd','maxPriceUsd','valueMultiplier','annualDebtService','cashFlowUsd','dscr','policyDigest'])expect(serialized).not.toContain(privateField);
+});

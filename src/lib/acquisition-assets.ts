@@ -20,7 +20,16 @@ function sales<T extends Sale>(rows:T[],p:AcquisitionPolicy,now:Date,synthetic:b
  const seen=new Set<string>(),accepted:T[]=[],excluded:{id:string;reason:string}[]=[];
  for(const c of rows){const days=(now.getTime()-Date.parse(c.saleDate))/86400000;
  const valid=Boolean(c.id&&!seen.has(c.id)&&numeric(c.salePrice,true)&&numeric(c.distanceMiles)&&c.distanceMiles<=p.radiusMiles&&Number.isFinite(days)&&days>=0&&days<=p.maxAgeDays&&c.saleVerified&&!/estimated/i.test(c.saleType)&&p.verifiedSaleTypes.includes(c.saleType)&&sourceOK(c.source,p,now,synthetic,true)&&match(c));
- seen.add(c.id);if(valid)accepted.push(c);else excluded.push({id:c.id,reason:'Sale, provenance or asset-policy verification failed'});}
+ const reasons:string[]=[];
+ if(!c.id)reasons.push('Missing sale identity');
+ if(seen.has(c.id))reasons.push('Duplicate sale identity');
+ if(!numeric(c.salePrice,true))reasons.push('Invalid sale price');
+ if(!numeric(c.distanceMiles)||c.distanceMiles>p.radiusMiles)reasons.push('Outside approved distance');
+ if(!Number.isFinite(days)||days<0||days>p.maxAgeDays)reasons.push('Outside approved sale recency');
+ if(!c.saleVerified||/estimated/i.test(c.saleType)||!p.verifiedSaleTypes.includes(c.saleType))reasons.push('Unsupported actual-sale classification');
+ if(!sourceOK(c.source,p,now,synthetic,true))reasons.push('Source provenance or freshness failed');
+ if(!match(c))reasons.push('Asset matching facts outside approved policy');
+ seen.add(c.id);if(valid)accepted.push(c);else excluded.push({id:c.id,reason:reasons.join('; ')});}
  fail(accepted.length>=p.minComps,'Insufficient verified asset comps');return{accepted,excluded};
 }
 export function analyzeLand(subject:LandFacts,rows:LandComp[],policy:AcquisitionPolicy,now:Date,synthetic:boolean){
