@@ -42,3 +42,16 @@ it('property-specific complete synthetic proposal match is not recorded authoriz
 it('5+ safe source explanation excludes debt and private ceiling/policy packet',()=>{
  const out=call(fixture('commercial_multifamily'));expect(out.publicResult?.incomeExplanation?.noiUsd).toBe('12000.00');const text=JSON.stringify(out.publicResult);for(const key of ['annualDebtService','cashFlowUsd','dscr','approvedCeilingUsd','minPriceUsd','maxPriceUsd','targetProfitUsd'])expect(text).not.toContain(key);
 });
+
+it('observed native test UI requires a JSON string literal, while object input fails safely',()=>{
+ const requestText=JSON.stringify(fixture());
+ // Observed Test Setup coerces raw object JSON to an object; outer quotes retain a string.
+ const objectInput=JSON.parse(requestText);
+ expect(nativeCalculationProof({requestJson:objectInput})).toMatchObject({status:'NEEDS_REVIEW',reason:'Invalid bounded proof input',publicResult:null,proposalResult:null});
+ const testFieldLiteral=JSON.stringify(requestText),stringInput=JSON.parse(testFieldLiteral);
+ expect(typeof stringInput).toBe('string');expect(nativeCalculationProof({requestJson:stringInput})).toEqual(call(fixture()));
+ const source=readFileSync('../jarvis-acquisitions-draft/native-first/custom-code-synthetic-proof.js','utf8');
+ const nativeEditorCopy=source.replace('return JarvisNativeProof.nativeCalculationProof(inputData);','output = JarvisNativeProof.nativeCalculationProof(inputData);');
+ const execute=new Function('inputData','let output;\n'+nativeEditorCopy+'\nreturn output;');
+ expect(execute({requestJson:stringInput})).toEqual(call(fixture()));
+});
