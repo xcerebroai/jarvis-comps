@@ -1,0 +1,24 @@
+{
+  "status": "ALLOCATE_PENDING_ONLY",
+  "mode": "synthetic_fixture",
+  "analysis": {
+    "schemaKey": "custom_objects.jarvis_acq_analyses",
+    "recordId": null,
+    "uniqueKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+    "parentRecordId": "SYNTHETIC-A",
+    "properties": {
+      "analysis_key": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+      "analysis_version": "v1",
+      "property_record_id": "SYNTHETIC-A",
+      "property_key": "SYNTHETIC-key-A",
+      "provider_property_id": "SYNTHETIC-provider-A",
+      "policy_id": "SYNTHETIC-policy",
+      "policy_version": "v1",
+      "source_version": "v1",
+      "status": "PENDING",
+      "completion_state": "INCOMPLETE"
+    }
+  },
+  "pointerUpdate": null,
+  "outboundEnabled": false
+}

@@ -1,0 +1,58 @@
+{
+  "context": {
+    "locationId": "SesCoVXlNu7qTSBol1gs",
+    "now": "2026-10-07T09:00:00.000Z",
+    "contactId": "SYNTHETIC-seller",
+    "associatedPropertyRecordIds": [
+      "SYNTHETIC-A",
+      "SYNTHETIC-B"
+    ],
+    "contactDnd": false,
+    "contactTakeover": false,
+    "property": {
+      "recordId": "SYNTHETIC-A",
+      "propertyKey": "SYNTHETIC-key-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "propertyVersion": "v1",
+      "canonicalAddress": "SYNTHETIC Property A",
+      "sourceIdentityReference": "SYNTHETIC-identity",
+      "asset": "house",
+      "currentAnalysisId": "SYNTHETIC-analysis-A",
+      "currentAnalysisVersion": "v1",
+      "held": "false",
+      "humanTakeover": "false",
+      "status": "READY",
+      "holdReason": ""
+    },
+    "analysisRecordId": "SYNTHETIC-analysis-A",
+    "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+    "analysisVersion": "v1",
+    "expectedPropertyVersion": "v1",
+    "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+    "expectedCurrentAnalysisVersion": "v1",
+    "policyRecordId": "SYNTHETIC-policy",
+    "policyVersion": "v1",
+    "sourceVersion": "v1",
+    "eventId": "SYNTHETIC-event"
+  },
+  "requestedPropertyRecordId": "SYNTHETIC-A",
+  "properties": [
+    {
+      "recordId": "SYNTHETIC-A",
+      "propertyKey": "SYNTHETIC-key-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "propertyVersion": "v1",
+      "canonicalAddress": "SYNTHETIC Property A",
+      "sourceIdentityReference": "SYNTHETIC-identity",
+      "asset": "house",
+      "currentAnalysisId": "SYNTHETIC-analysis-A",
+      "currentAnalysisVersion": "v1",
+      "held": "false",
+      "humanTakeover": "false",
+      "status": "READY",
+      "holdReason": ""
+    }
+  ],
+  "channel": "voice",
+  "intent": "offer"
+}

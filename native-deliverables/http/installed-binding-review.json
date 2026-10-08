@@ -1,0 +1,78 @@
+{
+  "status": "MAPPING_CANDIDATE_NOT_RUNTIME_CONFIG",
+  "active": false,
+  "locationId": "SesCoVXlNu7qTSBol1gs",
+  "storageMode": "installed_fields",
+  "context": {
+    "schemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+    "keyField": "event_key",
+    "payloadField": "canonical_event",
+    "eventType": "QUOTE_CONTEXT_SNAPSHOT"
+  },
+  "quote": {
+    "schemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+    "keyField": "event_key",
+    "payloadField": "canonical_event",
+    "eventType": "QUOTE_DECISION_RECORDED",
+    "claimedLocationField": "event_location_id",
+    "uniqueRequestKeyVerified": false,
+    "maxPayloadBytes": null
+  },
+  "policy": {
+    "schemaKey": "custom_objects.jarvis_acq_policies",
+    "configurationScope": null,
+    "repairDefaultsOnlyRecordId": "6ac6d94e18c960322a93986c",
+    "repairDefaultsAreOfferAuthority": false
+  },
+  "offer": {
+    "schemaKey": "custom_objects.jarvis_acq_offers",
+    "approvedOfferStates": []
+  },
+  "ceiling": {
+    "schemaKey": "custom_objects.jarvis_acq_sourced_ceilings"
+  },
+  "uiAssociationCandidates": [
+    {
+      "label": "ACQ Property Analysis",
+      "childSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac5a61ada772f37a6b93410",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Analysis Evidence",
+      "childSchemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "observedRelationId": "6ac5a65510057ebf27eb264d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "Seller",
+      "childSchemaKey": null,
+      "parentSchemaKey": null,
+      "observedRelationId": "6ac6d2b9e9b61f01dc34fe2e",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    }
+  ],
+  "unresolved": [
+    "authorized server transport and exact API version",
+    "API association definition ID translation and relation envelope",
+    "Contact global/voice DND and takeover mapping",
+    "API unique conflict/read-after-write behavior and capacities",
+    "restricted native writers and searchable keys",
+    "protected native context event with structured supplements",
+    "adopted full policy and exact offer/ceiling records"
+  ],
+  "scopeStringsFromBrowserProposal": [
+    "objects/schema.readonly",
+    "objects/record.readonly",
+    "objects/record.write",
+    "associations.readonly",
+    "associations/relation.readonly",
+    "associations/relation.write"
+  ],
+  "credentialsIncluded": false
+}

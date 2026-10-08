@@ -13,6 +13,9 @@ async function main(){
  const token='SYNTHETIC-LOCAL-ONLY-NOT-A-REAL-MACHINE-CREDENTIAL';
  const policy:HousePolicy={approvalReference:'SYNTHETIC-headless-policy',expiresAt:'2027-01-01T00:00:00Z',housePropertyTypes:['SYNTHETIC-house'],saleTypes:['SYNTHETIC-recorded'],radiusMiles:1,maxAgeDays:365,sizeTolerance:.2,minComps:3,maxSourceAgeHours:24};
  try{
+  // SQL authorization uses CURRENT_TIMESTAMP; use the same actual local DB clock.
+  // A fixed historical injected clock otherwise creates already-expired approvals.
+  const [{now:testNow}]=await db.$queryRawUnsafe<{now:Date}[]>('SELECT CURRENT_TIMESTAMP AS now');
   await db.$executeRawUnsafe('INSERT INTO "AcquisitionMembership"(agency,location,actor,role,enabled) VALUES($1,$2,$3,\'analysis_machine\',TRUE) ON CONFLICT(agency,location,actor) DO UPDATE SET enabled=TRUE',agency,location,actor);
   await db.$executeRawUnsafe('INSERT INTO "AcquisitionSettings"(agency,location,selected,"selectedBy","decisionReference",policy) VALUES($1,$2,TRUE,\'SYNTHETIC-owner\',\'SYNTHETIC-decision\',$3::jsonb) ON CONFLICT(agency,location) DO UPDATE SET selected=TRUE,policy=EXCLUDED.policy',agency,location,JSON.stringify(policy));
   await db.$executeRawUnsafe('INSERT INTO "AcquisitionCredential"(id,"tokenHash",agency,location,actor,scopes,"expiresAt") VALUES(\'SYNTHETIC-headless-key\',$1,$2,$3,$4,ARRAY[\'acquisitions:analyze\'],\'2027-01-01T00:00:00Z\') ON CONFLICT(id) DO UPDATE SET revoked=FALSE,agency=EXCLUDED.agency,location=EXCLUDED.location,actor=EXCLUDED.actor',createHash('sha256').update(token).digest('hex'),agency,location,actor);
@@ -20,7 +23,7 @@ async function main(){
   await db.$executeRawUnsafe('DELETE FROM "AcquisitionHold" WHERE agency=$1 AND location=$2',agency,location);
   let calls=0;
   const provider:Provider={resolveProperty:async()=>{calls++;return {match:{input:{},matched:true,dm_property_id:'SYNTHETIC-headless-property'},matchedAddress:'SYNTHETIC property',normalized:false};},fetchComps:async()=>{calls++;return {found:true,subject:{dm_property_id:'SYNTHETIC-headless-property',sqft:1000,property_type:'SYNTHETIC-house'},comps:[100000,120000,140000].map((price,i)=>({dm_property_id:'SYNTHETIC-comp-'+i,address:'SYNTHETIC comp',type:'sale',sale_type:'SYNTHETIC-recorded',sale_price:price,sale_date:'2026-06-01',sqft:1000,distance:.2,property_type:'SYNTHETIC-house'}))} as unknown as DmCompsResult;}};
-  const handler=headlessCompHandler({query:async<T>(sql:string,parameters:unknown[])=>db.$queryRawUnsafe<T[]>(sql,...parameters)},provider,true,()=>new Date('2026-10-06T12:00:00Z'));
+  const handler=headlessCompHandler({query:async<T>(sql:string,parameters:unknown[])=>db.$queryRawUnsafe<T[]>(sql,...parameters)},provider,true,()=>new Date(testNow.getTime()));
   const request=(address='SYNTHETIC property')=>new Request('https://synthetic.invalid',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({address,requestId:'synthetic-headless-1'})});
   const first=await handler(request());assert.equal(first.status,200);const one=await first.json();assert.equal(one.valuation.valueUsd,120000);assert.equal(one.offerReadiness,'NEEDS_INPUT');
   const two=await (await handler(request())).json();assert.equal(one.analysisId,two.analysisId);assert.equal(calls,2);
@@ -37,7 +40,7 @@ async function main(){
   await db.$executeRawUnsafe('UPDATE "AcquisitionCredential" SET revoked=FALSE,scopes=ARRAY[\'acquisitions:analyze\',\'acquisitions:propose\'] WHERE id=\'SYNTHETIC-headless-key\'');
   await db.$executeRawUnsafe('DELETE FROM "AcquisitionReview" WHERE agency=$1 AND location=$2',agency,location);
   const fresh=await handler(new Request('https://synthetic.invalid',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({address:'SYNTHETIC property',contactId:'SYNTHETIC-contact'})}));assert.equal(fresh.status,200);const analysis=await fresh.json();assert.equal(analysis.offerReadiness,'LIMIT_READY');assert.ok(!JSON.stringify(analysis).includes('maxPriceUsd'));
-  const proposals=headlessProposalHandler({query:async<T>(sql:string,parameters:unknown[])=>db.$queryRawUnsafe<T[]>(sql,...parameters)},true,()=>new Date('2026-10-06T12:00:00Z'));
+  const proposals=headlessProposalHandler({query:async<T>(sql:string,parameters:unknown[])=>db.$queryRawUnsafe<T[]>(sql,...parameters)},true,()=>new Date(testNow.getTime()));
   const proposal=(priceUsd=65000)=>new Request('https://synthetic.invalid',{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json'},body:JSON.stringify({analysisId:analysis.analysisId,analysisVersion:analysis.analysisVersion,priceUsd})});
   const authorized=await proposals(proposal());assert.equal(authorized.status,200);const authorization=await authorized.json();assert.equal(authorization.deliveryInstalled,false);assert.equal((await (await proposals(proposal())).json()).authorizationId,authorization.authorizationId);
   assert.equal((await proposals(proposal(69000))).status,422);

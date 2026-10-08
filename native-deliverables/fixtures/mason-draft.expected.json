@@ -1,0 +1,71 @@
+{
+  "status": "EXACT_DRAFT_PREPARATION_ONLY",
+  "contractKey": "187:11:SYNTHETIC-A20:SYNTHETIC-provider-A16:SYNTHETIC-seller20:SYNTHETIC-analysis-A2:v116:SYNTHETIC-policy2:v11:15:6500010:2026-11-014:10002:104:true14:SYNTHETIC-cash1:05:house9:wholesale2:v11396:{\"fields\":{\"buyerAuthorityReference\":\"SYNTHETIC-authority\",\"buyerLegalEntity\":\"SYNTHETIC-buyer\",\"closingInstructionsReference\":\"SYNTHETIC-closing\",\"deliveryConsentReference\":\"SYNTHETIC-consent\",\"jurisdiction\":\"SYNTHETIC-jurisdiction\",\"legalDescription\":\"SYNTHETIC-legal-description\",\"ownershipReference\":\"SYNTHETIC-ownership\",\"parcelReference\":\"SYNTHETIC-parcel\",\"senderId\":\"SYNTHETIC-sender\",\"templateApprovalReference\":\"SYNTHETIC-approval\",\"templateId\":\"SYNTHETIC-template\",\"templateVersion\":\"v1\",\"titleEscrow\":\"SYNTHETIC-title\"},\"packet\":{\"analysisRecordId\":\"SYNTHETIC-analysis-A\",\"analysisVersion\":\"v1\",\"asset\":\"house\",\"policyRecordId\":\"SYNTHETIC-policy\",\"policyVersion\":\"v1\",\"priceUsd\":65000,\"propertyRecordId\":\"SYNTHETIC-A\",\"propertyVersion\":\"v1\",\"providerPropertyId\":\"SYNTHETIC-provider-A\",\"recipientId\":\"SYNTHETIC-seller\",\"revision\":1,\"strategy\":\"wholesale\",\"terms\":{\"assignmentAllowed\":true,\"closingDate\":\"2026-11-01\",\"depositUsd\":1000,\"financing\":\"SYNTHETIC-cash\",\"inspectionDays\":10,\"sellerConcessionsUsd\":0}},\"signers\":[{\"authorityReference\":\"SYNTHETIC-authority\",\"contactId\":\"SYNTHETIC-buyer-contact\",\"email\":\"buyer@example.invalid\",\"id\":\"SYNTHETIC-buyer\",\"legalName\":\"SYNTHETIC Buyer\",\"role\":\"buyer\"},{\"authorityReference\":\"SYNTHETIC-ownership\",\"contactId\":\"SYNTHETIC-seller\",\"email\":\"seller@example.invalid\",\"id\":\"SYNTHETIC-seller\",\"legalName\":\"SYNTHETIC Seller\",\"role\":\"seller\"}]}",
+  "packetKey": "11:SYNTHETIC-A20:SYNTHETIC-provider-A16:SYNTHETIC-seller20:SYNTHETIC-analysis-A2:v116:SYNTHETIC-policy2:v11:15:6500010:2026-11-014:10002:104:true14:SYNTHETIC-cash1:05:house9:wholesale2:v1",
+  "snapshot": {
+    "packet": {
+      "propertyRecordId": "SYNTHETIC-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "propertyVersion": "v1",
+      "recipientId": "SYNTHETIC-seller",
+      "asset": "house",
+      "strategy": "wholesale",
+      "priceUsd": 65000,
+      "terms": {
+        "closingDate": "2026-11-01",
+        "depositUsd": 1000,
+        "inspectionDays": 10,
+        "assignmentAllowed": true,
+        "financing": "SYNTHETIC-cash",
+        "sellerConcessionsUsd": 0
+      },
+      "analysisRecordId": "SYNTHETIC-analysis-A",
+      "analysisVersion": "v1",
+      "policyRecordId": "SYNTHETIC-policy",
+      "policyVersion": "v1",
+      "revision": 1
+    },
+    "fields": {
+      "jurisdiction": "SYNTHETIC-jurisdiction",
+      "templateId": "SYNTHETIC-template",
+      "templateVersion": "v1",
+      "templateApprovalReference": "SYNTHETIC-approval",
+      "buyerLegalEntity": "SYNTHETIC-buyer",
+      "buyerAuthorityReference": "SYNTHETIC-authority",
+      "ownershipReference": "SYNTHETIC-ownership",
+      "legalDescription": "SYNTHETIC-legal-description",
+      "parcelReference": "SYNTHETIC-parcel",
+      "titleEscrow": "SYNTHETIC-title",
+      "closingInstructionsReference": "SYNTHETIC-closing",
+      "senderId": "SYNTHETIC-sender",
+      "deliveryConsentReference": "SYNTHETIC-consent"
+    },
+    "signers": [
+      {
+        "id": "SYNTHETIC-buyer",
+        "role": "buyer",
+        "legalName": "SYNTHETIC Buyer",
+        "authorityReference": "SYNTHETIC-authority",
+        "contactId": "SYNTHETIC-buyer-contact",
+        "email": "buyer@example.invalid"
+      },
+      {
+        "id": "SYNTHETIC-seller",
+        "role": "seller",
+        "legalName": "SYNTHETIC Seller",
+        "authorityReference": "SYNTHETIC-ownership",
+        "contactId": "SYNTHETIC-seller",
+        "email": "seller@example.invalid"
+      }
+    ]
+  },
+  "sendIntent": null,
+  "signatureIntent": null,
+  "blockers": [
+    "NATIVE_CONTRACT_STORAGE_UNAVAILABLE",
+    "DOCUMENT_REVISION_BINDING_UNVERIFIED",
+    "IDEMPOTENT_SEND_UNVERIFIED"
+  ],
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

@@ -1,0 +1,410 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "context": {
+      "type": "object",
+      "properties": {
+        "locationId": {
+          "type": "string",
+          "const": "SesCoVXlNu7qTSBol1gs"
+        },
+        "now": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "contactId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "associatedPropertyRecordIds": {
+          "minItems": 1,
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          }
+        },
+        "contactDnd": {
+          "type": "boolean"
+        },
+        "contactTakeover": {
+          "type": "boolean"
+        },
+        "property": {
+          "type": "object",
+          "properties": {
+            "recordId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "propertyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "providerPropertyId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "propertyVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "canonicalAddress": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "sourceIdentityReference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "asset": {
+              "type": "string",
+              "enum": [
+                "house",
+                "land",
+                "small_multifamily",
+                "commercial_multifamily"
+              ]
+            },
+            "currentAnalysisId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                {
+                  "type": "string",
+                  "const": ""
+                }
+              ]
+            },
+            "currentAnalysisVersion": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                {
+                  "type": "string",
+                  "const": ""
+                }
+              ]
+            },
+            "held": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "humanTakeover": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "UNQUALIFIED",
+                "READY",
+                "HELD",
+                "UNDER_CONTRACT"
+              ]
+            },
+            "holdReason": {
+              "type": "string",
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "recordId",
+            "propertyKey",
+            "providerPropertyId",
+            "propertyVersion",
+            "canonicalAddress",
+            "sourceIdentityReference",
+            "asset",
+            "currentAnalysisId",
+            "currentAnalysisVersion",
+            "held",
+            "humanTakeover",
+            "status",
+            "holdReason"
+          ],
+          "additionalProperties": false
+        },
+        "analysisRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "analysisKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "analysisVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expectedPropertyVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expectedCurrentAnalysisId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            {
+              "type": "string",
+              "const": ""
+            }
+          ]
+        },
+        "expectedCurrentAnalysisVersion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            {
+              "type": "string",
+              "const": ""
+            }
+          ]
+        },
+        "policyRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "policyVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "sourceVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "eventId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        }
+      },
+      "required": [
+        "locationId",
+        "now",
+        "contactId",
+        "associatedPropertyRecordIds",
+        "contactDnd",
+        "contactTakeover",
+        "property",
+        "analysisRecordId",
+        "analysisKey",
+        "analysisVersion",
+        "expectedPropertyVersion",
+        "expectedCurrentAnalysisId",
+        "expectedCurrentAnalysisVersion",
+        "policyRecordId",
+        "policyVersion",
+        "sourceVersion",
+        "eventId"
+      ],
+      "additionalProperties": false
+    },
+    "requestedPropertyRecordId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "properties": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "recordId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "propertyKey": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "providerPropertyId": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "propertyVersion": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "canonicalAddress": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "sourceIdentityReference": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "asset": {
+            "type": "string",
+            "enum": [
+              "house",
+              "land",
+              "small_multifamily",
+              "commercial_multifamily"
+            ]
+          },
+          "currentAnalysisId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              {
+                "type": "string",
+                "const": ""
+              }
+            ]
+          },
+          "currentAnalysisVersion": {
+            "anyOf": [
+              {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              {
+                "type": "string",
+                "const": ""
+              }
+            ]
+          },
+          "held": {
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "humanTakeover": {
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "UNQUALIFIED",
+              "READY",
+              "HELD",
+              "UNDER_CONTRACT"
+            ]
+          },
+          "holdReason": {
+            "type": "string",
+            "maxLength": 500
+          }
+        },
+        "required": [
+          "recordId",
+          "propertyKey",
+          "providerPropertyId",
+          "propertyVersion",
+          "canonicalAddress",
+          "sourceIdentityReference",
+          "asset",
+          "currentAnalysisId",
+          "currentAnalysisVersion",
+          "held",
+          "humanTakeover",
+          "status",
+          "holdReason"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "text",
+        "voice"
+      ]
+    },
+    "intent": {
+      "type": "string",
+      "enum": [
+        "discovery",
+        "nurture",
+        "offer",
+        "contract"
+      ]
+    }
+  },
+  "required": [
+    "context",
+    "requestedPropertyRecordId",
+    "properties",
+    "channel",
+    "intent"
+  ],
+  "additionalProperties": false
+}

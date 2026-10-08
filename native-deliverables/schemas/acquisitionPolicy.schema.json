@@ -1,0 +1,1295 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "type": "string",
+          "const": "calculate_wholesale"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "object",
+              "properties": {
+                "locationId": {
+                  "type": "string",
+                  "const": "SesCoVXlNu7qTSBol1gs"
+                },
+                "now": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+                },
+                "contactId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "associatedPropertyRecordIds": {
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  }
+                },
+                "contactDnd": {
+                  "type": "boolean"
+                },
+                "contactTakeover": {
+                  "type": "boolean"
+                },
+                "property": {
+                  "type": "object",
+                  "properties": {
+                    "recordId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "propertyKey": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "providerPropertyId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "propertyVersion": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "canonicalAddress": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "sourceIdentityReference": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "asset": {
+                      "type": "string",
+                      "enum": [
+                        "house",
+                        "land",
+                        "small_multifamily",
+                        "commercial_multifamily"
+                      ]
+                    },
+                    "currentAnalysisId": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        {
+                          "type": "string",
+                          "const": ""
+                        }
+                      ]
+                    },
+                    "currentAnalysisVersion": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        {
+                          "type": "string",
+                          "const": ""
+                        }
+                      ]
+                    },
+                    "held": {
+                      "type": "string",
+                      "enum": [
+                        "true",
+                        "false"
+                      ]
+                    },
+                    "humanTakeover": {
+                      "type": "string",
+                      "enum": [
+                        "true",
+                        "false"
+                      ]
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "UNQUALIFIED",
+                        "READY",
+                        "HELD",
+                        "UNDER_CONTRACT"
+                      ]
+                    },
+                    "holdReason": {
+                      "type": "string",
+                      "maxLength": 500
+                    }
+                  },
+                  "required": [
+                    "recordId",
+                    "propertyKey",
+                    "providerPropertyId",
+                    "propertyVersion",
+                    "canonicalAddress",
+                    "sourceIdentityReference",
+                    "asset",
+                    "currentAnalysisId",
+                    "currentAnalysisVersion",
+                    "held",
+                    "humanTakeover",
+                    "status",
+                    "holdReason"
+                  ],
+                  "additionalProperties": false
+                },
+                "analysisRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "analysisKey": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "analysisVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "expectedPropertyVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "expectedCurrentAnalysisId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    {
+                      "type": "string",
+                      "const": ""
+                    }
+                  ]
+                },
+                "expectedCurrentAnalysisVersion": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    {
+                      "type": "string",
+                      "const": ""
+                    }
+                  ]
+                },
+                "policyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "policyVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "sourceVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "eventId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                }
+              },
+              "required": [
+                "locationId",
+                "now",
+                "contactId",
+                "associatedPropertyRecordIds",
+                "contactDnd",
+                "contactTakeover",
+                "property",
+                "analysisRecordId",
+                "analysisKey",
+                "analysisVersion",
+                "expectedPropertyVersion",
+                "expectedCurrentAnalysisId",
+                "expectedCurrentAnalysisVersion",
+                "policyRecordId",
+                "policyVersion",
+                "sourceVersion",
+                "eventId"
+              ],
+              "additionalProperties": false
+            },
+            "policy": {
+              "type": "object",
+              "properties": {
+                "recordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "version": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "approvalReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "approvedBy": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "expiresAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+                },
+                "revoked": {
+                  "type": "boolean"
+                },
+                "formula": {
+                  "type": "string",
+                  "const": "0.70*ARV-repairs"
+                },
+                "allowedArvBases": {
+                  "minItems": 1,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "enum": [
+                      "house_verified_renovated_sales",
+                      "house_provider_estimated_arv"
+                    ]
+                  }
+                },
+                "estimateAcceptanceReference": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "repairModelVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "repairRatesUsdPerSqft": {
+                  "type": "object",
+                  "properties": {
+                    "light": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "medium": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "heavy": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "light",
+                    "medium",
+                    "heavy"
+                  ],
+                  "additionalProperties": false
+                },
+                "contingencyBps": {
+                  "type": "object",
+                  "properties": {
+                    "light": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000
+                    },
+                    "medium": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000
+                    },
+                    "heavy": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 10000
+                    }
+                  },
+                  "required": [
+                    "light",
+                    "medium",
+                    "heavy"
+                  ],
+                  "additionalProperties": false
+                },
+                "repairRatesReference": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "recordId",
+                "version",
+                "approvalReference",
+                "approvedBy",
+                "expiresAt",
+                "revoked",
+                "formula",
+                "allowedArvBases",
+                "estimateAcceptanceReference",
+                "repairModelVersion",
+                "repairRatesUsdPerSqft",
+                "contingencyBps",
+                "repairRatesReference"
+              ],
+              "additionalProperties": false
+            },
+            "discovery": {
+              "type": "object",
+              "properties": {
+                "contactId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "propertyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "rapportReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "sellerWhy": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "sellerWhyReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "repairScope": {
+                  "type": "string",
+                  "enum": [
+                    "light",
+                    "medium",
+                    "heavy"
+                  ]
+                },
+                "repairScopeReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "repairDescription": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                }
+              },
+              "required": [
+                "contactId",
+                "propertyRecordId",
+                "rapportReference",
+                "sellerWhy",
+                "sellerWhyReference",
+                "repairScope",
+                "repairScopeReference",
+                "repairDescription"
+              ],
+              "additionalProperties": false
+            },
+            "repairPlan": {
+              "type": "object",
+              "properties": {
+                "scopeArea": {
+                  "type": "string",
+                  "enum": [
+                    "whole_house",
+                    "rooms_only",
+                    "component_area"
+                  ]
+                },
+                "majorComponents": {
+                  "minItems": 7,
+                  "maxItems": 7,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "component": {
+                        "type": "string",
+                        "enum": [
+                          "roof",
+                          "hvac",
+                          "electrical",
+                          "plumbing",
+                          "sewer",
+                          "windows",
+                          "remediation"
+                        ]
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "no_work_reported",
+                          "priced_extra",
+                          "documented_base_allowance",
+                          "unknown"
+                        ]
+                      },
+                      "reference": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500
+                      }
+                    },
+                    "required": [
+                      "component",
+                      "status",
+                      "reference"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "exceptions": {
+                  "type": "object",
+                  "properties": {
+                    "structural": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "foundation": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "fire": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "flood": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "fullGut": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "additions": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    },
+                    "unresolvedCode": {
+                      "type": "string",
+                      "enum": [
+                        "yes",
+                        "no",
+                        "unknown"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "structural",
+                    "foundation",
+                    "fire",
+                    "flood",
+                    "fullGut",
+                    "additions",
+                    "unresolvedCode"
+                  ],
+                  "additionalProperties": false
+                },
+                "riskScreenReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "knownExtras": {
+                  "maxItems": 30,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200,
+                        "pattern": "^[A-Za-z0-9_.:-]+$"
+                      },
+                      "component": {
+                        "type": "string",
+                        "enum": [
+                          "roof",
+                          "hvac",
+                          "electrical",
+                          "plumbing",
+                          "sewer",
+                          "windows",
+                          "remediation",
+                          "permits",
+                          "disposal",
+                          "project_management",
+                          "other_project_cost"
+                        ]
+                      },
+                      "amountUsd": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "treatment": {
+                        "type": "string",
+                        "enum": [
+                          "outside_base",
+                          "replaces_base_allowance"
+                        ]
+                      },
+                      "replacedAllowanceUsd": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "scopeReference": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "component",
+                      "amountUsd",
+                      "treatment",
+                      "replacedAllowanceUsd",
+                      "scopeReference"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "uncoveredProjectCosts": {
+                  "maxItems": 30,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 200,
+                        "pattern": "^[A-Za-z0-9_.:-]+$"
+                      },
+                      "component": {
+                        "type": "string",
+                        "enum": [
+                          "roof",
+                          "hvac",
+                          "electrical",
+                          "plumbing",
+                          "sewer",
+                          "windows",
+                          "remediation",
+                          "permits",
+                          "disposal",
+                          "project_management",
+                          "other_project_cost"
+                        ]
+                      },
+                      "amountUsd": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "treatment": {
+                        "type": "string",
+                        "enum": [
+                          "outside_base",
+                          "replaces_base_allowance"
+                        ]
+                      },
+                      "replacedAllowanceUsd": {
+                        "type": "number",
+                        "minimum": 0
+                      },
+                      "scopeReference": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 500
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "component",
+                      "amountUsd",
+                      "treatment",
+                      "replacedAllowanceUsd",
+                      "scopeReference"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "projectCostAssessmentReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "separateDealCosts": {
+                  "type": "object",
+                  "properties": {
+                    "financingUsd": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "holdingUsd": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "sellingUsd": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "assignmentUsd": {
+                      "anyOf": [
+                        {
+                          "type": "number",
+                          "minimum": 0
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "financingUsd",
+                    "holdingUsd",
+                    "sellingUsd",
+                    "assignmentUsd"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "scopeArea",
+                "majorComponents",
+                "exceptions",
+                "riskScreenReference",
+                "knownExtras",
+                "uncoveredProjectCosts",
+                "projectCostAssessmentReference",
+                "separateDealCosts"
+              ],
+              "additionalProperties": false
+            },
+            "subject": {
+              "type": "object",
+              "properties": {
+                "areaBasis": {
+                  "type": "string",
+                  "const": "living_floor_area"
+                },
+                "sqft": {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                "sourceReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                }
+              },
+              "required": [
+                "areaBasis",
+                "sqft",
+                "sourceReference"
+              ],
+              "additionalProperties": false
+            },
+            "analysis": {
+              "type": "object",
+              "properties": {
+                "recordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "propertyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "providerPropertyId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "version": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "policyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "policyVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "arvUsd": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "basis": {
+                  "type": "string",
+                  "enum": [
+                    "house_verified_renovated_sales",
+                    "house_provider_estimated_arv"
+                  ]
+                },
+                "estimateAcceptanceReference": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "expiresAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+                },
+                "evidenceReadbackReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                }
+              },
+              "required": [
+                "recordId",
+                "propertyRecordId",
+                "providerPropertyId",
+                "version",
+                "policyRecordId",
+                "policyVersion",
+                "arvUsd",
+                "basis",
+                "estimateAcceptanceReference",
+                "expiresAt",
+                "evidenceReadbackReference"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "context",
+            "policy",
+            "discovery",
+            "repairPlan",
+            "subject",
+            "analysis"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operation",
+        "request"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "operation": {
+          "type": "string",
+          "const": "explore_alternatives"
+        },
+        "request": {
+          "type": "object",
+          "properties": {
+            "context": {
+              "type": "object",
+              "properties": {
+                "locationId": {
+                  "type": "string",
+                  "const": "SesCoVXlNu7qTSBol1gs"
+                },
+                "now": {
+                  "type": "string",
+                  "format": "date-time",
+                  "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+                },
+                "contactId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "associatedPropertyRecordIds": {
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200,
+                    "pattern": "^[A-Za-z0-9_.:-]+$"
+                  }
+                },
+                "contactDnd": {
+                  "type": "boolean"
+                },
+                "contactTakeover": {
+                  "type": "boolean"
+                },
+                "property": {
+                  "type": "object",
+                  "properties": {
+                    "recordId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "propertyKey": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "providerPropertyId": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "propertyVersion": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    "canonicalAddress": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "sourceIdentityReference": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 500
+                    },
+                    "asset": {
+                      "type": "string",
+                      "enum": [
+                        "house",
+                        "land",
+                        "small_multifamily",
+                        "commercial_multifamily"
+                      ]
+                    },
+                    "currentAnalysisId": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        {
+                          "type": "string",
+                          "const": ""
+                        }
+                      ]
+                    },
+                    "currentAnalysisVersion": {
+                      "anyOf": [
+                        {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 200,
+                          "pattern": "^[A-Za-z0-9_.:-]+$"
+                        },
+                        {
+                          "type": "string",
+                          "const": ""
+                        }
+                      ]
+                    },
+                    "held": {
+                      "type": "string",
+                      "enum": [
+                        "true",
+                        "false"
+                      ]
+                    },
+                    "humanTakeover": {
+                      "type": "string",
+                      "enum": [
+                        "true",
+                        "false"
+                      ]
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": [
+                        "UNQUALIFIED",
+                        "READY",
+                        "HELD",
+                        "UNDER_CONTRACT"
+                      ]
+                    },
+                    "holdReason": {
+                      "type": "string",
+                      "maxLength": 500
+                    }
+                  },
+                  "required": [
+                    "recordId",
+                    "propertyKey",
+                    "providerPropertyId",
+                    "propertyVersion",
+                    "canonicalAddress",
+                    "sourceIdentityReference",
+                    "asset",
+                    "currentAnalysisId",
+                    "currentAnalysisVersion",
+                    "held",
+                    "humanTakeover",
+                    "status",
+                    "holdReason"
+                  ],
+                  "additionalProperties": false
+                },
+                "analysisRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "analysisKey": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 4000
+                },
+                "analysisVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "expectedPropertyVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "expectedCurrentAnalysisId": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    {
+                      "type": "string",
+                      "const": ""
+                    }
+                  ]
+                },
+                "expectedCurrentAnalysisVersion": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 200,
+                      "pattern": "^[A-Za-z0-9_.:-]+$"
+                    },
+                    {
+                      "type": "string",
+                      "const": ""
+                    }
+                  ]
+                },
+                "policyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "policyVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "sourceVersion": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "eventId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                }
+              },
+              "required": [
+                "locationId",
+                "now",
+                "contactId",
+                "associatedPropertyRecordIds",
+                "contactDnd",
+                "contactTakeover",
+                "property",
+                "analysisRecordId",
+                "analysisKey",
+                "analysisVersion",
+                "expectedPropertyVersion",
+                "expectedCurrentAnalysisId",
+                "expectedCurrentAnalysisVersion",
+                "policyRecordId",
+                "policyVersion",
+                "sourceVersion",
+                "eventId"
+              ],
+              "additionalProperties": false
+            },
+            "sellerFacts": {
+              "type": "object",
+              "properties": {
+                "propertyRecordId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "contactId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                "reportReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "existingMortgage": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "lowEquity": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "ownsFreeAndClear": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "rejectedWholesaleCash": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                },
+                "willingPartnershipToSell": {
+                  "type": "string",
+                  "enum": [
+                    "yes",
+                    "no",
+                    "unknown"
+                  ]
+                }
+              },
+              "required": [
+                "propertyRecordId",
+                "contactId",
+                "reportReference",
+                "existingMortgage",
+                "lowEquity",
+                "ownsFreeAndClear",
+                "rejectedWholesaleCash",
+                "willingPartnershipToSell"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "context",
+            "sellerFacts"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "operation",
+        "request"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

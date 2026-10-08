@@ -1,0 +1,28 @@
+import {z} from 'zod';
+import {asset,assert,context,current,date,failure,id,instant,money,parseInput,positiveMoney,same,text,valuationBasis} from './contracts';
+import {calculateWholesale,wholesaleRequest} from './acquisition-policy';
+import {stableKey} from './storage';
+export const terms=z.strictObject({closingDate:date,depositUsd:money,inspectionDays:z.number().int().nonnegative(),assignmentAllowed:z.boolean(),financing:text,sellerConcessionsUsd:money});
+export const packet=z.strictObject({propertyRecordId:id,providerPropertyId:id,propertyVersion:id,recipientId:id,asset,strategy:z.enum(['wholesale','flip','rental','creative']),priceUsd:positiveMoney,terms,analysisRecordId:id,analysisVersion:id,policyRecordId:id,policyVersion:id,revision:z.number().int().positive()});
+export const standing=z.strictObject({recordId:id,version:id,approvalReference:text,approvedBy:id,expiresAt:instant,revoked:z.boolean(),propertyRecordId:id,recipientId:id,asset,strategy:packet.shape.strategy,minPriceUsd:positiveMoney,maxPriceUsd:positiveMoney,acceptedValuationBases:z.array(valuationBasis).min(1),estimateAcceptanceReference:text.nullable(),terms});
+const ceiling=z.strictObject({recordId:id,sourceReference:text,approvedBy:id,propertyRecordId:id,analysisRecordId:id,analysisVersion:id,policyRecordId:id,policyVersion:id,expiresAt:instant,valuationBasis,ceilingUsd:positiveMoney});
+export const offerRequest=z.strictObject({context,packet,standing,ceiling,wholesalePreparation:wholesaleRequest.nullable().optional(),analysis:z.strictObject({recordId:id,propertyRecordId:id,version:id,policyRecordId:id,policyVersion:id,completionState:z.literal('COMPLETE'),status:z.literal('READY'),expiresAt:instant,valuationBasis,estimateAcceptanceReference:text.nullable(),evidenceReadbackReference:text}),previousPacket:packet.nullable()});
+export function offerKey(p:z.infer<typeof packet>){return stableKey([p.propertyRecordId,p.providerPropertyId,p.recipientId,p.analysisRecordId,p.analysisVersion,p.policyRecordId,p.policyVersion,String(p.revision),String(p.priceUsd),...['closingDate','depositUsd','inspectionDays','assignmentAllowed','financing','sellerConcessionsUsd'].map(k=>String(p.terms[k as keyof typeof p.terms])),p.asset,p.strategy,p.propertyVersion]);}
+export function evaluateOffer(raw:unknown){
+ const x=offerRequest.parse(raw),{context:c,packet:p,standing:s,analysis:a,ceiling:b}=x,now=Date.parse(c.now);current(c);
+ assert(p.propertyRecordId===c.property.recordId&&p.providerPropertyId===c.property.providerPropertyId&&p.propertyVersion===c.property.propertyVersion&&p.recipientId===c.contactId&&p.asset===c.property.asset,'PACKET_PROPERTY_OR_RECIPIENT_MISMATCH');
+ assert(p.analysisRecordId===c.analysisRecordId&&p.analysisVersion===c.analysisVersion&&p.policyRecordId===c.policyRecordId&&p.policyVersion===c.policyVersion,'PACKET_VERSION_MISMATCH');
+ assert(a.recordId===c.analysisRecordId&&a.version===c.analysisVersion&&a.propertyRecordId===c.property.recordId&&a.policyRecordId===c.policyRecordId&&a.policyVersion===c.policyVersion&&Date.parse(a.expiresAt)>now,'ANALYSIS_STALE_OR_MISMATCHED');
+ assert(s.acceptedValuationBases.includes(a.valuationBasis)&&b.valuationBasis===a.valuationBasis,'VALUATION_BASIS_NOT_AUTHORIZED');
+ if(a.valuationBasis.includes('estimated'))assert(a.estimateAcceptanceReference&&a.estimateAcceptanceReference===s.estimateAcceptanceReference,'ESTIMATE_ACCEPTANCE_MISMATCH');
+ assert(s.recordId===c.policyRecordId&&s.version===c.policyVersion&&!s.revoked&&Date.parse(s.expiresAt)>now,'STANDING_POLICY_INVALID');
+ assert(s.propertyRecordId===p.propertyRecordId&&s.recipientId===p.recipientId&&s.asset===p.asset&&s.strategy===p.strategy,'STANDING_SCOPE_MISMATCH');
+ assert(s.minPriceUsd<=s.maxPriceUsd&&p.priceUsd>=s.minPriceUsd&&p.priceUsd<=s.maxPriceUsd&&same(p.terms,s.terms)&&p.terms.closingDate>=c.now.slice(0,10),'PRICE_OR_TERMS_OUTSIDE_POLICY');
+ assert(b.propertyRecordId===p.propertyRecordId&&b.analysisRecordId===p.analysisRecordId&&b.analysisVersion===p.analysisVersion&&b.policyRecordId===p.policyRecordId&&b.policyVersion===p.policyVersion&&Date.parse(b.expiresAt)>now&&p.priceUsd<=b.ceilingUsd,'SOURCED_CEILING_INVALID');
+ if(p.strategy==='wholesale'&&['house_provider_estimated_arv','house_verified_renovated_sales'].includes(a.valuationBasis)){assert(x.wholesalePreparation,'WHOLESALE_PREPARATION_REQUIRED');assert(same(x.wholesalePreparation.context,c)&&x.wholesalePreparation.analysis.basis===a.valuationBasis&&x.wholesalePreparation.analysis.estimateAcceptanceReference===a.estimateAcceptanceReference,'WHOLESALE_PREPARATION_MISMATCH');const opening=calculateWholesale(x.wholesalePreparation);if(p.revision===1)assert(p.priceUsd===opening.requestedOfferUsd,'OPENING_OFFER_FORMULA_MISMATCH');}
+ if(x.previousPacket){const previous=x.previousPacket;assert(previous.propertyRecordId===p.propertyRecordId&&previous.providerPropertyId===p.providerPropertyId&&previous.recipientId===p.recipientId,'COUNTER_SCOPE_MISMATCH');assert(same(p,previous)||p.revision===previous.revision+1,'COUNTER_REVISION_REQUIRED');}
+ else assert(p.revision===1,'INITIAL_REVISION_REQUIRED');
+ const expiresAt=[a.expiresAt,s.expiresAt,b.expiresAt].sort()[0];
+ return {status:'WITHIN_STANDING_RULES',packetKey:offerKey(p),candidatePacket:p,expiresAt,requiresRoutineHumanApproval:false,sellerFacingPacket:null,presentationBlockers:['NATIVE_POLICY_AUTHORITY_UNVERIFIED','ATOMIC_AUTHORIZATION_AND_DELIVERY_UNVERIFIED'],outboundEnabled:false,authorizationRecorded:false};
+}
+export function offerWorkflow(input:unknown){try{return evaluateOffer(parseInput(input));}catch(e){return failure(e);}}

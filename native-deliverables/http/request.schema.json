@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "call_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "contact_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "property_record_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "analysis_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "analysis_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "location_id": {
+      "type": "string",
+      "const": "SesCoVXlNu7qTSBol1gs"
+    }
+  },
+  "required": [
+    "request_id",
+    "call_id",
+    "contact_id",
+    "property_record_id",
+    "analysis_id",
+    "analysis_version"
+  ],
+  "additionalProperties": false
+}

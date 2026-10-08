@@ -1,0 +1,153 @@
+{
+  "operation": "calculate_wholesale",
+  "request": {
+    "context": {
+      "locationId": "SesCoVXlNu7qTSBol1gs",
+      "now": "2026-10-07T09:00:00.000Z",
+      "contactId": "SYNTHETIC-seller",
+      "associatedPropertyRecordIds": [
+        "SYNTHETIC-A",
+        "SYNTHETIC-B"
+      ],
+      "contactDnd": false,
+      "contactTakeover": false,
+      "property": {
+        "recordId": "SYNTHETIC-A",
+        "propertyKey": "SYNTHETIC-key-A",
+        "providerPropertyId": "SYNTHETIC-provider-A",
+        "propertyVersion": "v1",
+        "canonicalAddress": "SYNTHETIC Property A",
+        "sourceIdentityReference": "SYNTHETIC-identity",
+        "asset": "house",
+        "currentAnalysisId": "SYNTHETIC-analysis-A",
+        "currentAnalysisVersion": "v1",
+        "held": "false",
+        "humanTakeover": "false",
+        "status": "READY",
+        "holdReason": ""
+      },
+      "analysisRecordId": "SYNTHETIC-analysis-A",
+      "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+      "analysisVersion": "v1",
+      "expectedPropertyVersion": "v1",
+      "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+      "expectedCurrentAnalysisVersion": "v1",
+      "policyRecordId": "SYNTHETIC-policy",
+      "policyVersion": "v1",
+      "sourceVersion": "v1",
+      "eventId": "SYNTHETIC-event"
+    },
+    "policy": {
+      "recordId": "SYNTHETIC-policy",
+      "version": "v1",
+      "approvalReference": "SYNTHETIC-formula-policy",
+      "approvedBy": "SYNTHETIC-owner",
+      "expiresAt": "2026-10-08T08:00:00.000Z",
+      "revoked": false,
+      "formula": "0.70*ARV-repairs",
+      "allowedArvBases": [
+        "house_provider_estimated_arv"
+      ],
+      "estimateAcceptanceReference": "SYNTHETIC-estimate-acceptance",
+      "repairModelVersion": "SYNTHETIC-model",
+      "repairRatesUsdPerSqft": {
+        "light": 10,
+        "medium": 20,
+        "heavy": 30
+      },
+      "contingencyBps": {
+        "light": 0,
+        "medium": 0,
+        "heavy": 0
+      },
+      "repairRatesReference": "SYNTHETIC-RATES-NOT-CLIENT-RATES"
+    },
+    "discovery": {
+      "contactId": "SYNTHETIC-seller",
+      "propertyRecordId": "SYNTHETIC-A",
+      "rapportReference": "SYNTHETIC-rapport",
+      "sellerWhy": "SYNTHETIC seller reason",
+      "sellerWhyReference": "SYNTHETIC-why",
+      "repairScope": "medium",
+      "repairScopeReference": "SYNTHETIC-repair-intake",
+      "repairDescription": "SYNTHETIC repairs"
+    },
+    "repairPlan": {
+      "scopeArea": "whole_house",
+      "majorComponents": [
+        {
+          "component": "roof",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "hvac",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "electrical",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "plumbing",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "sewer",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "windows",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        },
+        {
+          "component": "remediation",
+          "status": "no_work_reported",
+          "reference": "SYNTHETIC-seller-check"
+        }
+      ],
+      "exceptions": {
+        "structural": "no",
+        "foundation": "no",
+        "fire": "no",
+        "flood": "no",
+        "fullGut": "no",
+        "additions": "no",
+        "unresolvedCode": "no"
+      },
+      "riskScreenReference": "SYNTHETIC-risk-screen",
+      "knownExtras": [],
+      "uncoveredProjectCosts": [],
+      "projectCostAssessmentReference": "SYNTHETIC-project-cost-check",
+      "separateDealCosts": {
+        "financingUsd": null,
+        "holdingUsd": null,
+        "sellingUsd": null,
+        "assignmentUsd": null
+      }
+    },
+    "subject": {
+      "areaBasis": "living_floor_area",
+      "sqft": 1000,
+      "sourceReference": "SYNTHETIC-area"
+    },
+    "analysis": {
+      "recordId": "SYNTHETIC-analysis-A",
+      "propertyRecordId": "SYNTHETIC-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "version": "v1",
+      "policyRecordId": "SYNTHETIC-policy",
+      "policyVersion": "v1",
+      "arvUsd": 120000,
+      "basis": "house_provider_estimated_arv",
+      "estimateAcceptanceReference": "SYNTHETIC-estimate-acceptance",
+      "expiresAt": "2026-10-08T08:00:00.000Z",
+      "evidenceReadbackReference": "SYNTHETIC-analysis-readback"
+    }
+  }
+}

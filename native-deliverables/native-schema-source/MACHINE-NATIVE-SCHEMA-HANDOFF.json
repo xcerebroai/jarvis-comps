@@ -1,0 +1,4731 @@
+{
+  "handoffVersion": "jarvis.machine-native-schema-handoff.v1",
+  "generatedAtUtc": "2026-10-08T00:16:37.411285+00:00",
+  "locationId": "SesCoVXlNu7qTSBol1gs",
+  "purpose": "Exact local evidence map for implementing the native read/commit adapter; not API transport proof or runtime authority.",
+  "counts": {
+    "objects": 9,
+    "fields": 179,
+    "baseFields": 58,
+    "newFields": 121,
+    "associationEntries": 16,
+    "newAssociationDefinitions": 13,
+    "uiRelationIdsKnown": 16,
+    "apiAssociationDefinitionIdsVerified": 0
+  },
+  "evidenceBoundary": {
+    "readOnlyLocalSources": true,
+    "networkCallsMade": false,
+    "credentialsAccessed": false,
+    "task2Modified": false,
+    "nativeRuntimeMappingInstalledClaimInSource": false,
+    "sourceTimeWarning": "Source files represent earlier observations. generatedAtUtc is artifact assembly time, not provider/native retrieval time; runtime may have changed after the saved evidence."
+  },
+  "sources": {
+    "newSchema": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/schema-map.json",
+      "sha256": "bdf4852e17715487789f51034fa5148b5b41f954d9c3d8186ccd26658d645984"
+    },
+    "newCsv": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/field-map.csv",
+      "sha256": "582de61da06d0d907d8b64cd762db2885b3ae33d8a017c3d33aa3d836550ab20"
+    },
+    "newAssociations": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/associations.json",
+      "sha256": "d0981640479f949ef960f66fe1324653af77361eff5572fe0c571c806acbb54f"
+    },
+    "newObservedFields": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/observed-fields.json",
+      "sha256": "541e988fa424e56aadf0e8772a83357ea7890e772535517c55d4a9c316fb7ca9"
+    },
+    "baseSchema": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-2/implementation/native-deliverables/schema-manifest.json",
+      "sha256": "b361076746a0e443ba497744b89489c3520469fc4d8c1b1844fffb7c431a235f"
+    },
+    "baseCsv": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-2/implementation/native-deliverables/field-map.csv",
+      "sha256": "52d3ade0819593cc722b05d3bcb34c2ad39ede365ad6d33c928a5879c79d4445"
+    },
+    "qaRoundtrip": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-record-roundtrip-evidence.json",
+      "sha256": "8cceb4775daaa15ea2bf5af8fe112672e2e30ce62a5e1853510f1b671a56229d"
+    },
+    "qaDecoder": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/qa-decode/report.json",
+      "sha256": "39b741526b020fc4fddab1369a20f44fc61d466c2a3ae828ad9f221670b04b49"
+    },
+    "repairReadback": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/repair-defaults-readback.json",
+      "sha256": "7438a9784eb14cab4ff01697c16993c079030c00b2ee441798ab802f06186e0d"
+    },
+    "relationFollowup": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/agent-tool-binding-review.md",
+      "sha256": "3482bf9bf6d7248b4d1a9cd5d8e834200fcd4a71a000920e7a8e1cfdf5fa542e"
+    },
+    "installReadme": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/native-storage-install/README.md",
+      "sha256": "933c8148cd2d56f61026609cd3f0c18b0fac210e0744ef46e19aced3b00221b5"
+    },
+    "storageSource": {
+      "path": "/Users/quentinflores/Documents/Codex/2026-10-07/task-2/implementation/src/lib/native/storage.ts",
+      "sha256": "fba0496284d3941333b70fdea82d09309d0ca9e4539aebc135aba1a2b535f5ff"
+    }
+  },
+  "objectsBySchemaKey": {
+    "custom_objects.jarvis_acq_properties": {
+      "family": "Property",
+      "objectDefinitionId": "6ac5a3fd9c2e1ab4b33524ca",
+      "schemaKey": "custom_objects.jarvis_acq_properties",
+      "observedLabel": "JARVIS ACQ Property",
+      "fieldCount": 12,
+      "logicalKeyField": "property_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "source_identity_ref": {
+          "fieldId": "sp2FtOvQKu4nxpMs7Rk6",
+          "fieldKey": "source_identity_ref",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.source_identity_ref",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_identity_ref",
+          "candidateWritePath": "properties.source_identity_ref",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "asset": {
+          "fieldId": "64r31cYAOedH54nY4zYX",
+          "fieldKey": "asset",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.asset",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "asset",
+          "candidateWritePath": "properties.asset",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "canonical_address": {
+          "fieldId": "pQikqcFEZRe5ncdj9r4g",
+          "fieldKey": "canonical_address",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.canonical_address",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "canonical_address",
+          "candidateWritePath": "properties.canonical_address",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "provider_property_id": {
+          "fieldId": "FalTmYl1iH2zutgJ2dhk",
+          "fieldKey": "provider_property_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.provider_property_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_property_id",
+          "candidateWritePath": "properties.provider_property_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "property_key": {
+          "fieldId": "XplY0S33KIjn4ZwlSr8w",
+          "fieldKey": "property_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.property_key",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_key",
+          "candidateWritePath": "properties.property_key",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "held": {
+          "fieldId": "pfcckpDT5xFXC7khkQbE",
+          "fieldKey": "held",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.held",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "held",
+          "candidateWritePath": "properties.held",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "property_version": {
+          "fieldId": "sqvE7N1NuQvsrF743NO1",
+          "fieldKey": "property_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.property_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_version",
+          "candidateWritePath": "properties.property_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "current_analysis_id": {
+          "fieldId": "oDCuWEhoU4pZDVdOZC1L",
+          "fieldKey": "current_analysis_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.current_analysis_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "current_analysis_id",
+          "candidateWritePath": "properties.current_analysis_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "hold_reason": {
+          "fieldId": "18L9eOxChzVv732wzjkD",
+          "fieldKey": "hold_reason",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.hold_reason",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "hold_reason",
+          "candidateWritePath": "properties.hold_reason",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "human_takeover": {
+          "fieldId": "6TDefImbLCv40YFrKTON",
+          "fieldKey": "human_takeover",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.human_takeover",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "human_takeover",
+          "candidateWritePath": "properties.human_takeover",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "status": {
+          "fieldId": "GOnDKefMYe4zGPAg8H0Q",
+          "fieldKey": "status",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.status",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "status",
+          "candidateWritePath": "properties.status",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "current_analysis_version": {
+          "fieldId": "4pM4GJeQ4la0xj9hhjVu",
+          "fieldKey": "current_analysis_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_properties.current_analysis_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "current_analysis_version",
+          "candidateWritePath": "properties.current_analysis_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "baseSchema",
+        "baseCsv"
+      ]
+    },
+    "custom_objects.jarvis_acq_analyses": {
+      "family": "Analysis",
+      "objectDefinitionId": "6ac5a4b55637e713b2f0bdaf",
+      "schemaKey": "custom_objects.jarvis_acq_analyses",
+      "observedLabel": "JARVIS ACQ Analysis",
+      "fieldCount": 18,
+      "logicalKeyField": "analysis_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "policy_version": {
+          "fieldId": "srSo4MUj6HmCY3ytthUS",
+          "fieldKey": "policy_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.policy_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_version",
+          "candidateWritePath": "properties.policy_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "policy_id": {
+          "fieldId": "KfTcLElwiJaeKjcFPr4P",
+          "fieldKey": "policy_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.policy_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_id",
+          "candidateWritePath": "properties.policy_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "property_key": {
+          "fieldId": "UPVLGpFbJPl93tGRQ1pe",
+          "fieldKey": "property_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.property_key",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_key",
+          "candidateWritePath": "properties.property_key",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "provider_property_id": {
+          "fieldId": "KME6QRtlwJhHMVYUTPEf",
+          "fieldKey": "provider_property_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.provider_property_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_property_id",
+          "candidateWritePath": "properties.provider_property_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "FH7pkDmG1Nqa68HyAmx4",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.property_record_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "analysis_version": {
+          "fieldId": "IPDx9algUW8G2H5mIJsV",
+          "fieldKey": "analysis_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.analysis_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_version",
+          "candidateWritePath": "properties.analysis_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "analysis_key": {
+          "fieldId": "4ngnzzVb8PIcV585IdZB",
+          "fieldKey": "analysis_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.analysis_key",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_key",
+          "candidateWritePath": "properties.analysis_key",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "expected_evidence_count": {
+          "fieldId": "DgFM3Cg6CuGxuFIJrGbE",
+          "fieldKey": "expected_evidence_count",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.expected_evidence_count",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "expected_evidence_count",
+          "candidateWritePath": "properties.expected_evidence_count",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "rejected_count": {
+          "fieldId": "kG6PTxWMI5cRsMWjr2bd",
+          "fieldKey": "rejected_count",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.rejected_count",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "rejected_count",
+          "candidateWritePath": "properties.rejected_count",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "accepted_count": {
+          "fieldId": "QcdSpALjPqJY88LlCe0u",
+          "fieldKey": "accepted_count",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.accepted_count",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "accepted_count",
+          "candidateWritePath": "properties.accepted_count",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "public_value_usd": {
+          "fieldId": "TwKaKptIN3n8bBLuvRL4",
+          "fieldKey": "public_value_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.public_value_usd",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "public_value_usd",
+          "candidateWritePath": "properties.public_value_usd",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "basis": {
+          "fieldId": "Gu44XY0WM05KCisNbgw3",
+          "fieldKey": "basis",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.basis",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "basis",
+          "candidateWritePath": "properties.basis",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "status": {
+          "fieldId": "GLKO9LGcKDmXya8Ro4ok",
+          "fieldKey": "status",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.status",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "status",
+          "candidateWritePath": "properties.status",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "expires_at": {
+          "fieldId": "k7jl7YjsRPyrSWdL0dw7",
+          "fieldKey": "expires_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.expires_at",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "expires_at",
+          "candidateWritePath": "properties.expires_at",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "retrieved_at": {
+          "fieldId": "MtKxLD3wqk2bQ4K5FNzl",
+          "fieldKey": "retrieved_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.retrieved_at",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "retrieved_at",
+          "candidateWritePath": "properties.retrieved_at",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "source_reference": {
+          "fieldId": "CS0sgUOlmh0IifR64qNe",
+          "fieldKey": "source_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.source_reference",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_reference",
+          "candidateWritePath": "properties.source_reference",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "source_version": {
+          "fieldId": "ZOagl0xtHgCXjhnkyqU1",
+          "fieldKey": "source_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.source_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_version",
+          "candidateWritePath": "properties.source_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "completion_state": {
+          "fieldId": "F09PLlynkfWkAuqDd6hI",
+          "fieldKey": "completion_state",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analyses.completion_state",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "completion_state",
+          "candidateWritePath": "properties.completion_state",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "baseSchema",
+        "baseCsv"
+      ]
+    },
+    "custom_objects.jarvis_acq_analysis_evidence_rows": {
+      "family": "Analysis Evidence",
+      "objectDefinitionId": "6ac5a54987e0869402700fa2",
+      "schemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows",
+      "observedLabel": "JARVIS ACQ Analysis Evidence",
+      "fieldCount": 28,
+      "logicalKeyField": "evidence_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "property_type": {
+          "fieldId": "J15jlesvhSewkbbFVUcP",
+          "fieldKey": "property_type",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.property_type",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_type",
+          "candidateWritePath": "properties.property_type",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "distance_miles": {
+          "fieldId": "wJZy5sX1336EtaZPzCJV",
+          "fieldKey": "distance_miles",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.distance_miles",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "distance_miles",
+          "candidateWritePath": "properties.distance_miles",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "sqft": {
+          "fieldId": "FAIcwiEL5JvBHqTzbIfH",
+          "fieldKey": "sqft",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.sqft",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sqft",
+          "candidateWritePath": "properties.sqft",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "sale_price_usd": {
+          "fieldId": "R7kGEPIGMVMw9G7dFit7",
+          "fieldKey": "sale_price_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_price_usd",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sale_price_usd",
+          "candidateWritePath": "properties.sale_price_usd",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "provider_row_ordinal": {
+          "fieldId": "jSxrQKeafheGsEGVs3nH",
+          "fieldKey": "provider_row_ordinal",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.provider_row_ordinal",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_row_ordinal",
+          "candidateWritePath": "properties.provider_row_ordinal",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "sale_date": {
+          "fieldId": "rZiT8NUVTs3ThDX5DaLD",
+          "fieldKey": "sale_date",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_date",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sale_date",
+          "candidateWritePath": "properties.sale_date",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "sale_type": {
+          "fieldId": "jAuPwb2neiyWKCwW9cm9",
+          "fieldKey": "sale_type",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_type",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sale_type",
+          "candidateWritePath": "properties.sale_type",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "row_kind": {
+          "fieldId": "T14PtwxwvU06sIMG8J83",
+          "fieldKey": "row_kind",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.row_kind",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "row_kind",
+          "candidateWritePath": "properties.row_kind",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "exclusion_codes": {
+          "fieldId": "dLxnzof4xdbc4wh4hAxN",
+          "fieldKey": "exclusion_codes",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.exclusion_codes",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "exclusion_codes",
+          "candidateWritePath": "properties.exclusion_codes",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "selection": {
+          "fieldId": "rYAZbgNCO6vlFWiuhcjT",
+          "fieldKey": "selection",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.selection",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "selection",
+          "candidateWritePath": "properties.selection",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "source_property_id": {
+          "fieldId": "cnsSoK0R37phmE97a8iR",
+          "fieldKey": "source_property_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.source_property_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_property_id",
+          "candidateWritePath": "properties.source_property_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "endpoint_contract_version": {
+          "fieldId": "ZVVux4Ce2zoo25fwHTHD",
+          "fieldKey": "endpoint_contract_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.endpoint_contract_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "endpoint_contract_version",
+          "candidateWritePath": "properties.endpoint_contract_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "expires_at": {
+          "fieldId": "BBZ3tikm0lKWeQgzd5ym",
+          "fieldKey": "expires_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.expires_at",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "expires_at",
+          "candidateWritePath": "properties.expires_at",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "retrieved_at": {
+          "fieldId": "4rseqx7ILvU9tXZ9zIec",
+          "fieldKey": "retrieved_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.retrieved_at",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "retrieved_at",
+          "candidateWritePath": "properties.retrieved_at",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "source_reference": {
+          "fieldId": "shwlxjIGNxVvRFWsjDUF",
+          "fieldKey": "source_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.source_reference",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_reference",
+          "candidateWritePath": "properties.source_reference",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "source_provider": {
+          "fieldId": "tu3xOzoCw8BtCkNzqlz0",
+          "fieldKey": "source_provider",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.source_provider",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_provider",
+          "candidateWritePath": "properties.source_provider",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "4jJIy9fT3m21rm00bf74",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.property_record_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "analysis_version": {
+          "fieldId": "hvFz3V1FojYVdVWOfjZL",
+          "fieldKey": "analysis_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_version",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_version",
+          "candidateWritePath": "properties.analysis_version",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "analysis_key": {
+          "fieldId": "UQ5Xf2hI3OkNtNmKX9MV",
+          "fieldKey": "analysis_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_key",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_key",
+          "candidateWritePath": "properties.analysis_key",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "analysis_record_id": {
+          "fieldId": "ufoJOWUvacCFwxITYJcB",
+          "fieldKey": "analysis_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_record_id",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_record_id",
+          "candidateWritePath": "properties.analysis_record_id",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "evidence_key": {
+          "fieldId": "sxtKuYXx7WskpjD6oXAy",
+          "fieldKey": "evidence_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.evidence_key",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "evidence_key",
+          "candidateWritePath": "properties.evidence_key",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "fact_value_text": {
+          "fieldId": "QFQYs7J76DzgPhqsjuO4",
+          "fieldKey": "fact_value_text",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_value_text",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "fact_value_text",
+          "candidateWritePath": "properties.fact_value_text",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "fact_unit": {
+          "fieldId": "kfq2Qq4JszbFG1U4rnz8",
+          "fieldKey": "fact_unit",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_unit",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "fact_unit",
+          "candidateWritePath": "properties.fact_unit",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "fact_value_number": {
+          "fieldId": "RcASjvPqiHERksMa5hN4",
+          "fieldKey": "fact_value_number",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_value_number",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "fact_value_number",
+          "candidateWritePath": "properties.fact_value_number",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "fact_name": {
+          "fieldId": "YK1FdFBvRo0TTPqX07cD",
+          "fieldKey": "fact_name",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_name",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "fact_name",
+          "candidateWritePath": "properties.fact_name",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "display_address": {
+          "fieldId": "2P7k8aKSmjFJ5nW1GmY2",
+          "fieldKey": "display_address",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.display_address",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "display_address",
+          "candidateWritePath": "properties.display_address",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "lot_unit": {
+          "fieldId": "0M7Mg6Jn0czzov7R4DiD",
+          "fieldKey": "lot_unit",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.lot_unit",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "lot_unit",
+          "candidateWritePath": "properties.lot_unit",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        },
+        "lot_size": {
+          "fieldId": "SdxIpJF565MO2ARkAzdi",
+          "fieldKey": "lot_size",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "custom_objects.jarvis_acq_analysis_evidence_rows.lot_size",
+          "uiPrimaryUniqueObserved": null,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "lot_size",
+          "candidateWritePath": "properties.lot_size",
+          "apiWritePathVerified": false,
+          "sourceRefs": [
+            "baseSchema",
+            "baseCsv"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "baseSchema",
+        "baseCsv"
+      ]
+    },
+    "custom_objects.jarvis_acq_policies": {
+      "family": "Policy",
+      "objectDefinitionId": "6ac6d4b2af19b2b02f0c2e1c",
+      "schemaKey": "custom_objects.jarvis_acq_policies",
+      "fieldCount": 37,
+      "logicalKeyField": "policy_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "max_income_sales_difference": {
+          "fieldId": "2T3dlDEnC12sLdWTHP0Z",
+          "fieldKey": "max_income_sales_difference",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.max_income_sales_difference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "max_income_sales_difference",
+          "candidateWritePath": "properties.max_income_sales_difference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "2T3dlDEnC12sLdWTHP0Z",
+            "fieldLabel": "max_income_sales_difference",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.max_income_sales_difference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "min_comps": {
+          "fieldId": "TiXgDbA8G7yicVBUWINo",
+          "fieldKey": "min_comps",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.min_comps}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "min_comps",
+          "candidateWritePath": "properties.min_comps",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "TiXgDbA8G7yicVBUWINo",
+            "fieldLabel": "min_comps",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.min_comps}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "size_tolerance": {
+          "fieldId": "GIvBY868ujV1X0LeIq7w",
+          "fieldKey": "size_tolerance",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.size_tolerance}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "size_tolerance",
+          "candidateWritePath": "properties.size_tolerance",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "GIvBY868ujV1X0LeIq7w",
+            "fieldLabel": "size_tolerance",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.size_tolerance}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "radius_miles": {
+          "fieldId": "QPvfKzTp3lFpqWnccb4t",
+          "fieldKey": "radius_miles",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.radius_miles}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "radius_miles",
+          "candidateWritePath": "properties.radius_miles",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "QPvfKzTp3lFpqWnccb4t",
+            "fieldLabel": "radius_miles",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.radius_miles}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "max_source_age_hours": {
+          "fieldId": "4YT3lxFNjy6x9hDQuicO",
+          "fieldKey": "max_source_age_hours",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.max_source_age_hours}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "max_source_age_hours",
+          "candidateWritePath": "properties.max_source_age_hours",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "4YT3lxFNjy6x9hDQuicO",
+            "fieldLabel": "max_source_age_hours",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.max_source_age_hours}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "max_age_days": {
+          "fieldId": "mciIGSWhH4PYsqFqpsGQ",
+          "fieldKey": "max_age_days",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.max_age_days}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "max_age_days",
+          "candidateWritePath": "properties.max_age_days",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "mciIGSWhH4PYsqFqpsGQ",
+            "fieldLabel": "max_age_days",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.max_age_days}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "house_basis": {
+          "fieldId": "MkAuuDYsWc8bfsEYnkye",
+          "fieldKey": "house_basis",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.house_basis}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "house_basis",
+          "candidateWritePath": "properties.house_basis",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "MkAuuDYsWc8bfsEYnkye",
+            "fieldLabel": "house_basis",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.house_basis}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "comp_price_basis": {
+          "fieldId": "FkjgyA8Rm8aOk1iFxL5r",
+          "fieldKey": "comp_price_basis",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.comp_price_basis}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "comp_price_basis",
+          "candidateWritePath": "properties.comp_price_basis",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "FkjgyA8Rm8aOk1iFxL5r",
+            "fieldLabel": "comp_price_basis",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.comp_price_basis}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contingency_heavy_bps": {
+          "fieldId": "F3y2JHVEUL2jWFqrQk5p",
+          "fieldKey": "contingency_heavy_bps",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.contingency_heavy_bps}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contingency_heavy_bps",
+          "candidateWritePath": "properties.contingency_heavy_bps",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "F3y2JHVEUL2jWFqrQk5p",
+            "fieldLabel": "contingency_heavy_bps",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.contingency_heavy_bps}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contingency_medium_bps": {
+          "fieldId": "iE9yoEZ0qFh8NmZFQlTW",
+          "fieldKey": "contingency_medium_bps",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.contingency_medium_bps}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contingency_medium_bps",
+          "candidateWritePath": "properties.contingency_medium_bps",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "iE9yoEZ0qFh8NmZFQlTW",
+            "fieldLabel": "contingency_medium_bps",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.contingency_medium_bps}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contingency_light_bps": {
+          "fieldId": "xuLAXzW6GiMV3EhUM9Cd",
+          "fieldKey": "contingency_light_bps",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.contingency_light_bps}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contingency_light_bps",
+          "candidateWritePath": "properties.contingency_light_bps",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "xuLAXzW6GiMV3EhUM9Cd",
+            "fieldLabel": "contingency_light_bps",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.contingency_light_bps}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "repair_heavy_usd_per_sqft": {
+          "fieldId": "0X53bztiam3GP1DYIyNj",
+          "fieldKey": "repair_heavy_usd_per_sqft",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.repair_heavy_usd_per_sqft}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "repair_heavy_usd_per_sqft",
+          "candidateWritePath": "properties.repair_heavy_usd_per_sqft",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "0X53bztiam3GP1DYIyNj",
+            "fieldLabel": "repair_heavy_usd_per_sqft",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.repair_heavy_usd_per_sqft}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "repair_medium_usd_per_sqft": {
+          "fieldId": "OK3fM9nFl3DnNsgrhhWa",
+          "fieldKey": "repair_medium_usd_per_sqft",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.repair_medium_usd_per_sqft}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "repair_medium_usd_per_sqft",
+          "candidateWritePath": "properties.repair_medium_usd_per_sqft",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "OK3fM9nFl3DnNsgrhhWa",
+            "fieldLabel": "repair_medium_usd_per_sqft",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.repair_medium_usd_per_sqft}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "repair_light_usd_per_sqft": {
+          "fieldId": "zmxQa0xTHioos7Kc4pdc",
+          "fieldKey": "repair_light_usd_per_sqft",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.repair_light_usd_per_sqft}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "repair_light_usd_per_sqft",
+          "candidateWritePath": "properties.repair_light_usd_per_sqft",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "zmxQa0xTHioos7Kc4pdc",
+            "fieldLabel": "repair_light_usd_per_sqft",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.repair_light_usd_per_sqft}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "repair_rates_reference": {
+          "fieldId": "bkToSN1yvuJ0O8kLHWUF",
+          "fieldKey": "repair_rates_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.repair_rates_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "repair_rates_reference",
+          "candidateWritePath": "properties.repair_rates_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "bkToSN1yvuJ0O8kLHWUF",
+            "fieldLabel": "repair_rates_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.repair_rates_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "crosscheck_approval_reference": {
+          "fieldId": "nUHSaN4vRs1kcDI7roqw",
+          "fieldKey": "crosscheck_approval_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.crosscheck_approval_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "crosscheck_approval_reference",
+          "candidateWritePath": "properties.crosscheck_approval_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "nUHSaN4vRs1kcDI7roqw",
+            "fieldLabel": "crosscheck_approval_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.crosscheck_approval_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "repair_model_version": {
+          "fieldId": "DaQwVuEIAlWgB8ccGNI6",
+          "fieldKey": "repair_model_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.repair_model_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "repair_model_version",
+          "candidateWritePath": "properties.repair_model_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "DaQwVuEIAlWgB8ccGNI6",
+            "fieldLabel": "repair_model_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.repair_model_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "estimate_acceptance_reference": {
+          "fieldId": "7VWiZqJANjs0CKaIxo11",
+          "fieldKey": "estimate_acceptance_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.estimate_acceptance_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "estimate_acceptance_reference",
+          "candidateWritePath": "properties.estimate_acceptance_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "7VWiZqJANjs0CKaIxo11",
+            "fieldLabel": "estimate_acceptance_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.estimate_acceptance_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "seller_concessions_usd": {
+          "fieldId": "TUJARyAZvUQigfveDK7E",
+          "fieldKey": "seller_concessions_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.seller_concessions_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "seller_concessions_usd",
+          "candidateWritePath": "properties.seller_concessions_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "TUJARyAZvUQigfveDK7E",
+            "fieldLabel": "seller_concessions_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.seller_concessions_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "financing": {
+          "fieldId": "Nd6XI1Rnr4KrN1fhtz0s",
+          "fieldKey": "financing",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.financing}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "financing",
+          "candidateWritePath": "properties.financing",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "Nd6XI1Rnr4KrN1fhtz0s",
+            "fieldLabel": "financing",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.financing}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "deposit_usd": {
+          "fieldId": "oyWEAXyIxD9Rrkyf9NDH",
+          "fieldKey": "deposit_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.deposit_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "deposit_usd",
+          "candidateWritePath": "properties.deposit_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "oyWEAXyIxD9Rrkyf9NDH",
+            "fieldLabel": "deposit_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.deposit_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "closing_date": {
+          "fieldId": "2NoYPl2CsdqzGoGYBR35",
+          "fieldKey": "closing_date",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.closing_date}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "closing_date",
+          "candidateWritePath": "properties.closing_date",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "2NoYPl2CsdqzGoGYBR35",
+            "fieldLabel": "closing_date",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.closing_date}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "max_price_usd": {
+          "fieldId": "lCAapgxeE8DnhfycQKZb",
+          "fieldKey": "max_price_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.max_price_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "max_price_usd",
+          "candidateWritePath": "properties.max_price_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "lCAapgxeE8DnhfycQKZb",
+            "fieldLabel": "max_price_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.max_price_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "min_price_usd": {
+          "fieldId": "MetBpAIMWqgeSZyzpjMg",
+          "fieldKey": "min_price_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.min_price_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "min_price_usd",
+          "candidateWritePath": "properties.min_price_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "MetBpAIMWqgeSZyzpjMg",
+            "fieldLabel": "min_price_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.min_price_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "strategy": {
+          "fieldId": "s02HBVruQzWsT9jEOCAV",
+          "fieldKey": "strategy",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.strategy}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "strategy",
+          "candidateWritePath": "properties.strategy",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "s02HBVruQzWsT9jEOCAV",
+            "fieldLabel": "strategy",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.strategy}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "asset": {
+          "fieldId": "0mTn9Io3s2GBfWaykoMP",
+          "fieldKey": "asset",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.asset}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "asset",
+          "candidateWritePath": "properties.asset",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "0mTn9Io3s2GBfWaykoMP",
+            "fieldLabel": "asset",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.asset}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "recipient_id": {
+          "fieldId": "jfTfy584adwqmRULTc5v",
+          "fieldKey": "recipient_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.recipient_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "recipient_id",
+          "candidateWritePath": "properties.recipient_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "jfTfy584adwqmRULTc5v",
+            "fieldLabel": "recipient_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.recipient_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "pepMtznjenpQ1pwjL6Nn",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.property_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "pepMtznjenpQ1pwjL6Nn",
+            "fieldLabel": "property_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.property_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "revoked": {
+          "fieldId": "AB6ssd1yfVFYgqDTtQXR",
+          "fieldKey": "revoked",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.revoked}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "revoked",
+          "candidateWritePath": "properties.revoked",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "AB6ssd1yfVFYgqDTtQXR",
+            "fieldLabel": "revoked",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.revoked}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "expires_at": {
+          "fieldId": "T9lUqUmbtXg0Q0wtDJ5f",
+          "fieldKey": "expires_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.expires_at}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "expires_at",
+          "candidateWritePath": "properties.expires_at",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "T9lUqUmbtXg0Q0wtDJ5f",
+            "fieldLabel": "expires_at",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.expires_at}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "approved_by": {
+          "fieldId": "uageUqELoeLWVwRL0eD4",
+          "fieldKey": "approved_by",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.approved_by}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "approved_by",
+          "candidateWritePath": "properties.approved_by",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "uageUqELoeLWVwRL0eD4",
+            "fieldLabel": "approved_by",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.approved_by}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "approval_reference": {
+          "fieldId": "MxozJCFP9CuJaWen3iy8",
+          "fieldKey": "approval_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.approval_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "approval_reference",
+          "candidateWritePath": "properties.approval_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "MxozJCFP9CuJaWen3iy8",
+            "fieldLabel": "approval_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.approval_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "version": {
+          "fieldId": "usgTyOhOSaeTHvvgQqRk",
+          "fieldKey": "version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "version",
+          "candidateWritePath": "properties.version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "usgTyOhOSaeTHvvgQqRk",
+            "fieldLabel": "version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "policy_key": {
+          "fieldId": "kXFue1w2pa9NmvxKXwiU",
+          "fieldKey": "policy_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.policy_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_key",
+          "candidateWritePath": "properties.policy_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "kXFue1w2pa9NmvxKXwiU",
+            "fieldLabel": "policy_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.policy_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "assignment_allowed": {
+          "fieldId": "2oHl0urB2Z13IHFWCivH",
+          "fieldKey": "assignment_allowed",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.assignment_allowed}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "assignment_allowed",
+          "candidateWritePath": "properties.assignment_allowed",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "2oHl0urB2Z13IHFWCivH",
+            "fieldLabel": "assignment_allowed",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.assignment_allowed}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "inspection_days": {
+          "fieldId": "7vXJJAkVNO15aEjI0Owc",
+          "fieldKey": "inspection_days",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.inspection_days}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "inspection_days",
+          "candidateWritePath": "properties.inspection_days",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "7vXJJAkVNO15aEjI0Owc",
+            "fieldLabel": "inspection_days",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.inspection_days}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "configuration_scope": {
+          "fieldId": "0gJPwbDOCZckvI7AaMdJ",
+          "fieldKey": "configuration_scope",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_policies.configuration_scope}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "configuration_scope",
+          "candidateWritePath": "properties.configuration_scope",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "0gJPwbDOCZckvI7AaMdJ",
+            "fieldLabel": "configuration_scope",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Policy Info",
+            "mergeText": "{{custom_objects.jarvis_acq_policies.configuration_scope}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    },
+    "custom_objects.jarvis_acq_offers": {
+      "family": "Offer",
+      "objectDefinitionId": "6ac6d4d1af19b2b02f0c2f30",
+      "schemaKey": "custom_objects.jarvis_acq_offers",
+      "fieldCount": 22,
+      "logicalKeyField": "packet_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "packet_key": {
+          "fieldId": "7IhJpYFsSoluwpirnqF8",
+          "fieldKey": "packet_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.packet_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "packet_key",
+          "candidateWritePath": "properties.packet_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "7IhJpYFsSoluwpirnqF8",
+            "fieldLabel": "packet_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.packet_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "7GDaipjM3PQVIUevKwLa",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.property_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "7GDaipjM3PQVIUevKwLa",
+            "fieldLabel": "property_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.property_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "provider_property_id": {
+          "fieldId": "ioMr113TzRaPCfQUn6cG",
+          "fieldKey": "provider_property_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.provider_property_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_property_id",
+          "candidateWritePath": "properties.provider_property_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "ioMr113TzRaPCfQUn6cG",
+            "fieldLabel": "provider_property_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.provider_property_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_version": {
+          "fieldId": "4peJf1qdHzR5ZNMnZI6x",
+          "fieldKey": "property_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.property_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_version",
+          "candidateWritePath": "properties.property_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "4peJf1qdHzR5ZNMnZI6x",
+            "fieldLabel": "property_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.property_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "recipient_id": {
+          "fieldId": "pdWXDKOr0UH25lQnZOKW",
+          "fieldKey": "recipient_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.recipient_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "recipient_id",
+          "candidateWritePath": "properties.recipient_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "pdWXDKOr0UH25lQnZOKW",
+            "fieldLabel": "recipient_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.recipient_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "asset": {
+          "fieldId": "uOCkOieLoFua7FmXBms7",
+          "fieldKey": "asset",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.asset}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "asset",
+          "candidateWritePath": "properties.asset",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "uOCkOieLoFua7FmXBms7",
+            "fieldLabel": "asset",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.asset}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "strategy": {
+          "fieldId": "jmKpmsr8RzXwBn5qCNmN",
+          "fieldKey": "strategy",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.strategy}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "strategy",
+          "candidateWritePath": "properties.strategy",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "jmKpmsr8RzXwBn5qCNmN",
+            "fieldLabel": "strategy",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.strategy}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "analysis_record_id": {
+          "fieldId": "ONpkTXItpQDexov49Ef1",
+          "fieldKey": "analysis_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.analysis_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_record_id",
+          "candidateWritePath": "properties.analysis_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "ONpkTXItpQDexov49Ef1",
+            "fieldLabel": "analysis_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.analysis_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "analysis_version": {
+          "fieldId": "F6zBZe34VnlsoWOzXrpC",
+          "fieldKey": "analysis_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.analysis_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_version",
+          "candidateWritePath": "properties.analysis_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "F6zBZe34VnlsoWOzXrpC",
+            "fieldLabel": "analysis_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.analysis_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "policy_record_id": {
+          "fieldId": "PAkzG8WLgCRax0BLykwG",
+          "fieldKey": "policy_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.policy_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_record_id",
+          "candidateWritePath": "properties.policy_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "PAkzG8WLgCRax0BLykwG",
+            "fieldLabel": "policy_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.policy_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "policy_version": {
+          "fieldId": "Ta6sOa2oeYH2lc7f5QCX",
+          "fieldKey": "policy_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.policy_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_version",
+          "candidateWritePath": "properties.policy_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "Ta6sOa2oeYH2lc7f5QCX",
+            "fieldLabel": "policy_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.policy_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "price_usd": {
+          "fieldId": "b6MTJF10dnv3cDo9Gp1q",
+          "fieldKey": "price_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.price_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "price_usd",
+          "candidateWritePath": "properties.price_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "b6MTJF10dnv3cDo9Gp1q",
+            "fieldLabel": "price_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.price_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "deposit_usd": {
+          "fieldId": "AQmAA5tXEpKom1yVHA73",
+          "fieldKey": "deposit_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.deposit_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "deposit_usd",
+          "candidateWritePath": "properties.deposit_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "AQmAA5tXEpKom1yVHA73",
+            "fieldLabel": "deposit_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.deposit_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "inspection_days": {
+          "fieldId": "7BMmqXAcsbD4hSEoPrt0",
+          "fieldKey": "inspection_days",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.inspection_days}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "inspection_days",
+          "candidateWritePath": "properties.inspection_days",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "7BMmqXAcsbD4hSEoPrt0",
+            "fieldLabel": "inspection_days",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.inspection_days}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "seller_concessions_usd": {
+          "fieldId": "OahlS3tWYBv0CPlFhXO1",
+          "fieldKey": "seller_concessions_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.seller_concessions_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "seller_concessions_usd",
+          "candidateWritePath": "properties.seller_concessions_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "OahlS3tWYBv0CPlFhXO1",
+            "fieldLabel": "seller_concessions_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.seller_concessions_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "revision": {
+          "fieldId": "fuVzz2snQXIqQPw5glkl",
+          "fieldKey": "revision",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "revision",
+          "candidateWritePath": "properties.revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "fuVzz2snQXIqQPw5glkl",
+            "fieldLabel": "revision",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "closing_date": {
+          "fieldId": "XlmOE9OjibHKBvF8mNK9",
+          "fieldKey": "closing_date",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.closing_date}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "closing_date",
+          "candidateWritePath": "properties.closing_date",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "XlmOE9OjibHKBvF8mNK9",
+            "fieldLabel": "closing_date",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.closing_date}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "assignment_allowed": {
+          "fieldId": "yutzTWKrWtzRoJUETG3z",
+          "fieldKey": "assignment_allowed",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.assignment_allowed}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "assignment_allowed",
+          "candidateWritePath": "properties.assignment_allowed",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "yutzTWKrWtzRoJUETG3z",
+            "fieldLabel": "assignment_allowed",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.assignment_allowed}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "financing": {
+          "fieldId": "iPpW5EwJ86RDHm7uEDj7",
+          "fieldKey": "financing",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.financing}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "financing",
+          "candidateWritePath": "properties.financing",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "iPpW5EwJ86RDHm7uEDj7",
+            "fieldLabel": "financing",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.financing}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "approval_state": {
+          "fieldId": "XoXWiqO1eJBmFHLwENJ1",
+          "fieldKey": "approval_state",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.approval_state}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "approval_state",
+          "candidateWritePath": "properties.approval_state",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "XoXWiqO1eJBmFHLwENJ1",
+            "fieldLabel": "approval_state",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.approval_state}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "reservation_state": {
+          "fieldId": "N4rnik6f249o78qGqbFl",
+          "fieldKey": "reservation_state",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.reservation_state}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "reservation_state",
+          "candidateWritePath": "properties.reservation_state",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "N4rnik6f249o78qGqbFl",
+            "fieldLabel": "reservation_state",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.reservation_state}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "delivery_state": {
+          "fieldId": "0E45yhIXBgTCaKdwn5uk",
+          "fieldKey": "delivery_state",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_offers.delivery_state}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "delivery_state",
+          "candidateWritePath": "properties.delivery_state",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "0E45yhIXBgTCaKdwn5uk",
+            "fieldLabel": "delivery_state",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Offer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_offers.delivery_state}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    },
+    "custom_objects.jarvis_acq_contracts": {
+      "family": "Contract",
+      "objectDefinitionId": "6ac6d4d60ee94059c65318fa",
+      "schemaKey": "custom_objects.jarvis_acq_contracts",
+      "fieldCount": 25,
+      "logicalKeyField": "contract_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "contract_key": {
+          "fieldId": "V0Lqde3tpjWQPpYxfh7C",
+          "fieldKey": "contract_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.contract_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contract_key",
+          "candidateWritePath": "properties.contract_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "V0Lqde3tpjWQPpYxfh7C",
+            "fieldLabel": "contract_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.contract_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "wD1ZoPEd2xUaDmCZNXZo",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.property_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "wD1ZoPEd2xUaDmCZNXZo",
+            "fieldLabel": "property_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.property_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "provider_property_id": {
+          "fieldId": "6Rxd46ZguQnKXY80zYtP",
+          "fieldKey": "provider_property_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.provider_property_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_property_id",
+          "candidateWritePath": "properties.provider_property_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "6Rxd46ZguQnKXY80zYtP",
+            "fieldLabel": "provider_property_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.provider_property_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "recipient_id": {
+          "fieldId": "1y7fbCqJd9ByGG7PHbf6",
+          "fieldKey": "recipient_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.recipient_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "recipient_id",
+          "candidateWritePath": "properties.recipient_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "1y7fbCqJd9ByGG7PHbf6",
+            "fieldLabel": "recipient_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.recipient_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "packet_key": {
+          "fieldId": "UIn0kpFW66TVzZVsNkme",
+          "fieldKey": "packet_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.packet_key}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "packet_key",
+          "candidateWritePath": "properties.packet_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "UIn0kpFW66TVzZVsNkme",
+            "fieldLabel": "packet_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.packet_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_id": {
+          "fieldId": "hDYYYL9VD3SaCjTHmFOv",
+          "fieldKey": "document_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.document_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_id",
+          "candidateWritePath": "properties.document_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "hDYYYL9VD3SaCjTHmFOv",
+            "fieldLabel": "document_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.document_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_revision": {
+          "fieldId": "QMPVRFAO1jhVchs1HqoA",
+          "fieldKey": "document_revision",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.document_revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_revision",
+          "candidateWritePath": "properties.document_revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "QMPVRFAO1jhVchs1HqoA",
+            "fieldLabel": "document_revision",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.document_revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "template_id": {
+          "fieldId": "W4Usx66J8YXAiDIT4byh",
+          "fieldKey": "template_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.template_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "template_id",
+          "candidateWritePath": "properties.template_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "W4Usx66J8YXAiDIT4byh",
+            "fieldLabel": "template_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.template_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "template_version": {
+          "fieldId": "spSBAjvd0wsga94CEGS1",
+          "fieldKey": "template_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.template_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "template_version",
+          "candidateWritePath": "properties.template_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "spSBAjvd0wsga94CEGS1",
+            "fieldLabel": "template_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.template_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "template_approval_reference": {
+          "fieldId": "VsZPhOKzuemMRPHQTi33",
+          "fieldKey": "template_approval_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.template_approval_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "template_approval_reference",
+          "candidateWritePath": "properties.template_approval_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "VsZPhOKzuemMRPHQTi33",
+            "fieldLabel": "template_approval_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.template_approval_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "state": {
+          "fieldId": "m2TqzpOiK70ae8tYd3hb",
+          "fieldKey": "state",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.state}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "state",
+          "candidateWritePath": "properties.state",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "m2TqzpOiK70ae8tYd3hb",
+            "fieldLabel": "state",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.state}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "packet_revision": {
+          "fieldId": "MEvf9cSfgZkr6Pos8fYa",
+          "fieldKey": "packet_revision",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.packet_revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "packet_revision",
+          "candidateWritePath": "properties.packet_revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "MEvf9cSfgZkr6Pos8fYa",
+            "fieldLabel": "packet_revision",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.packet_revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "conditions_satisfied": {
+          "fieldId": "gnQk7zF8JevAEujy9WlS",
+          "fieldKey": "conditions_satisfied",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.conditions_satisfied}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "conditions_satisfied",
+          "candidateWritePath": "properties.conditions_satisfied",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "gnQk7zF8JevAEujy9WlS",
+            "fieldLabel": "conditions_satisfied",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.conditions_satisfied}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "sent_at": {
+          "fieldId": "QkBP9vf8JYX1YwUIA0xp",
+          "fieldKey": "sent_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.sent_at}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sent_at",
+          "candidateWritePath": "properties.sent_at",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "QkBP9vf8JYX1YwUIA0xp",
+            "fieldLabel": "sent_at",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.sent_at}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "last_event_at": {
+          "fieldId": "F1R6v3lJMKdb8WGO2AsV",
+          "fieldKey": "last_event_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.last_event_at}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "last_event_at",
+          "candidateWritePath": "properties.last_event_at",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "F1R6v3lJMKdb8WGO2AsV",
+            "fieldLabel": "last_event_at",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.last_event_at}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "jurisdiction": {
+          "fieldId": "dXy5qXzfJxC1PftsVT4B",
+          "fieldKey": "jurisdiction",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.jurisdiction}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "jurisdiction",
+          "candidateWritePath": "properties.jurisdiction",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "dXy5qXzfJxC1PftsVT4B",
+            "fieldLabel": "jurisdiction",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.jurisdiction}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "buyer_legal_entity": {
+          "fieldId": "e1u2bVVa9LQiCDyBbFaM",
+          "fieldKey": "buyer_legal_entity",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.buyer_legal_entity}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "buyer_legal_entity",
+          "candidateWritePath": "properties.buyer_legal_entity",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "e1u2bVVa9LQiCDyBbFaM",
+            "fieldLabel": "buyer_legal_entity",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.buyer_legal_entity}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "buyer_authority_reference": {
+          "fieldId": "JOGwQ7akAx48h1gyFOhQ",
+          "fieldKey": "buyer_authority_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.buyer_authority_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "buyer_authority_reference",
+          "candidateWritePath": "properties.buyer_authority_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "JOGwQ7akAx48h1gyFOhQ",
+            "fieldLabel": "buyer_authority_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.buyer_authority_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "ownership_reference": {
+          "fieldId": "4MnJNIPUKagpCXvwzMeL",
+          "fieldKey": "ownership_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.ownership_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "ownership_reference",
+          "candidateWritePath": "properties.ownership_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "4MnJNIPUKagpCXvwzMeL",
+            "fieldLabel": "ownership_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.ownership_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "legal_description": {
+          "fieldId": "X5Byj24hug8tdDk2dO0E",
+          "fieldKey": "legal_description",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.legal_description}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "legal_description",
+          "candidateWritePath": "properties.legal_description",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "X5Byj24hug8tdDk2dO0E",
+            "fieldLabel": "legal_description",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.legal_description}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "parcel_reference": {
+          "fieldId": "91psLoKDMfNk2I6kzbXd",
+          "fieldKey": "parcel_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.parcel_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "parcel_reference",
+          "candidateWritePath": "properties.parcel_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "91psLoKDMfNk2I6kzbXd",
+            "fieldLabel": "parcel_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.parcel_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "title_escrow": {
+          "fieldId": "OZ5HL6zMQRaOEoFHcyFC",
+          "fieldKey": "title_escrow",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.title_escrow}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "title_escrow",
+          "candidateWritePath": "properties.title_escrow",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "OZ5HL6zMQRaOEoFHcyFC",
+            "fieldLabel": "title_escrow",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.title_escrow}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "closing_instructions_reference": {
+          "fieldId": "YTEYyEyKJWOPBorDWX0y",
+          "fieldKey": "closing_instructions_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.closing_instructions_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "closing_instructions_reference",
+          "candidateWritePath": "properties.closing_instructions_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "YTEYyEyKJWOPBorDWX0y",
+            "fieldLabel": "closing_instructions_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.closing_instructions_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "sender_id": {
+          "fieldId": "qcfTqKu34nMFXiGpcKGg",
+          "fieldKey": "sender_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.sender_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "sender_id",
+          "candidateWritePath": "properties.sender_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "qcfTqKu34nMFXiGpcKGg",
+            "fieldLabel": "sender_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.sender_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "delivery_consent_reference": {
+          "fieldId": "fXYcPwzyfHT7RAg2DLKj",
+          "fieldKey": "delivery_consent_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contracts.delivery_consent_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "delivery_consent_reference",
+          "candidateWritePath": "properties.delivery_consent_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "fXYcPwzyfHT7RAg2DLKj",
+            "fieldLabel": "delivery_consent_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contracts.delivery_consent_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    },
+    "custom_objects.jarvis_acq_contract_signers": {
+      "family": "Signer",
+      "objectDefinitionId": "6ac6d4e9ac1e1f76b6f5ecfc",
+      "schemaKey": "custom_objects.jarvis_acq_contract_signers",
+      "fieldCount": 12,
+      "logicalKeyField": "signer_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "signer_key": {
+          "fieldId": "L9oK51QFximj7FBH3Rtq",
+          "fieldKey": "signer_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.signer_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "signer_key",
+          "candidateWritePath": "properties.signer_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "L9oK51QFximj7FBH3Rtq",
+            "fieldLabel": "signer_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.signer_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contract_record_id": {
+          "fieldId": "JEA73AqdF6fv3abn9R3p",
+          "fieldKey": "contract_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.contract_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contract_record_id",
+          "candidateWritePath": "properties.contract_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "JEA73AqdF6fv3abn9R3p",
+            "fieldLabel": "contract_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.contract_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_id": {
+          "fieldId": "rWDvBztOdxZ6jkea841X",
+          "fieldKey": "document_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.document_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_id",
+          "candidateWritePath": "properties.document_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "rWDvBztOdxZ6jkea841X",
+            "fieldLabel": "document_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.document_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_revision": {
+          "fieldId": "57Id5aZFGaOByUXJqTes",
+          "fieldKey": "document_revision",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.document_revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_revision",
+          "candidateWritePath": "properties.document_revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "57Id5aZFGaOByUXJqTes",
+            "fieldLabel": "document_revision",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.document_revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "signer_id": {
+          "fieldId": "mjLpWl0h37LHwsFXZO3z",
+          "fieldKey": "signer_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.signer_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "signer_id",
+          "candidateWritePath": "properties.signer_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "mjLpWl0h37LHwsFXZO3z",
+            "fieldLabel": "signer_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.signer_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "role": {
+          "fieldId": "jB1auXQqjWE9PTIBBbrk",
+          "fieldKey": "role",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.role}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "role",
+          "candidateWritePath": "properties.role",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "jB1auXQqjWE9PTIBBbrk",
+            "fieldLabel": "role",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.role}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "legal_name": {
+          "fieldId": "xP2bpvglZAktUjQwaiUv",
+          "fieldKey": "legal_name",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.legal_name}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "legal_name",
+          "candidateWritePath": "properties.legal_name",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "xP2bpvglZAktUjQwaiUv",
+            "fieldLabel": "legal_name",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.legal_name}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "authority_reference": {
+          "fieldId": "CUyPUZgny64j6ir473Zt",
+          "fieldKey": "authority_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.authority_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "authority_reference",
+          "candidateWritePath": "properties.authority_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "CUyPUZgny64j6ir473Zt",
+            "fieldLabel": "authority_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.authority_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contact_id": {
+          "fieldId": "GH7VTB2jfKuv57cCpo2F",
+          "fieldKey": "contact_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.contact_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contact_id",
+          "candidateWritePath": "properties.contact_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "GH7VTB2jfKuv57cCpo2F",
+            "fieldLabel": "contact_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.contact_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "email": {
+          "fieldId": "O3IrETVGTAia3YrAh8UB",
+          "fieldKey": "email",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.email}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "email",
+          "candidateWritePath": "properties.email",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "O3IrETVGTAia3YrAh8UB",
+            "fieldLabel": "email",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.email}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "required": {
+          "fieldId": "g9RVljIdFOkSX5yOiAzJ",
+          "fieldKey": "required",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.required}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "required",
+          "candidateWritePath": "properties.required",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "g9RVljIdFOkSX5yOiAzJ",
+            "fieldLabel": "required",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.required}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "signed": {
+          "fieldId": "gr0JxeChgdMnYR5oH9WK",
+          "fieldKey": "signed",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_contract_signers.signed}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "signed",
+          "candidateWritePath": "properties.signed",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "gr0JxeChgdMnYR5oH9WK",
+            "fieldLabel": "signed",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Contract Signer Info",
+            "mergeText": "{{custom_objects.jarvis_acq_contract_signers.signed}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    },
+    "custom_objects.jarvis_acq_lifecycle_events": {
+      "family": "Lifecycle Event",
+      "objectDefinitionId": "6ac6d4faee91305eaa54f816",
+      "schemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "fieldCount": 14,
+      "logicalKeyField": "event_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "event_key": {
+          "fieldId": "fr4FBdoFeYBE2nPFcqUO",
+          "fieldKey": "event_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.event_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "event_key",
+          "candidateWritePath": "properties.event_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "fr4FBdoFeYBE2nPFcqUO",
+            "fieldLabel": "event_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.event_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "contract_record_id": {
+          "fieldId": "EF4w8bJDDD4sUs39BuZU",
+          "fieldKey": "contract_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.contract_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "contract_record_id",
+          "candidateWritePath": "properties.contract_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "EF4w8bJDDD4sUs39BuZU",
+            "fieldLabel": "contract_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.contract_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "KBdOiDNGggFUlMn9o1MZ",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.property_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "KBdOiDNGggFUlMn9o1MZ",
+            "fieldLabel": "property_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.property_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "event_location_id": {
+          "fieldId": "GO6FSZdUfFohCjsdLDeR",
+          "fieldKey": "event_location_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.event_location_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "event_location_id",
+          "candidateWritePath": "properties.event_location_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "GO6FSZdUfFohCjsdLDeR",
+            "fieldLabel": "event_location_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.event_location_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "provider_event_id": {
+          "fieldId": "qiwbXAPiuAXWgx2iYUPc",
+          "fieldKey": "provider_event_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.provider_event_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "provider_event_id",
+          "candidateWritePath": "properties.provider_event_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "qiwbXAPiuAXWgx2iYUPc",
+            "fieldLabel": "provider_event_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.provider_event_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_id": {
+          "fieldId": "rYCcVU4exjN34GwZw1jl",
+          "fieldKey": "document_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.document_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_id",
+          "candidateWritePath": "properties.document_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "rYCcVU4exjN34GwZw1jl",
+            "fieldLabel": "document_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.document_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "document_revision": {
+          "fieldId": "rCmLeodK4Qs1ef1vqhMy",
+          "fieldKey": "document_revision",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.document_revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "document_revision",
+          "candidateWritePath": "properties.document_revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "rCmLeodK4Qs1ef1vqhMy",
+            "fieldLabel": "document_revision",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.document_revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "occurred_at": {
+          "fieldId": "54QkkX6PnZSqNB35Ende",
+          "fieldKey": "occurred_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.occurred_at}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "occurred_at",
+          "candidateWritePath": "properties.occurred_at",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "54QkkX6PnZSqNB35Ende",
+            "fieldLabel": "occurred_at",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.occurred_at}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "event_type": {
+          "fieldId": "c28kDHHfw67d1KKP2LUv",
+          "fieldKey": "event_type",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.event_type}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "event_type",
+          "candidateWritePath": "properties.event_type",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "c28kDHHfw67d1KKP2LUv",
+            "fieldLabel": "event_type",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.event_type}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "signer_id": {
+          "fieldId": "RjQPN1FVZBz57tPo5evR",
+          "fieldKey": "signer_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.signer_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "signer_id",
+          "candidateWritePath": "properties.signer_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "RjQPN1FVZBz57tPo5evR",
+            "fieldLabel": "signer_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.signer_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "conditions_satisfied": {
+          "fieldId": "bjW9lFPfnM4fhWZNPbHQ",
+          "fieldKey": "conditions_satisfied",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.conditions_satisfied}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "conditions_satisfied",
+          "candidateWritePath": "properties.conditions_satisfied",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "bjW9lFPfnM4fhWZNPbHQ",
+            "fieldLabel": "conditions_satisfied",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.conditions_satisfied}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "reconciliation_reference": {
+          "fieldId": "4wiI4DlKWcnUNNTFMXRb",
+          "fieldKey": "reconciliation_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.reconciliation_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "reconciliation_reference",
+          "candidateWritePath": "properties.reconciliation_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "4wiI4DlKWcnUNNTFMXRb",
+            "fieldLabel": "reconciliation_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.reconciliation_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "packet_revision": {
+          "fieldId": "emKLzEKwxnWybbMjfKiF",
+          "fieldKey": "packet_revision",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.packet_revision}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "packet_revision",
+          "candidateWritePath": "properties.packet_revision",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "emKLzEKwxnWybbMjfKiF",
+            "fieldLabel": "packet_revision",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.packet_revision}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "canonical_event": {
+          "fieldId": "R97MrXaYhHW8WnmwaAgD",
+          "fieldKey": "canonical_event",
+          "uiType": "Multi line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_lifecycle_events.canonical_event}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "canonical_event",
+          "candidateWritePath": "properties.canonical_event",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "R97MrXaYhHW8WnmwaAgD",
+            "fieldLabel": "canonical_event",
+            "typeLabel": "Multi line",
+            "groupLabel": "JARVIS ACQ Lifecycle Event Info",
+            "mergeText": "{{custom_objects.jarvis_acq_lifecycle_events.canonical_event}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    },
+    "custom_objects.jarvis_acq_sourced_ceilings": {
+      "family": "Sourced Ceiling",
+      "objectDefinitionId": "6ac6d509af19b2b02f0c31cd",
+      "schemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "fieldCount": 11,
+      "logicalKeyField": "ceiling_key",
+      "uiPrimaryFieldVerified": true,
+      "uiPrimaryUniqueObserved": true,
+      "fieldsByKey": {
+        "ceiling_key": {
+          "fieldId": "ZDnc6Vtn1qBySzAFHbrs",
+          "fieldKey": "ceiling_key",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.ceiling_key}}",
+          "uiPrimaryUniqueObserved": true,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "ceiling_key",
+          "candidateWritePath": "properties.ceiling_key",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "ZDnc6Vtn1qBySzAFHbrs",
+            "fieldLabel": "ceiling_key",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.ceiling_key}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "source_reference": {
+          "fieldId": "eHaktezHuDoDmIKuG6Km",
+          "fieldKey": "source_reference",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.source_reference}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "source_reference",
+          "candidateWritePath": "properties.source_reference",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "eHaktezHuDoDmIKuG6Km",
+            "fieldLabel": "source_reference",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.source_reference}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "approved_by": {
+          "fieldId": "qFtlSchqKWSPTsxLTdnC",
+          "fieldKey": "approved_by",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.approved_by}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "approved_by",
+          "candidateWritePath": "properties.approved_by",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "qFtlSchqKWSPTsxLTdnC",
+            "fieldLabel": "approved_by",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.approved_by}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "property_record_id": {
+          "fieldId": "Pgq6C02sKDS6V9gMeeQH",
+          "fieldKey": "property_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.property_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "property_record_id",
+          "candidateWritePath": "properties.property_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "Pgq6C02sKDS6V9gMeeQH",
+            "fieldLabel": "property_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.property_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "analysis_record_id": {
+          "fieldId": "ZVIepZhoIa3wDdC92vSZ",
+          "fieldKey": "analysis_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.analysis_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_record_id",
+          "candidateWritePath": "properties.analysis_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "ZVIepZhoIa3wDdC92vSZ",
+            "fieldLabel": "analysis_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.analysis_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "analysis_version": {
+          "fieldId": "CG8knlkZbmFEKnPmOnl2",
+          "fieldKey": "analysis_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.analysis_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "analysis_version",
+          "candidateWritePath": "properties.analysis_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "CG8knlkZbmFEKnPmOnl2",
+            "fieldLabel": "analysis_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.analysis_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "policy_record_id": {
+          "fieldId": "VP7HznLuKpRnzRXrm0DQ",
+          "fieldKey": "policy_record_id",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.policy_record_id}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_record_id",
+          "candidateWritePath": "properties.policy_record_id",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "VP7HznLuKpRnzRXrm0DQ",
+            "fieldLabel": "policy_record_id",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.policy_record_id}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "policy_version": {
+          "fieldId": "SxLXdp9bB2U9EUSruJHh",
+          "fieldKey": "policy_version",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.policy_version}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "policy_version",
+          "candidateWritePath": "properties.policy_version",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "SxLXdp9bB2U9EUSruJHh",
+            "fieldLabel": "policy_version",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.policy_version}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "expires_at": {
+          "fieldId": "VHcE8rtzKiGVS8wBTnky",
+          "fieldKey": "expires_at",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.expires_at}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "expires_at",
+          "candidateWritePath": "properties.expires_at",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "VHcE8rtzKiGVS8wBTnky",
+            "fieldLabel": "expires_at",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.expires_at}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "valuation_basis": {
+          "fieldId": "IeLxRBDSzdvWNyN22ENw",
+          "fieldKey": "valuation_basis",
+          "uiType": "Single line",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.valuation_basis}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "valuation_basis",
+          "candidateWritePath": "properties.valuation_basis",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "IeLxRBDSzdvWNyN22ENw",
+            "fieldLabel": "valuation_basis",
+            "typeLabel": "Single line",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.valuation_basis}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        },
+        "ceiling_usd": {
+          "fieldId": "kmnGhJaaudNxN59E5SEO",
+          "fieldKey": "ceiling_usd",
+          "uiType": "Number",
+          "mergeKeyAsRecorded": "{{custom_objects.jarvis_acq_sourced_ceilings.ceiling_usd}}",
+          "uiPrimaryUniqueObserved": false,
+          "apiDataType": null,
+          "apiDataTypeVerified": false,
+          "candidatePropertiesMember": "ceiling_usd",
+          "candidateWritePath": "properties.ceiling_usd",
+          "apiWritePathVerified": false,
+          "uiEvidence": {
+            "fieldTableRowId": "kmnGhJaaudNxN59E5SEO",
+            "fieldLabel": "ceiling_usd",
+            "typeLabel": "Number",
+            "groupLabel": "JARVIS ACQ Sourced Ceiling Info",
+            "mergeText": "{{custom_objects.jarvis_acq_sourced_ceilings.ceiling_usd}}"
+          },
+          "sourceRefs": [
+            "newSchema",
+            "newCsv",
+            "newObservedFields"
+          ]
+        }
+      },
+      "sourceRefs": [
+        "newSchema",
+        "newCsv",
+        "newObservedFields"
+      ]
+    }
+  },
+  "associations": [
+    {
+      "label": "ACQ Contract Signer",
+      "childSchemaKey": "custom_objects.jarvis_acq_contract_signers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da055d9e0d3230c48d6f",
+      "observedRelationId": "6ac6da055d9e0d3230c48d6f",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Contract Event",
+      "childSchemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da31a31985f618991810",
+      "observedRelationId": "6ac6da31a31985f618991810",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Event Completed Signer",
+      "childSchemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contract_signers",
+      "parentUiLabel": null,
+      "childMaxParents": "many",
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da4e0ba321fcf4d7db02",
+      "observedRelationId": "6ac6da4e0ba321fcf4d7db02",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Offer Contract",
+      "childSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da64fb7dc4d2c36187a8",
+      "observedRelationId": "6ac6da64fb7dc4d2c36187a8",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Property Contract",
+      "childSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da76a499e373ff8e7932",
+      "observedRelationId": "6ac6da76a499e373ff8e7932",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Property Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da7d4aa797c0619194cc",
+      "observedRelationId": "6ac6da7d4aa797c0619194cc",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Policy Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_policies",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da875d9e0d3230c4befe",
+      "observedRelationId": "6ac6da875d9e0d3230c4befe",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Analysis Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6da9d258c796142948063",
+      "observedRelationId": "6ac6da9d258c796142948063",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Offer Recipient",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": null,
+      "parentUiLabel": "Contacts",
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6daaba31985f618994674",
+      "observedRelationId": "6ac6daaba31985f618994674",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Property Policy",
+      "childSchemaKey": "custom_objects.jarvis_acq_policies",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6dacfab12fccb564df01d",
+      "observedRelationId": "6ac6dacfab12fccb564df01d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Property Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6dad70ba321fcf4d811b3",
+      "observedRelationId": "6ac6dad70ba321fcf4d811b3",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Analysis Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6dae8fb7dc4d2c361bd4d",
+      "observedRelationId": "6ac6dae8fb7dc4d2c361bd4d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Policy Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_policies",
+      "parentUiLabel": null,
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6daf50ba321fcf4d81eb3",
+      "observedRelationId": "6ac6daf50ba321fcf4d81eb3",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "idProvenance": "Native list Manage fields > Associations checkbox ID; after save and fresh navigation",
+      "sourceRefs": [
+        "newAssociations"
+      ]
+    },
+    {
+      "label": "ACQ Property Analysis",
+      "childSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac5a61ada772f37a6b93410",
+      "observedRelationId": "6ac5a61ada772f37a6b93410",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "sourceRefs": [
+        "baseSchema",
+        "relationFollowup"
+      ],
+      "idProvenance": "Later Property list Manage fields > Associations checkbox/column key and reload membership readback; not API definition ID."
+    },
+    {
+      "label": "ACQ Analysis Evidence",
+      "childSchemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "childMaxParents": 1,
+      "parentMaxChildren": "many",
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac5a65510057ebf27eb264d",
+      "observedRelationId": "6ac5a65510057ebf27eb264d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "sourceRefs": [
+        "baseSchema"
+      ],
+      "idProvenance": "Observed Analysis list Manage fields > Associations checkbox; native-storage-install/original-schema-readonly-addendum.json. API definition ID remains unverified."
+    },
+    {
+      "label": "Seller",
+      "labelExactness": "Source calls this the existing Seller association column; full definition label/direction not inspected in this handoff.",
+      "childSchemaKey": null,
+      "parentSchemaKey": null,
+      "observedOnSchemaKey": "custom_objects.jarvis_acq_properties",
+      "relatedUiObject": null,
+      "childMaxParents": null,
+      "parentMaxChildren": null,
+      "uiVerified": true,
+      "observedRelationFieldId": "relations.6ac6d2b9e9b61f01dc34fe2e",
+      "observedRelationId": "6ac6d2b9e9b61f01dc34fe2e",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false,
+      "apiRelationPayloadVerified": false,
+      "sourceRefs": [
+        "relationFollowup"
+      ],
+      "relatedObjectNote": "Only the Seller column and relation ID are established by the cited excerpt; related API object key/direction/cardinality require verification."
+    }
+  ],
+  "criticalDivergences": [
+    {
+      "logicalInput": "event.locationId",
+      "schemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "actualFieldKey": "event_location_id",
+      "fieldId": "GO6FSZdUfFohCjsdLDeR",
+      "uiType": "Single line",
+      "prohibitedSubstitution": "Do not create/write a custom location_id or overwrite trusted native/API locationId with this value.",
+      "meaning": "Claimed event location only; compare with independently trusted tenant/runtime location.",
+      "reason": "Native UI rejected custom location_id as reserved standard name.",
+      "sourceRefs": [
+        "newSchema",
+        "newObservedFields",
+        "installReadme"
+      ]
+    }
+  ],
+  "uniqueRequestKeySupport": {
+    "explicitRequestKeyFieldFound": false,
+    "explicitRequestIdFieldFound": false,
+    "existingLogicalKeys": [
+      {
+        "schemaKey": "custom_objects.jarvis_acq_properties",
+        "keyField": "property_key",
+        "fieldId": "XplY0S33KIjn4ZwlSr8w",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_analyses",
+        "keyField": "analysis_key",
+        "fieldId": "4ngnzzVb8PIcV585IdZB",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows",
+        "keyField": "evidence_key",
+        "fieldId": "sxtKuYXx7WskpjD6oXAy",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_policies",
+        "keyField": "policy_key",
+        "fieldId": "kXFue1w2pa9NmvxKXwiU",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_offers",
+        "keyField": "packet_key",
+        "fieldId": "7IhJpYFsSoluwpirnqF8",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_contracts",
+        "keyField": "contract_key",
+        "fieldId": "V0Lqde3tpjWQPpYxfh7C",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_contract_signers",
+        "keyField": "signer_key",
+        "fieldId": "L9oK51QFximj7FBH3Rtq",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+        "keyField": "event_key",
+        "fieldId": "fr4FBdoFeYBE2nPFcqUO",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      },
+      {
+        "schemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+        "keyField": "ceiling_key",
+        "fieldId": "ZDnc6Vtn1qBySzAFHbrs",
+        "uiPrimaryUniqueObserved": true,
+        "apiUniqueConstraintVerified": false,
+        "atomicCreateIfAbsentVerified": false,
+        "maxKeyBytesVerified": null
+      }
+    ],
+    "localCodeContract": {
+      "sourceRef": "storageSource",
+      "allocateStatus": "ALLOCATE_PENDING_ONLY",
+      "analysisUniqueKeyField": "analysis_key",
+      "evidenceUniqueKeyField": "evidence_key",
+      "analysisKeyComponents": [
+        "locationId",
+        "property.recordId",
+        "property.providerPropertyId",
+        "property.propertyVersion",
+        "analysisVersion",
+        "policyRecordId",
+        "policyVersion",
+        "sourceVersion",
+        "eventId"
+      ],
+      "evidenceKeyComponents": [
+        "analysisKey",
+        "evidence.key"
+      ],
+      "keySerialization": "stableKey(parts) = parts.map(p => `${p.length}:${p}`).join(''); p.length is JavaScript string length; capacity checks separately use UTF-8 bytes. Preserve exact implementation; do not truncate or invent a digest.",
+      "emitsWriteIntentsOnly": true,
+      "pointerUpdateOnAllocate": null
+    },
+    "propertyDuplicateUiAttempt": "Same key did not leave creation form or create another visible record. Explicit rejection reason was not captured; concurrency guarantee not established.",
+    "limitations": [
+      "All nine primary fields are now UI-marked unique; this is not verified API conflict/upsert/concurrent-create behavior.",
+      "Original Property/Analysis/Evidence uniqueness was confirmed in a later saved UI metadata inspection; original manifest alone did not establish it.",
+      "No separately observed native request ledger or request-key constraint is supplied by these schemas.",
+      "Packet/contract canonical key capacities and event canonical text limit remain unproved.",
+      "Unique key presence alone does not establish conditional pointer update, reservation atomicity or exactly-once execution."
+    ]
+  },
+  "qa": {
+    "syntheticOnly": true,
+    "property": {
+      "recordId": "6ac6d81a64b4248653bc7c6a",
+      "key": "SYNTHETIC-NATIVE-QA-20261007-A",
+      "held": "true",
+      "humanTakeover": "true",
+      "status": "HELD",
+      "holdReason": "SYNTHETIC_TEST_ONLY_NO_OUTREACH",
+      "currentAnalysisId": "",
+      "currentAnalysisVersion": "",
+      "reloadVerified": true,
+      "duplicateCreateAttempt": "Same key did not leave creation form or create another visible record. Explicit rejection reason was not captured; concurrency guarantee not established."
+    },
+    "analysis": {
+      "recordId": "6ac6d89f118651332379e3af",
+      "key": "SYNTHETIC-NATIVE-QA-20261007-ANALYSIS-CENTS",
+      "propertyRecordIdScalar": "6ac6d81a64b4248653bc7c6a",
+      "status": "PENDING",
+      "completionState": "INCOMPLETE",
+      "publicValueUsd": 123456.78,
+      "acceptedCount": 3,
+      "rejectedCount": 0,
+      "expectedEvidenceCount": null,
+      "reloadVerified": true,
+      "numericOptionalObservation": "Never-entered expected_evidence_count remains visually blank. API omission versus null was not observed.",
+      "zeroObservation": "Native list row displays rejected_count0, while its edit drawer input is empty. Do not use edit-control truthiness as a codec."
+    },
+    "association": {
+      "label": "ACQ Property Analysis",
+      "propertyRecordId": "6ac6d81a64b4248653bc7c6a",
+      "analysisRecordId": "6ac6d89f118651332379e3af",
+      "uiMembershipReloadVerified": true,
+      "workflowId": "65791114-593f-4f73-a114-179cb7c7b150",
+      "guardActionId": "175bdedd-1684-4c18-b8d1-f272409f1eb6",
+      "associationActionId": "90a61fc6-d70a-4872-819b-b9b888b066e3",
+      "firstObservedExecutionId": "01M4CCPFAHDBJSQW1YB6VZHV2Z",
+      "repeatObservation": "These records are already associated.",
+      "apiMembershipReadVerified": false,
+      "concurrencyVerified": false,
+      "sourceRefs": [
+        "relationFollowup",
+        "qaDecoder"
+      ]
+    },
+    "decoder": {
+      "actionId": "84ed678c-2b71-4555-8f0b-0bda78c5f034",
+      "workflowPublishedInEvidence": true,
+      "automaticTriggers": 0,
+      "guard": {
+        "property_key": "SYNTHETIC-NATIVE-QA-20261007-A",
+        "held": "true",
+        "human_takeover": "true",
+        "operator": "AND",
+        "fallback": "END"
+      },
+      "propertyIdToken": "{{custom_objects.jarvis_acq_properties.id}}",
+      "isolatedStatus": "NATIVE_PROPERTY_SNAPSHOT_DECODED",
+      "latestSourceConclusion": "Strict JARVIS_TEXT: prefix passed actual native workflow execution, preserving empty pointers and literal true flags. All13inputbindings and exactcodehash reloaded before single QA execution. This proves scoped workflow-text transport, not raw API type/empty semantics.",
+      "sourceRefs": [
+        "qaDecoder"
+      ],
+      "historicalUnprefixedFailure": {
+        "output": {
+          "status": "NEEDS_REVIEW",
+          "reason": "INPUT_SCHEMA_INVALID",
+          "outboundEnabled": false,
+          "authorizationRecorded": false
+        },
+        "display": {
+          "recordId": "6ac6d81a64b4248653bc7c6a",
+          "sourceIdentityRef": "SYNTHETIC-NATIVE-QA",
+          "asset": "house",
+          "canonicalAddress": "SYNTHETIC Property A \u2014 native persistence QA",
+          "providerPropertyId": "SYNTHETIC-provider-A",
+          "propertyKey": "SYNTHETIC-NATIVE-QA-20261007-A",
+          "held": "true",
+          "propertyVersion": "v1",
+          "currentAnalysisId": "0",
+          "holdReason": "SYNTHETIC_TEST_ONLY_NO_OUTREACH",
+          "humanTakeover": "true",
+          "status": "HELD",
+          "currentAnalysisVersion": "0"
+        },
+        "caveat": "Visible table camelizes labels; raw JavaScript input key names/types not exposed. Empty native pointers render as 0."
+      },
+      "runtimeOutput": {
+        "status": "NATIVE_PROPERTY_SNAPSHOT_DECODED",
+        "property": {
+          "recordId": "6ac6d81a64b4248653bc7c6a",
+          "propertyKey": "SYNTHETIC-NATIVE-QA-20261007-A",
+          "providerPropertyId": "SYNTHETIC-provider-A",
+          "propertyVersion": "v1",
+          "canonicalAddress": "SYNTHETIC Property A \u2014 native persistence QA",
+          "sourceIdentityReference": "SYNTHETIC-NATIVE-QA",
+          "asset": "house",
+          "currentAnalysisId": "",
+          "currentAnalysisVersion": "",
+          "held": "true",
+          "humanTakeover": "true",
+          "status": "HELD",
+          "holdReason": "SYNTHETIC_TEST_ONLY_NO_OUTREACH"
+        },
+        "verification": "NORMALIZED_READBACK_ONLY",
+        "outboundEnabled": false,
+        "authorizationRecorded": false
+      },
+      "prefix": "JARVIS_TEXT:",
+      "inputBindings": [
+        {
+          "key": "recordId",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.id}}"
+        },
+        {
+          "key": "source_identity_ref",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.source_identity_ref}}"
+        },
+        {
+          "key": "asset",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.asset}}"
+        },
+        {
+          "key": "canonical_address",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.canonical_address}}"
+        },
+        {
+          "key": "provider_property_id",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.provider_property_id}}"
+        },
+        {
+          "key": "property_key",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.property_key}}"
+        },
+        {
+          "key": "held",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.held}}"
+        },
+        {
+          "key": "property_version",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.property_version}}"
+        },
+        {
+          "key": "current_analysis_id",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.current_analysis_id}}"
+        },
+        {
+          "key": "hold_reason",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.hold_reason}}"
+        },
+        {
+          "key": "human_takeover",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.human_takeover}}"
+        },
+        {
+          "key": "status",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.status}}"
+        },
+        {
+          "key": "current_analysis_version",
+          "value": "JARVIS_TEXT:{{custom_objects.jarvis_acq_properties.current_analysis_version}}"
+        }
+      ],
+      "savedCode": {
+        "bytes": 364846,
+        "sha256": "34c097bf8b06c61b914c56251f64318ac98c6bc49ef0e1bbfd873770c23e2175",
+        "exact": true,
+        "reloaded": true
+      },
+      "latestVerificationReport": "native-storage-install/qa-decode-prefixed/report.json",
+      "verified": {
+        "nativeContext": true,
+        "exactRecordId": true,
+        "exactPropertyKey": true,
+        "emptyAnalysisPointers": true,
+        "literalTrueFlags": true,
+        "outboundDisabled": true,
+        "authorizationNotRecorded": true
+      }
+    },
+    "limitations": [
+      "Manually populated UI cases, not automatic workflow persistence.",
+      "Native association is a separate test; scalar property_record_id alone does not prove association.",
+      "No completion pointer update, durable authorization, delivery, concurrent CAS or full evidence-page reconciliation tested."
+    ]
+  },
+  "repairDefaultsRecord": {
+    "recordId": "6ac6d94e18c960322a93986c",
+    "schemaKey": "custom_objects.jarvis_acq_policies",
+    "reloadVerified": true,
+    "configurationScope": "REPAIR_DEFAULTS_ONLY_NO_OFFER_AUTHORITY",
+    "isFullPolicy": false,
+    "offerAuthority": false,
+    "readbackSourceRef": "repairReadback",
+    "note": "Only approved repair defaults are populated. General policy/version/approval/expiry, standing terms/bounds, comp selection/freshness and property association remain missing according to installer evidence; read actual trusted state before use."
+  },
+  "apiRepresentation": {
+    "evidenceLevel": "Candidate/documented transport conventions only; no authenticated API response or request was executed in this handoff.",
+    "candidateRecordIdPath": "record.id",
+    "candidatePropertiesPath": "record.properties",
+    "candidateWritePropertiesContainer": "properties",
+    "schemaKeysFromObservedUi": true,
+    "fieldIdsAreRecordIds": false,
+    "objectDefinitionIdsAreRecordIds": false,
+    "mergeKeysAreApiPayloadKeys": false,
+    "writePathsInSourcesAreUiVerifiedApiPayloads": false,
+    "relationUiIdsAreProvenApiDefinitionIds": false,
+    "apiFieldTypeEnums": null,
+    "nullEmptyZeroSemanticsVerified": false,
+    "recordCreateReadUpdateSearchShapesVerified": false,
+    "associationReadWriteShapesVerified": false,
+    "paginationExhaustionVerified": false,
+    "notImplementedHere": [
+      "API base/version/auth headers",
+      "record search filter/sort/page syntax",
+      "relation operation payload and definition-ID translation",
+      "API numeric/boolean/date decoding",
+      "unique conflict/upsert/conditional update semantics"
+    ]
+  },
+  "runtimeGaps": [
+    "Dynamic workflow text boundary is resolved for the guarded QA record using a strict JARVIS_TEXT: prefix. Raw API property number/string/null/empty transport still requires API readback verification.",
+    "Preserve observed numeric zero, absent, null and empty string distinctly. QA decimal persisted visually; API number/cents precision remains unverified.",
+    "Single line booleans/enums and timestamps require strict parsing; unknown/empty is not false or an invented time.",
+    "Policy arrays acceptedValuationBases/estimatedSaleTypes/verifiedSaleTypes and structured repair intake/cost items have no verified storage representation in this inventory.",
+    "Required/signed signers and completed event membership need actual child records and relation readback, not merely scalar record IDs.",
+    "Need trusted location/contact/property holds and associations, current policy and versions, complete pagination, conditional pointer publication and durable reservation/revocation before production reliance.",
+    "No record IDs for Offer, Contract, Signer, Lifecycle Event or Sourced Ceiling were created in the installer evidence.",
+    "Authentication grants and API runtime state are outside this artifact; root verifies existing metadata separately."
+  ],
+  "consistencyValidation": {
+    "all179FieldIdsUnique": true,
+    "all6NewSchemaObjectsMatchCsvAndObservedRows": true,
+    "all3BaseObjectsMatchCsv": true,
+    "all13NewRelationFieldSuffixesMatchRecordedRelationId": true,
+    "eventLocationDivergencePreserved": true,
+    "networkValidationPerformed": false
+  },
+  "existingTransportMetadataRef": "EXISTING-GHL-TRANSPORT-METADATA.json",
+  "existingTransportSummary": {
+    "suitableBindingEstablished": false,
+    "locationCorrectPrivateIntegration": "XCEREBRO",
+    "observedScopes": [
+      "contacts.write",
+      "contacts.readonly",
+      "locations.readonly"
+    ],
+    "officialMcpTarget": "zsODNuiVWJqICpsgxCNF",
+    "targetLocation": "SesCoVXlNu7qTSBol1gs",
+    "credentialsReadOrChanged": false
+  },
+  "readOnlySchemaAddendumRef": "native-storage-install/original-schema-readonly-addendum.json",
+  "minimumScopeChangeProposalRef": "GHL-MINIMUM-SCOPE-CHANGE-PROPOSAL.md"
+}

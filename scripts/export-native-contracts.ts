@@ -1,0 +1,58 @@
+/** Deterministic local documentation/fixture generation; no network or credentials. */
+import {z} from 'zod';
+import {observedInput,observedWorkflow} from '../src/lib/native/observed-provider';
+import {observedReviewExample} from '../src/lib/native/observed-examples';
+import {acquisitionPolicyInput,acquisitionPolicyWorkflow} from '../src/lib/native/acquisition-policy';
+import {PROVISIONAL_REPAIR_MODEL,APPROVED_REPAIR_MODEL,SUPERSEDED_REPAIR_MODEL_VERSIONS,REPAIR_MODEL_SELECTION_PENDING,approvedRepairDefaults} from '../src/lib/native/repair-model';
+import {estimatedFixture,wholesaleFixture} from '../src/lib/native/estimated-fixtures';
+import {propertyAdapterInput,propertyWorkflow} from '../src/lib/native/property-adapter';
+import {propertyFixture} from '../src/lib/native/property-fixtures';
+import {auditNativeManifest,NATIVE_SCHEMAS,PROPERTY_FIELD_BINDINGS} from '../src/lib/native/native-fields';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {analysisRequest} from '../src/lib/native/contracts';
+import {atlasWorkflow} from '../src/lib/native/atlas';
+import {storageInput,storageWorkflow} from '../src/lib/native/storage';
+import {offerRequest,offerWorkflow} from '../src/lib/native/offers';
+import {masonInput,masonWorkflow} from '../src/lib/native/mason';
+import {routingInput,routingWorkflow} from '../src/lib/native/routing';
+import {fixture,fixtureLimits,offerFixture} from '../src/lib/native/fixtures';
+import manifest from '../native-deliverables/schema-manifest.json';
+async function main(){
+ const dir='native-deliverables';await mkdir(`${dir}/schemas`,{recursive:true});await mkdir(`${dir}/fixtures`,{recursive:true});
+ for(const [name,schema] of Object.entries({property:propertyAdapterInput,observed:observedInput,acquisitionPolicy:acquisitionPolicyInput,atlas:analysisRequest,storage:storageInput,offers:offerRequest,mason:masonInput,routing:routingInput}))await writeFile(`${dir}/schemas/${name}.schema.json`,JSON.stringify(z.toJSONSchema(schema),null,2)+'\n');
+ const samples:{name:string;workflow:string;request:unknown;execute:(input:unknown)=>unknown}[]=[];
+ for(const asset of ['house','land','small_multifamily','commercial_multifamily'] as const)samples.push({name:`atlas-${asset}`,workflow:'atlas',request:fixture(asset),execute:atlasWorkflow});
+ samples.push({name:'atlas-house-estimated',workflow:'atlas',request:estimatedFixture(),execute:atlasWorkflow});
+ samples.push({name:'house-wholesale-formula',workflow:'acquisition-policy',request:{operation:'calculate_wholesale',request:wholesaleFixture()},execute:acquisitionPolicyWorkflow});
+ const approvedRatesExample=wholesaleFixture();Object.assign(approvedRatesExample.policy,approvedRepairDefaults());approvedRatesExample.analysis.arvUsd=300000;
+ samples.push({name:'house-wholesale-approved-defaults',workflow:'acquisition-policy',request:{operation:'calculate_wholesale',request:approvedRatesExample},execute:acquisitionPolicyWorkflow});
+ for(const operation of ['address','get_property'] as const)samples.push({name:`property-${operation}`,workflow:'property-adapter',request:propertyFixture(operation),execute:propertyWorkflow});
+ const base=fixture(),offer=offerFixture(),{analysisRecordId,analysisKey,...allocationContext}=base.context;
+ if(!analysisRecordId||!analysisKey)throw Error('Fixture IDs missing');
+ samples.push({name:'storage-decode-property',workflow:'storage',request:{operation:'decode_property',request:{locationId:base.context.locationId,schemaKey:NATIVE_SCHEMAS.property,recordId:base.context.property.recordId,properties:Object.fromEntries(Object.entries(PROPERTY_FIELD_BINDINGS).map(([native,normalized])=>[native,base.context.property[normalized]]))}},execute:storageWorkflow});
+ samples.push({name:'storage-allocate',workflow:'storage',request:{operation:'allocate',request:{context:allocationContext,policy:base.policy,mode:'synthetic_fixture'},fieldLimits:fixtureLimits},execute:storageWorkflow});
+ samples.push({name:'storage-prepare',workflow:'storage',request:{operation:'prepare',request:base,fieldLimits:fixtureLimits},execute:storageWorkflow});
+ samples.push({name:'offers-opening',workflow:'offers',request:offer,execute:offerWorkflow});
+ const counter=offerFixture();counter.previousPacket=structuredClone(counter.packet);counter.packet.revision=2;counter.packet.priceUsd=66000;
+ samples.push({name:'offers-counter',workflow:'offers',request:counter,execute:offerWorkflow});
+ const fields={jurisdiction:'SYNTHETIC-jurisdiction',templateId:'SYNTHETIC-template',templateVersion:'v1',templateApprovalReference:'SYNTHETIC-approval',buyerLegalEntity:'SYNTHETIC-buyer',buyerAuthorityReference:'SYNTHETIC-authority',ownershipReference:'SYNTHETIC-ownership',legalDescription:'SYNTHETIC-legal-description',parcelReference:'SYNTHETIC-parcel',titleEscrow:'SYNTHETIC-title',closingInstructionsReference:'SYNTHETIC-closing',senderId:'SYNTHETIC-sender',deliveryConsentReference:'SYNTHETIC-consent'};
+ const signers=[{id:'SYNTHETIC-buyer',role:'buyer',legalName:'SYNTHETIC Buyer',authorityReference:'SYNTHETIC-authority',contactId:'SYNTHETIC-buyer-contact',email:'buyer@example.invalid'},{id:'SYNTHETIC-seller',role:'seller',legalName:'SYNTHETIC Seller',authorityReference:'SYNTHETIC-ownership',contactId:offer.packet.recipientId,email:'seller@example.invalid'}];
+ samples.push({name:'mason-draft',workflow:'mason',request:{operation:'prepare',request:{offer,fields,signers,draftReadback:{packet:offer.packet,fields,signers}}},execute:masonWorkflow});
+ samples.push({name:'routing-jessica-offer',workflow:'routing',request:{context:offer.context,requestedPropertyRecordId:offer.context.property.recordId,properties:[offer.context.property],channel:'voice',intent:'offer'},execute:routingWorkflow});
+ for(const sample of samples){const json=JSON.stringify(sample.request,null,2);await writeFile(`${dir}/fixtures/${sample.name}.json`,json+'\n');await writeFile(`${dir}/fixtures/${sample.name}.test-field-literal.txt`,JSON.stringify(json)+'\n');await writeFile(`${dir}/fixtures/${sample.name}.expected.json`,JSON.stringify(sample.execute({requestJson:json}),null,2)+'\n');}
+ await writeFile(`${dir}/fixtures/index.json`,JSON.stringify(samples.map(({name,workflow})=>({name,workflow,synthetic:true})),null,2)+'\n');
+ await mkdir(`${dir}/observed-examples`,{recursive:true});
+ const observedExample=observedReviewExample(),observedJson=JSON.stringify(observedExample,null,2);
+ await writeFile(`${dir}/observed-examples/paired-review.json`,observedJson+'\n');
+ await writeFile(`${dir}/observed-examples/paired-review.test-field-literal.txt`,JSON.stringify(observedJson)+'\n');
+ await writeFile(`${dir}/observed-examples/paired-review.expected.json`,JSON.stringify(observedWorkflow({requestJson:observedJson}),null,2)+'\n');
+ await writeFile(`${dir}/observed-examples/index.json`,JSON.stringify([{name:'paired-review',workflow:'observed-provider',synthetic:false,source:'sanitized observed pair; no native/unit/policy binding'}],null,2)+'\n');
+ await mkdir(`${dir}/admin-config`,{recursive:true});
+ await writeFile(`${dir}/admin-config/repair-models.json`,JSON.stringify({selectionPending:REPAIR_MODEL_SELECTION_PENDING,activeModel:APPROVED_REPAIR_MODEL,supersededModelVersions:SUPERSEDED_REPAIR_MODEL_VERSIONS,previousProposal:PROVISIONAL_REPAIR_MODEL},null,2)+'\n');
+ await writeFile(`${dir}/admin-config/repair-policy-defaults.json`,JSON.stringify(approvedRepairDefaults(),null,2)+'\n');
+ const audit=auditNativeManifest();await writeFile(`${dir}/native-mapping-audit.json`,JSON.stringify(audit,null,2)+'\n');
+ const csv=[['object_id','schema_key','field_id','field_key','merge_key','native_type']];for(const o of manifest.objects)for(const f of Object.values(o.fields))csv.push([o.id,o.schemaKey,f.id,f.key,f.mergeKey,f.uiType]);
+ await writeFile(`${dir}/field-map.csv`,csv.map(row=>row.map(v=>'"'+v.replaceAll('"','""')+'"').join(',')).join('\n')+'\n');
+ console.log(`Exported 8 input schemas, ${samples.length} synthetic examples, 1 observed review example, repair model configuration and 58 native field mappings.`);
+}
+main().catch(()=>{process.exitCode=1;console.error('Native contract export failed.');});

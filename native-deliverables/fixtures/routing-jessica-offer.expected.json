@@ -1,0 +1,10 @@
+{
+  "status": "LOCAL_ROUTE_ONLY",
+  "sellerFacingRole": "Jessica",
+  "backOfficeRole": "Mason",
+  "propertyRecordId": "SYNTHETIC-A",
+  "nextStage": "offer",
+  "outboundEnabled": false,
+  "nurtureOwner": "Alex",
+  "independentFollowupSequence": false
+}

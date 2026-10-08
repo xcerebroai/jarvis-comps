@@ -1,0 +1,208 @@
+{
+  "operation": "prepare",
+  "request": {
+    "offer": {
+      "context": {
+        "locationId": "SesCoVXlNu7qTSBol1gs",
+        "now": "2026-10-07T09:00:00.000Z",
+        "contactId": "SYNTHETIC-seller",
+        "associatedPropertyRecordIds": [
+          "SYNTHETIC-A",
+          "SYNTHETIC-B"
+        ],
+        "contactDnd": false,
+        "contactTakeover": false,
+        "property": {
+          "recordId": "SYNTHETIC-A",
+          "propertyKey": "SYNTHETIC-key-A",
+          "providerPropertyId": "SYNTHETIC-provider-A",
+          "propertyVersion": "v1",
+          "canonicalAddress": "SYNTHETIC Property A",
+          "sourceIdentityReference": "SYNTHETIC-identity",
+          "asset": "house",
+          "currentAnalysisId": "SYNTHETIC-analysis-A",
+          "currentAnalysisVersion": "v1",
+          "held": "false",
+          "humanTakeover": "false",
+          "status": "READY",
+          "holdReason": ""
+        },
+        "analysisRecordId": "SYNTHETIC-analysis-A",
+        "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+        "analysisVersion": "v1",
+        "expectedPropertyVersion": "v1",
+        "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+        "expectedCurrentAnalysisVersion": "v1",
+        "policyRecordId": "SYNTHETIC-policy",
+        "policyVersion": "v1",
+        "sourceVersion": "v1",
+        "eventId": "SYNTHETIC-event"
+      },
+      "packet": {
+        "propertyRecordId": "SYNTHETIC-A",
+        "providerPropertyId": "SYNTHETIC-provider-A",
+        "propertyVersion": "v1",
+        "recipientId": "SYNTHETIC-seller",
+        "asset": "house",
+        "strategy": "wholesale",
+        "priceUsd": 65000,
+        "terms": {
+          "closingDate": "2026-11-01",
+          "depositUsd": 1000,
+          "inspectionDays": 10,
+          "assignmentAllowed": true,
+          "financing": "SYNTHETIC-cash",
+          "sellerConcessionsUsd": 0
+        },
+        "analysisRecordId": "SYNTHETIC-analysis-A",
+        "analysisVersion": "v1",
+        "policyRecordId": "SYNTHETIC-policy",
+        "policyVersion": "v1",
+        "revision": 1
+      },
+      "standing": {
+        "recordId": "SYNTHETIC-policy",
+        "version": "v1",
+        "approvalReference": "SYNTHETIC-approval",
+        "approvedBy": "SYNTHETIC-buyer",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "revoked": false,
+        "propertyRecordId": "SYNTHETIC-A",
+        "recipientId": "SYNTHETIC-seller",
+        "asset": "house",
+        "strategy": "wholesale",
+        "minPriceUsd": 60000,
+        "maxPriceUsd": 67000,
+        "acceptedValuationBases": [
+          "house_verified_market_sales"
+        ],
+        "estimateAcceptanceReference": null,
+        "terms": {
+          "closingDate": "2026-11-01",
+          "depositUsd": 1000,
+          "inspectionDays": 10,
+          "assignmentAllowed": true,
+          "financing": "SYNTHETIC-cash",
+          "sellerConcessionsUsd": 0
+        }
+      },
+      "ceiling": {
+        "recordId": "SYNTHETIC-ceiling",
+        "sourceReference": "SYNTHETIC-approved-economics",
+        "approvedBy": "SYNTHETIC-buyer",
+        "propertyRecordId": "SYNTHETIC-A",
+        "analysisRecordId": "SYNTHETIC-analysis-A",
+        "analysisVersion": "v1",
+        "policyRecordId": "SYNTHETIC-policy",
+        "policyVersion": "v1",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "valuationBasis": "house_verified_market_sales",
+        "ceilingUsd": 68000
+      },
+      "analysis": {
+        "recordId": "SYNTHETIC-analysis-A",
+        "propertyRecordId": "SYNTHETIC-A",
+        "version": "v1",
+        "policyRecordId": "SYNTHETIC-policy",
+        "policyVersion": "v1",
+        "completionState": "COMPLETE",
+        "status": "READY",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "valuationBasis": "house_verified_market_sales",
+        "estimateAcceptanceReference": null,
+        "evidenceReadbackReference": "SYNTHETIC-readback"
+      },
+      "previousPacket": null
+    },
+    "fields": {
+      "jurisdiction": "SYNTHETIC-jurisdiction",
+      "templateId": "SYNTHETIC-template",
+      "templateVersion": "v1",
+      "templateApprovalReference": "SYNTHETIC-approval",
+      "buyerLegalEntity": "SYNTHETIC-buyer",
+      "buyerAuthorityReference": "SYNTHETIC-authority",
+      "ownershipReference": "SYNTHETIC-ownership",
+      "legalDescription": "SYNTHETIC-legal-description",
+      "parcelReference": "SYNTHETIC-parcel",
+      "titleEscrow": "SYNTHETIC-title",
+      "closingInstructionsReference": "SYNTHETIC-closing",
+      "senderId": "SYNTHETIC-sender",
+      "deliveryConsentReference": "SYNTHETIC-consent"
+    },
+    "signers": [
+      {
+        "id": "SYNTHETIC-buyer",
+        "role": "buyer",
+        "legalName": "SYNTHETIC Buyer",
+        "authorityReference": "SYNTHETIC-authority",
+        "contactId": "SYNTHETIC-buyer-contact",
+        "email": "buyer@example.invalid"
+      },
+      {
+        "id": "SYNTHETIC-seller",
+        "role": "seller",
+        "legalName": "SYNTHETIC Seller",
+        "authorityReference": "SYNTHETIC-ownership",
+        "contactId": "SYNTHETIC-seller",
+        "email": "seller@example.invalid"
+      }
+    ],
+    "draftReadback": {
+      "packet": {
+        "propertyRecordId": "SYNTHETIC-A",
+        "providerPropertyId": "SYNTHETIC-provider-A",
+        "propertyVersion": "v1",
+        "recipientId": "SYNTHETIC-seller",
+        "asset": "house",
+        "strategy": "wholesale",
+        "priceUsd": 65000,
+        "terms": {
+          "closingDate": "2026-11-01",
+          "depositUsd": 1000,
+          "inspectionDays": 10,
+          "assignmentAllowed": true,
+          "financing": "SYNTHETIC-cash",
+          "sellerConcessionsUsd": 0
+        },
+        "analysisRecordId": "SYNTHETIC-analysis-A",
+        "analysisVersion": "v1",
+        "policyRecordId": "SYNTHETIC-policy",
+        "policyVersion": "v1",
+        "revision": 1
+      },
+      "fields": {
+        "jurisdiction": "SYNTHETIC-jurisdiction",
+        "templateId": "SYNTHETIC-template",
+        "templateVersion": "v1",
+        "templateApprovalReference": "SYNTHETIC-approval",
+        "buyerLegalEntity": "SYNTHETIC-buyer",
+        "buyerAuthorityReference": "SYNTHETIC-authority",
+        "ownershipReference": "SYNTHETIC-ownership",
+        "legalDescription": "SYNTHETIC-legal-description",
+        "parcelReference": "SYNTHETIC-parcel",
+        "titleEscrow": "SYNTHETIC-title",
+        "closingInstructionsReference": "SYNTHETIC-closing",
+        "senderId": "SYNTHETIC-sender",
+        "deliveryConsentReference": "SYNTHETIC-consent"
+      },
+      "signers": [
+        {
+          "id": "SYNTHETIC-buyer",
+          "role": "buyer",
+          "legalName": "SYNTHETIC Buyer",
+          "authorityReference": "SYNTHETIC-authority",
+          "contactId": "SYNTHETIC-buyer-contact",
+          "email": "buyer@example.invalid"
+        },
+        {
+          "id": "SYNTHETIC-seller",
+          "role": "seller",
+          "legalName": "SYNTHETIC Seller",
+          "authorityReference": "SYNTHETIC-ownership",
+          "contactId": "SYNTHETIC-seller",
+          "email": "seller@example.invalid"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,359 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "locationId": {
+      "type": "string",
+      "const": "SesCoVXlNu7qTSBol1gs"
+    },
+    "agency": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "actor": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200,
+      "pattern": "^[A-Za-z0-9_.:-]+$"
+    },
+    "apiVersion": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "storageMode": {
+      "type": "string",
+      "enum": [
+        "json_envelopes",
+        "installed_fields"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "schemaKey": {
+          "type": "string",
+          "pattern": "^custom_objects\\.[a-z0-9_]+$"
+        },
+        "payloadField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "keyField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      },
+      "required": [
+        "schemaKey",
+        "payloadField",
+        "keyField"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "schemaKey": {
+          "type": "string",
+          "pattern": "^custom_objects\\.[a-z0-9_]+$"
+        },
+        "payloadField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      },
+      "required": [
+        "schemaKey"
+      ],
+      "additionalProperties": false
+    },
+    "offer": {
+      "type": "object",
+      "properties": {
+        "schemaKey": {
+          "type": "string",
+          "pattern": "^custom_objects\\.[a-z0-9_]+$"
+        },
+        "payloadField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      },
+      "required": [
+        "schemaKey"
+      ],
+      "additionalProperties": false
+    },
+    "installedFields": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "policyConfigurationScope": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "approvedOfferStates": {
+              "minItems": 1,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              }
+            },
+            "ceilingSchema": {
+              "type": "string",
+              "const": "custom_objects.jarvis_acq_sourced_ceilings"
+            },
+            "contextEventType": {
+              "type": "string",
+              "const": "QUOTE_CONTEXT_SNAPSHOT"
+            },
+            "quoteEventType": {
+              "type": "string",
+              "const": "QUOTE_DECISION_RECORDED"
+            }
+          },
+          "required": [
+            "policyConfigurationScope",
+            "approvedOfferStates",
+            "ceilingSchema",
+            "contextEventType",
+            "quoteEventType"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "quote": {
+      "type": "object",
+      "properties": {
+        "schemaKey": {
+          "type": "string",
+          "pattern": "^custom_objects\\.[a-z0-9_]+$"
+        },
+        "payloadField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "keyField": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "uniqueRequestKeyVerified": {
+          "type": "boolean",
+          "const": true
+        },
+        "uniqueConstraintReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "maxPayloadBytes": {
+          "type": "integer",
+          "minimum": 1024,
+          "maximum": 100000
+        }
+      },
+      "required": [
+        "schemaKey",
+        "payloadField",
+        "keyField",
+        "uniqueRequestKeyVerified",
+        "uniqueConstraintReference",
+        "maxPayloadBytes"
+      ],
+      "additionalProperties": false
+    },
+    "contact": {
+      "type": "object",
+      "properties": {
+        "dndPath": {
+          "minItems": 1,
+          "maxItems": 6,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+          }
+        },
+        "voiceDndPath": {
+          "anyOf": [
+            {
+              "minItems": 1,
+              "maxItems": 6,
+              "type": "array",
+              "items": {
+                "type": "string",
+                "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+              }
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "takeoverCustomFieldId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "customFieldsPath": {
+          "minItems": 1,
+          "maxItems": 6,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+          }
+        },
+        "customFieldIdKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "customFieldValueKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      },
+      "required": [
+        "dndPath",
+        "voiceDndPath",
+        "takeoverCustomFieldId",
+        "customFieldsPath",
+        "customFieldIdKey",
+        "customFieldValueKey"
+      ],
+      "additionalProperties": false
+    },
+    "relations": {
+      "type": "object",
+      "properties": {
+        "sellerPropertyAssociationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "analysisPropertyAssociationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "evidenceAnalysisAssociationId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "arrayPath": {
+          "minItems": 1,
+          "maxItems": 6,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+          }
+        },
+        "associationIdKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "firstRecordIdKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        },
+        "secondRecordIdKey": {
+          "type": "string",
+          "pattern": "^[A-Za-z_][A-Za-z0-9_]*$"
+        }
+      },
+      "required": [
+        "sellerPropertyAssociationId",
+        "analysisPropertyAssociationId",
+        "evidenceAnalysisAssociationId",
+        "arrayPath",
+        "associationIdKey",
+        "firstRecordIdKey",
+        "secondRecordIdKey"
+      ],
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "fieldMappingReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "readScopeReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "writeScopeReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "restrictedWritersReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "searchAndPagingReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "contactHoldReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "relationShapeReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        }
+      },
+      "required": [
+        "fieldMappingReference",
+        "readScopeReference",
+        "writeScopeReference",
+        "restrictedWritersReference",
+        "searchAndPagingReference",
+        "contactHoldReference",
+        "relationShapeReference"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "locationId",
+    "agency",
+    "actor",
+    "apiVersion",
+    "storageMode",
+    "context",
+    "policy",
+    "offer",
+    "installedFields",
+    "quote",
+    "contact",
+    "relations",
+    "verification"
+  ],
+  "additionalProperties": false
+}

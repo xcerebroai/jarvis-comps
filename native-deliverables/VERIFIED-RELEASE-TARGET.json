@@ -1,0 +1,189 @@
+{
+  "project": {
+    "id": "prj_ys4scGuUFNnN3NzRZk35TnDc3769",
+    "name": "jarvis-comps",
+    "accountId": "team_x5LipbWeQrp3d3sohlvRcieQ",
+    "framework": "nextjs",
+    "nodeVersion": "24.x",
+    "link": null,
+    "targets": {}
+  },
+  "deployment": {
+    "id": "dpl_9mW5aCk84qr6ye6SzCeEgtbCPEEX",
+    "url": "jarvis-comps-gf30h6wbu-deftones420xs-projects.vercel.app",
+    "name": "jarvis-comps",
+    "readyState": "READY",
+    "target": "production",
+    "alias": [
+      "comps.xcerebro.ai",
+      "jarvis-comps.vercel.app",
+      "jarvis-comps-deftones420xs-projects.vercel.app",
+      "jarvis-comps-git-codex-acquisitio-465c0c-deftones420xs-projects.vercel.app"
+    ],
+    "meta": {
+      "githubCommitSha": "74e394548186986198baa0bddab787b294d21f0f",
+      "githubCommitRef": "codex/acquisitions-headless"
+    }
+  },
+  "environmentNames": [
+    {
+      "key": "DATABASE_URL",
+      "type": "sensitive",
+      "target": [
+        "preview"
+      ],
+      "gitBranch": "codex/acquisitions-readonly-analysis"
+    },
+    {
+      "key": "VITE_NEON_AUTH_URL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_DATABASE",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "NEON_PROJECT_ID",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_URL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "PGPASSWORD",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_USER",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_URL_NON_POOLING",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_URL_NO_SSL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "PGDATABASE",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "DATABASE_URL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "PGUSER",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "PGHOST",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "NEON_AUTH_BASE_URL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_PRISMA_URL",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "PGHOST_UNPOOLED",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_PASSWORD",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "DATABASE_URL_UNPOOLED",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "POSTGRES_HOST",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "SESSION_SECRET",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    },
+    {
+      "key": "DEALMACHINE_API_KEY",
+      "type": "sensitive",
+      "target": [
+        "production"
+      ]
+    }
+  ],
+  "hiddenProductionEnvCount": 0,
+  "readScope": "project ID with connector default scope",
+  "secretValuesRead": false,
+  "providerCallsMade": false,
+  "ghlCallsMade": false,
+  "remoteHeads": {
+    "main": "c0f6722c60e1dfdd908ed4b1d870a35b7adeeb50",
+    "codex/acquisitions-headless": "74e394548186986198baa0bddab787b294d21f0f",
+    "codex/acquisitions-readonly-analysis": "4084e22c514a8bdf2dbfdc64c557a400feb256dd"
+  },
+  "publicationPerformed": false
+}

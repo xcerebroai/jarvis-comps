@@ -1,0 +1,43 @@
+{
+  "sourceTask": "2026-10-07/task-3",
+  "importKind": "sanitized_observed_artifacts_only",
+  "sourceSchema": "jarvis.observed-dealmachine.v1",
+  "requestLedgerNotReconciledHere": true,
+  "files": [
+    {
+      "path": "address-matched-projection.json",
+      "bytes": 1019,
+      "sha256": "a97358a6cb2907fb1a7b21b3fe3953d334ab9851737d8204a229a48aab73c540"
+    },
+    {
+      "path": "address-response-sanitized.json",
+      "bytes": 562,
+      "sha256": "38d921fb871ddd19f01667daa1d9eb0d9d401081e737a2cc8001f638edc099a6"
+    },
+    {
+      "path": "comps-response-projection.json",
+      "bytes": 2329,
+      "sha256": "2e59d2b9cac5d45a425294f3d50a67add0215caddf711ec62f066ba5f54673da"
+    },
+    {
+      "path": "provider-mapping/observed-provider-adapter.mjs",
+      "bytes": 12563,
+      "sha256": "ae31a7aae5b5ff208ef3231f01c57e1080e117782ad2804bea3b83ed9fa3664e"
+    },
+    {
+      "path": "provider-mapping/observed-provider-adapter.test.mjs",
+      "bytes": 16968,
+      "sha256": "ca0a514419f905587f4d2bc03a49ea52dc87f58f1daae8fe74dce9ac3b463e12"
+    },
+    {
+      "path": "provider-mapping/README.md",
+      "bytes": 6035,
+      "sha256": "d747abce3fcaf88afea0ee853a55eb57da7c3c289fa9ff07d06b3f410b7da668"
+    },
+    {
+      "path": "provider-mapping/VERIFICATION.md",
+      "bytes": 1964,
+      "sha256": "1075d16a377f87002c40f798578f43972da719f70b6f5b9d87593ed6e620338a"
+    }
+  ]
+}

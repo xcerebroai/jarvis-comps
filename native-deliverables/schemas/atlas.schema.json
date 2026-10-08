@@ -1,0 +1,922 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "contract": {
+      "type": "string",
+      "const": "jarvis.normalized-analysis.v2"
+    },
+    "mode": {
+      "type": "string",
+      "enum": [
+        "real",
+        "synthetic_fixture"
+      ]
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "locationId": {
+          "type": "string",
+          "const": "SesCoVXlNu7qTSBol1gs"
+        },
+        "now": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "contactId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "associatedPropertyRecordIds": {
+          "minItems": 1,
+          "maxItems": 100,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          }
+        },
+        "contactDnd": {
+          "type": "boolean"
+        },
+        "contactTakeover": {
+          "type": "boolean"
+        },
+        "property": {
+          "type": "object",
+          "properties": {
+            "recordId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "propertyKey": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "providerPropertyId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "propertyVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "canonicalAddress": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "sourceIdentityReference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "asset": {
+              "type": "string",
+              "enum": [
+                "house",
+                "land",
+                "small_multifamily",
+                "commercial_multifamily"
+              ]
+            },
+            "currentAnalysisId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                {
+                  "type": "string",
+                  "const": ""
+                }
+              ]
+            },
+            "currentAnalysisVersion": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 200,
+                  "pattern": "^[A-Za-z0-9_.:-]+$"
+                },
+                {
+                  "type": "string",
+                  "const": ""
+                }
+              ]
+            },
+            "held": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "humanTakeover": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ]
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "UNQUALIFIED",
+                "READY",
+                "HELD",
+                "UNDER_CONTRACT"
+              ]
+            },
+            "holdReason": {
+              "type": "string",
+              "maxLength": 500
+            }
+          },
+          "required": [
+            "recordId",
+            "propertyKey",
+            "providerPropertyId",
+            "propertyVersion",
+            "canonicalAddress",
+            "sourceIdentityReference",
+            "asset",
+            "currentAnalysisId",
+            "currentAnalysisVersion",
+            "held",
+            "humanTakeover",
+            "status",
+            "holdReason"
+          ],
+          "additionalProperties": false
+        },
+        "analysisRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "analysisKey": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000
+        },
+        "analysisVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expectedPropertyVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expectedCurrentAnalysisId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            {
+              "type": "string",
+              "const": ""
+            }
+          ]
+        },
+        "expectedCurrentAnalysisVersion": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            {
+              "type": "string",
+              "const": ""
+            }
+          ]
+        },
+        "policyRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "policyVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "sourceVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "eventId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        }
+      },
+      "required": [
+        "locationId",
+        "now",
+        "contactId",
+        "associatedPropertyRecordIds",
+        "contactDnd",
+        "contactTakeover",
+        "property",
+        "analysisRecordId",
+        "analysisKey",
+        "analysisVersion",
+        "expectedPropertyVersion",
+        "expectedCurrentAnalysisId",
+        "expectedCurrentAnalysisVersion",
+        "policyRecordId",
+        "policyVersion",
+        "sourceVersion",
+        "eventId"
+      ],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "recordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "approvalReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "approvedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "revoked": {
+          "type": "boolean"
+        },
+        "compPriceBasis": {
+          "type": "string",
+          "enum": [
+            "verified_recorded_sales",
+            "provider_estimated_comps"
+          ]
+        },
+        "estimateAcceptanceReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimatedSaleTypes": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "maxAgeDays": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maxSourceAgeHours": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "radiusMiles": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sizeTolerance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.999999
+        },
+        "minComps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "verifiedSaleTypes": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "houseBasis": {
+          "type": "string",
+          "enum": [
+            "comparable_market_value",
+            "renovated_arv",
+            "estimated_arv_proxy"
+          ]
+        },
+        "maxIncomeSalesDifference": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.999999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "crosscheckApprovalReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "recordId",
+        "version",
+        "approvalReference",
+        "approvedBy",
+        "expiresAt",
+        "revoked",
+        "compPriceBasis",
+        "estimateAcceptanceReference",
+        "estimatedSaleTypes",
+        "maxAgeDays",
+        "maxSourceAgeHours",
+        "radiusMiles",
+        "sizeTolerance",
+        "minComps",
+        "verifiedSaleTypes",
+        "houseBasis",
+        "maxIncomeSalesDifference",
+        "crosscheckApprovalReference"
+      ],
+      "additionalProperties": false
+    },
+    "sourceContract": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "verificationReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        }
+      },
+      "required": [
+        "id",
+        "verificationReference"
+      ],
+      "additionalProperties": false
+    },
+    "subject": {
+      "type": "object",
+      "properties": {
+        "providerPropertyId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "identityReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "canonicalAddress": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "propertyType": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "asset": {
+          "type": "string",
+          "enum": [
+            "house",
+            "land",
+            "small_multifamily",
+            "commercial_multifamily"
+          ]
+        },
+        "sqft": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "acres": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "units": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "exclusiveMinimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "parcel": {
+          "anyOf": [
+            {
+              "type": "object",
+              "properties": {
+                "zoning": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "legalAccess": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "utilities": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "floodStatus": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                },
+                "boundaryReference": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 500
+                }
+              },
+              "required": [
+                "zoning",
+                "legalAccess",
+                "utilities",
+                "floodStatus",
+                "boundaryReference"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "source": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "reference": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            "retrievedAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            },
+            "expiresAt": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+            },
+            "contractVersion": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200,
+              "pattern": "^[A-Za-z0-9_.:-]+$"
+            },
+            "synthetic": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "provider",
+            "reference",
+            "retrievedAt",
+            "expiresAt",
+            "contractVersion",
+            "synthetic"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "providerPropertyId",
+        "identityReference",
+        "canonicalAddress",
+        "propertyType",
+        "asset",
+        "sqft",
+        "acres",
+        "units",
+        "parcel",
+        "source"
+      ],
+      "additionalProperties": false
+    },
+    "comps": {
+      "maxItems": 100,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200,
+            "pattern": "^[A-Za-z0-9_.:-]+$"
+          },
+          "ordinal": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "displayAddress": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "propertyType": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "salePriceUsd": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string",
+                "maxLength": 100
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "estimatedPriceUsd": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "priceKind": {
+            "type": "string",
+            "enum": [
+              "RECORDED",
+              "ESTIMATED",
+              "UNKNOWN"
+            ]
+          },
+          "saleDate": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "saleType": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "saleVerified": {
+            "type": "boolean"
+          },
+          "renovatedComparable": {
+            "type": "boolean"
+          },
+          "distanceMiles": {
+            "type": "number",
+            "minimum": 0
+          },
+          "sqft": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "acres": {
+            "anyOf": [
+              {
+                "type": "number",
+                "minimum": 0
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "units": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "exclusiveMinimum": 0,
+                "maximum": 9007199254740991
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "parcel": {
+            "anyOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "zoning": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "legalAccess": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "utilities": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "floodStatus": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  },
+                  "boundaryReference": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 500
+                  }
+                },
+                "required": [
+                  "zoning",
+                  "legalAccess",
+                  "utilities",
+                  "floodStatus",
+                  "boundaryReference"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "retrievedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+              },
+              "expiresAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+              },
+              "contractVersion": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "synthetic": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "provider",
+              "reference",
+              "retrievedAt",
+              "expiresAt",
+              "contractVersion",
+              "synthetic"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "ordinal",
+          "displayAddress",
+          "propertyType",
+          "salePriceUsd",
+          "priceKind",
+          "saleDate",
+          "saleType",
+          "saleVerified",
+          "renovatedComparable",
+          "distanceMiles",
+          "sqft",
+          "acres",
+          "units",
+          "parcel",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "facts": {
+      "maxItems": 5,
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "enum": [
+              "grossScheduledAnnualRent",
+              "vacancyRate",
+              "annualOperatingExpenses",
+              "capRate",
+              "immediateCapitalWork"
+            ]
+          },
+          "value": {
+            "type": "number",
+            "minimum": 0
+          },
+          "unit": {
+            "type": "string",
+            "enum": [
+              "USD/year",
+              "USD",
+              "ratio"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "provider": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "reference": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 500
+              },
+              "retrievedAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+              },
+              "expiresAt": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+              },
+              "contractVersion": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 200,
+                "pattern": "^[A-Za-z0-9_.:-]+$"
+              },
+              "synthetic": {
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "provider",
+              "reference",
+              "retrievedAt",
+              "expiresAt",
+              "contractVersion",
+              "synthetic"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "name",
+          "value",
+          "unit",
+          "source"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "contract",
+    "mode",
+    "context",
+    "policy",
+    "sourceContract",
+    "subject",
+    "comps",
+    "facts"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,914 @@
+{
+  "locationId": "SesCoVXlNu7qTSBol1gs",
+  "objects": {
+    "custom_objects.jarvis_acq_properties": {
+      "id": "6ac5a3fd9c2e1ab4b33524ca",
+      "logicalKey": "property_key",
+      "uiUnique": true,
+      "fields": {
+        "source_identity_ref": {
+          "id": "sp2FtOvQKu4nxpMs7Rk6",
+          "type": "Single line"
+        },
+        "asset": {
+          "id": "64r31cYAOedH54nY4zYX",
+          "type": "Single line"
+        },
+        "canonical_address": {
+          "id": "pQikqcFEZRe5ncdj9r4g",
+          "type": "Single line"
+        },
+        "provider_property_id": {
+          "id": "FalTmYl1iH2zutgJ2dhk",
+          "type": "Single line"
+        },
+        "property_key": {
+          "id": "XplY0S33KIjn4ZwlSr8w",
+          "type": "Single line"
+        },
+        "held": {
+          "id": "pfcckpDT5xFXC7khkQbE",
+          "type": "Single line"
+        },
+        "property_version": {
+          "id": "sqvE7N1NuQvsrF743NO1",
+          "type": "Single line"
+        },
+        "current_analysis_id": {
+          "id": "oDCuWEhoU4pZDVdOZC1L",
+          "type": "Single line"
+        },
+        "hold_reason": {
+          "id": "18L9eOxChzVv732wzjkD",
+          "type": "Single line"
+        },
+        "human_takeover": {
+          "id": "6TDefImbLCv40YFrKTON",
+          "type": "Single line"
+        },
+        "status": {
+          "id": "GOnDKefMYe4zGPAg8H0Q",
+          "type": "Single line"
+        },
+        "current_analysis_version": {
+          "id": "4pM4GJeQ4la0xj9hhjVu",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_analyses": {
+      "id": "6ac5a4b55637e713b2f0bdaf",
+      "logicalKey": "analysis_key",
+      "uiUnique": true,
+      "fields": {
+        "policy_version": {
+          "id": "srSo4MUj6HmCY3ytthUS",
+          "type": "Single line"
+        },
+        "policy_id": {
+          "id": "KfTcLElwiJaeKjcFPr4P",
+          "type": "Single line"
+        },
+        "property_key": {
+          "id": "UPVLGpFbJPl93tGRQ1pe",
+          "type": "Single line"
+        },
+        "provider_property_id": {
+          "id": "KME6QRtlwJhHMVYUTPEf",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "FH7pkDmG1Nqa68HyAmx4",
+          "type": "Single line"
+        },
+        "analysis_version": {
+          "id": "IPDx9algUW8G2H5mIJsV",
+          "type": "Single line"
+        },
+        "analysis_key": {
+          "id": "4ngnzzVb8PIcV585IdZB",
+          "type": "Single line"
+        },
+        "expected_evidence_count": {
+          "id": "DgFM3Cg6CuGxuFIJrGbE",
+          "type": "Number"
+        },
+        "rejected_count": {
+          "id": "kG6PTxWMI5cRsMWjr2bd",
+          "type": "Number"
+        },
+        "accepted_count": {
+          "id": "QcdSpALjPqJY88LlCe0u",
+          "type": "Number"
+        },
+        "public_value_usd": {
+          "id": "TwKaKptIN3n8bBLuvRL4",
+          "type": "Number"
+        },
+        "basis": {
+          "id": "Gu44XY0WM05KCisNbgw3",
+          "type": "Single line"
+        },
+        "status": {
+          "id": "GLKO9LGcKDmXya8Ro4ok",
+          "type": "Single line"
+        },
+        "expires_at": {
+          "id": "k7jl7YjsRPyrSWdL0dw7",
+          "type": "Single line"
+        },
+        "retrieved_at": {
+          "id": "MtKxLD3wqk2bQ4K5FNzl",
+          "type": "Single line"
+        },
+        "source_reference": {
+          "id": "CS0sgUOlmh0IifR64qNe",
+          "type": "Single line"
+        },
+        "source_version": {
+          "id": "ZOagl0xtHgCXjhnkyqU1",
+          "type": "Single line"
+        },
+        "completion_state": {
+          "id": "F09PLlynkfWkAuqDd6hI",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_analysis_evidence_rows": {
+      "id": "6ac5a54987e0869402700fa2",
+      "logicalKey": "evidence_key",
+      "uiUnique": true,
+      "fields": {
+        "property_type": {
+          "id": "J15jlesvhSewkbbFVUcP",
+          "type": "Single line"
+        },
+        "distance_miles": {
+          "id": "wJZy5sX1336EtaZPzCJV",
+          "type": "Number"
+        },
+        "sqft": {
+          "id": "FAIcwiEL5JvBHqTzbIfH",
+          "type": "Number"
+        },
+        "sale_price_usd": {
+          "id": "R7kGEPIGMVMw9G7dFit7",
+          "type": "Number"
+        },
+        "provider_row_ordinal": {
+          "id": "jSxrQKeafheGsEGVs3nH",
+          "type": "Number"
+        },
+        "sale_date": {
+          "id": "rZiT8NUVTs3ThDX5DaLD",
+          "type": "Single line"
+        },
+        "sale_type": {
+          "id": "jAuPwb2neiyWKCwW9cm9",
+          "type": "Single line"
+        },
+        "row_kind": {
+          "id": "T14PtwxwvU06sIMG8J83",
+          "type": "Single line"
+        },
+        "exclusion_codes": {
+          "id": "dLxnzof4xdbc4wh4hAxN",
+          "type": "Single line"
+        },
+        "selection": {
+          "id": "rYAZbgNCO6vlFWiuhcjT",
+          "type": "Single line"
+        },
+        "source_property_id": {
+          "id": "cnsSoK0R37phmE97a8iR",
+          "type": "Single line"
+        },
+        "endpoint_contract_version": {
+          "id": "ZVVux4Ce2zoo25fwHTHD",
+          "type": "Single line"
+        },
+        "expires_at": {
+          "id": "BBZ3tikm0lKWeQgzd5ym",
+          "type": "Single line"
+        },
+        "retrieved_at": {
+          "id": "4rseqx7ILvU9tXZ9zIec",
+          "type": "Single line"
+        },
+        "source_reference": {
+          "id": "shwlxjIGNxVvRFWsjDUF",
+          "type": "Single line"
+        },
+        "source_provider": {
+          "id": "tu3xOzoCw8BtCkNzqlz0",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "4jJIy9fT3m21rm00bf74",
+          "type": "Single line"
+        },
+        "analysis_version": {
+          "id": "hvFz3V1FojYVdVWOfjZL",
+          "type": "Single line"
+        },
+        "analysis_key": {
+          "id": "UQ5Xf2hI3OkNtNmKX9MV",
+          "type": "Single line"
+        },
+        "analysis_record_id": {
+          "id": "ufoJOWUvacCFwxITYJcB",
+          "type": "Single line"
+        },
+        "evidence_key": {
+          "id": "sxtKuYXx7WskpjD6oXAy",
+          "type": "Single line"
+        },
+        "fact_value_text": {
+          "id": "QFQYs7J76DzgPhqsjuO4",
+          "type": "Single line"
+        },
+        "fact_unit": {
+          "id": "kfq2Qq4JszbFG1U4rnz8",
+          "type": "Single line"
+        },
+        "fact_value_number": {
+          "id": "RcASjvPqiHERksMa5hN4",
+          "type": "Number"
+        },
+        "fact_name": {
+          "id": "YK1FdFBvRo0TTPqX07cD",
+          "type": "Single line"
+        },
+        "display_address": {
+          "id": "2P7k8aKSmjFJ5nW1GmY2",
+          "type": "Single line"
+        },
+        "lot_unit": {
+          "id": "0M7Mg6Jn0czzov7R4DiD",
+          "type": "Single line"
+        },
+        "lot_size": {
+          "id": "SdxIpJF565MO2ARkAzdi",
+          "type": "Number"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_policies": {
+      "id": "6ac6d4b2af19b2b02f0c2e1c",
+      "logicalKey": "policy_key",
+      "uiUnique": true,
+      "fields": {
+        "max_income_sales_difference": {
+          "id": "2T3dlDEnC12sLdWTHP0Z",
+          "type": "Number"
+        },
+        "min_comps": {
+          "id": "TiXgDbA8G7yicVBUWINo",
+          "type": "Number"
+        },
+        "size_tolerance": {
+          "id": "GIvBY868ujV1X0LeIq7w",
+          "type": "Number"
+        },
+        "radius_miles": {
+          "id": "QPvfKzTp3lFpqWnccb4t",
+          "type": "Number"
+        },
+        "max_source_age_hours": {
+          "id": "4YT3lxFNjy6x9hDQuicO",
+          "type": "Number"
+        },
+        "max_age_days": {
+          "id": "mciIGSWhH4PYsqFqpsGQ",
+          "type": "Number"
+        },
+        "house_basis": {
+          "id": "MkAuuDYsWc8bfsEYnkye",
+          "type": "Single line"
+        },
+        "comp_price_basis": {
+          "id": "FkjgyA8Rm8aOk1iFxL5r",
+          "type": "Single line"
+        },
+        "contingency_heavy_bps": {
+          "id": "F3y2JHVEUL2jWFqrQk5p",
+          "type": "Number"
+        },
+        "contingency_medium_bps": {
+          "id": "iE9yoEZ0qFh8NmZFQlTW",
+          "type": "Number"
+        },
+        "contingency_light_bps": {
+          "id": "xuLAXzW6GiMV3EhUM9Cd",
+          "type": "Number"
+        },
+        "repair_heavy_usd_per_sqft": {
+          "id": "0X53bztiam3GP1DYIyNj",
+          "type": "Number"
+        },
+        "repair_medium_usd_per_sqft": {
+          "id": "OK3fM9nFl3DnNsgrhhWa",
+          "type": "Number"
+        },
+        "repair_light_usd_per_sqft": {
+          "id": "zmxQa0xTHioos7Kc4pdc",
+          "type": "Number"
+        },
+        "repair_rates_reference": {
+          "id": "bkToSN1yvuJ0O8kLHWUF",
+          "type": "Single line"
+        },
+        "crosscheck_approval_reference": {
+          "id": "nUHSaN4vRs1kcDI7roqw",
+          "type": "Single line"
+        },
+        "repair_model_version": {
+          "id": "DaQwVuEIAlWgB8ccGNI6",
+          "type": "Single line"
+        },
+        "estimate_acceptance_reference": {
+          "id": "7VWiZqJANjs0CKaIxo11",
+          "type": "Single line"
+        },
+        "seller_concessions_usd": {
+          "id": "TUJARyAZvUQigfveDK7E",
+          "type": "Number"
+        },
+        "financing": {
+          "id": "Nd6XI1Rnr4KrN1fhtz0s",
+          "type": "Single line"
+        },
+        "deposit_usd": {
+          "id": "oyWEAXyIxD9Rrkyf9NDH",
+          "type": "Number"
+        },
+        "closing_date": {
+          "id": "2NoYPl2CsdqzGoGYBR35",
+          "type": "Single line"
+        },
+        "max_price_usd": {
+          "id": "lCAapgxeE8DnhfycQKZb",
+          "type": "Number"
+        },
+        "min_price_usd": {
+          "id": "MetBpAIMWqgeSZyzpjMg",
+          "type": "Number"
+        },
+        "strategy": {
+          "id": "s02HBVruQzWsT9jEOCAV",
+          "type": "Single line"
+        },
+        "asset": {
+          "id": "0mTn9Io3s2GBfWaykoMP",
+          "type": "Single line"
+        },
+        "recipient_id": {
+          "id": "jfTfy584adwqmRULTc5v",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "pepMtznjenpQ1pwjL6Nn",
+          "type": "Single line"
+        },
+        "revoked": {
+          "id": "AB6ssd1yfVFYgqDTtQXR",
+          "type": "Single line"
+        },
+        "expires_at": {
+          "id": "T9lUqUmbtXg0Q0wtDJ5f",
+          "type": "Single line"
+        },
+        "approved_by": {
+          "id": "uageUqELoeLWVwRL0eD4",
+          "type": "Single line"
+        },
+        "approval_reference": {
+          "id": "MxozJCFP9CuJaWen3iy8",
+          "type": "Single line"
+        },
+        "version": {
+          "id": "usgTyOhOSaeTHvvgQqRk",
+          "type": "Single line"
+        },
+        "policy_key": {
+          "id": "kXFue1w2pa9NmvxKXwiU",
+          "type": "Single line"
+        },
+        "assignment_allowed": {
+          "id": "2oHl0urB2Z13IHFWCivH",
+          "type": "Single line"
+        },
+        "inspection_days": {
+          "id": "7vXJJAkVNO15aEjI0Owc",
+          "type": "Number"
+        },
+        "configuration_scope": {
+          "id": "0gJPwbDOCZckvI7AaMdJ",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_offers": {
+      "id": "6ac6d4d1af19b2b02f0c2f30",
+      "logicalKey": "packet_key",
+      "uiUnique": true,
+      "fields": {
+        "packet_key": {
+          "id": "7IhJpYFsSoluwpirnqF8",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "7GDaipjM3PQVIUevKwLa",
+          "type": "Single line"
+        },
+        "provider_property_id": {
+          "id": "ioMr113TzRaPCfQUn6cG",
+          "type": "Single line"
+        },
+        "property_version": {
+          "id": "4peJf1qdHzR5ZNMnZI6x",
+          "type": "Single line"
+        },
+        "recipient_id": {
+          "id": "pdWXDKOr0UH25lQnZOKW",
+          "type": "Single line"
+        },
+        "asset": {
+          "id": "uOCkOieLoFua7FmXBms7",
+          "type": "Single line"
+        },
+        "strategy": {
+          "id": "jmKpmsr8RzXwBn5qCNmN",
+          "type": "Single line"
+        },
+        "analysis_record_id": {
+          "id": "ONpkTXItpQDexov49Ef1",
+          "type": "Single line"
+        },
+        "analysis_version": {
+          "id": "F6zBZe34VnlsoWOzXrpC",
+          "type": "Single line"
+        },
+        "policy_record_id": {
+          "id": "PAkzG8WLgCRax0BLykwG",
+          "type": "Single line"
+        },
+        "policy_version": {
+          "id": "Ta6sOa2oeYH2lc7f5QCX",
+          "type": "Single line"
+        },
+        "price_usd": {
+          "id": "b6MTJF10dnv3cDo9Gp1q",
+          "type": "Number"
+        },
+        "deposit_usd": {
+          "id": "AQmAA5tXEpKom1yVHA73",
+          "type": "Number"
+        },
+        "inspection_days": {
+          "id": "7BMmqXAcsbD4hSEoPrt0",
+          "type": "Number"
+        },
+        "seller_concessions_usd": {
+          "id": "OahlS3tWYBv0CPlFhXO1",
+          "type": "Number"
+        },
+        "revision": {
+          "id": "fuVzz2snQXIqQPw5glkl",
+          "type": "Number"
+        },
+        "closing_date": {
+          "id": "XlmOE9OjibHKBvF8mNK9",
+          "type": "Single line"
+        },
+        "assignment_allowed": {
+          "id": "yutzTWKrWtzRoJUETG3z",
+          "type": "Single line"
+        },
+        "financing": {
+          "id": "iPpW5EwJ86RDHm7uEDj7",
+          "type": "Single line"
+        },
+        "approval_state": {
+          "id": "XoXWiqO1eJBmFHLwENJ1",
+          "type": "Single line"
+        },
+        "reservation_state": {
+          "id": "N4rnik6f249o78qGqbFl",
+          "type": "Single line"
+        },
+        "delivery_state": {
+          "id": "0E45yhIXBgTCaKdwn5uk",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_contracts": {
+      "id": "6ac6d4d60ee94059c65318fa",
+      "logicalKey": "contract_key",
+      "uiUnique": true,
+      "fields": {
+        "contract_key": {
+          "id": "V0Lqde3tpjWQPpYxfh7C",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "wD1ZoPEd2xUaDmCZNXZo",
+          "type": "Single line"
+        },
+        "provider_property_id": {
+          "id": "6Rxd46ZguQnKXY80zYtP",
+          "type": "Single line"
+        },
+        "recipient_id": {
+          "id": "1y7fbCqJd9ByGG7PHbf6",
+          "type": "Single line"
+        },
+        "packet_key": {
+          "id": "UIn0kpFW66TVzZVsNkme",
+          "type": "Single line"
+        },
+        "document_id": {
+          "id": "hDYYYL9VD3SaCjTHmFOv",
+          "type": "Single line"
+        },
+        "document_revision": {
+          "id": "QMPVRFAO1jhVchs1HqoA",
+          "type": "Single line"
+        },
+        "template_id": {
+          "id": "W4Usx66J8YXAiDIT4byh",
+          "type": "Single line"
+        },
+        "template_version": {
+          "id": "spSBAjvd0wsga94CEGS1",
+          "type": "Single line"
+        },
+        "template_approval_reference": {
+          "id": "VsZPhOKzuemMRPHQTi33",
+          "type": "Single line"
+        },
+        "state": {
+          "id": "m2TqzpOiK70ae8tYd3hb",
+          "type": "Single line"
+        },
+        "packet_revision": {
+          "id": "MEvf9cSfgZkr6Pos8fYa",
+          "type": "Number"
+        },
+        "conditions_satisfied": {
+          "id": "gnQk7zF8JevAEujy9WlS",
+          "type": "Single line"
+        },
+        "sent_at": {
+          "id": "QkBP9vf8JYX1YwUIA0xp",
+          "type": "Single line"
+        },
+        "last_event_at": {
+          "id": "F1R6v3lJMKdb8WGO2AsV",
+          "type": "Single line"
+        },
+        "jurisdiction": {
+          "id": "dXy5qXzfJxC1PftsVT4B",
+          "type": "Single line"
+        },
+        "buyer_legal_entity": {
+          "id": "e1u2bVVa9LQiCDyBbFaM",
+          "type": "Single line"
+        },
+        "buyer_authority_reference": {
+          "id": "JOGwQ7akAx48h1gyFOhQ",
+          "type": "Single line"
+        },
+        "ownership_reference": {
+          "id": "4MnJNIPUKagpCXvwzMeL",
+          "type": "Single line"
+        },
+        "legal_description": {
+          "id": "X5Byj24hug8tdDk2dO0E",
+          "type": "Single line"
+        },
+        "parcel_reference": {
+          "id": "91psLoKDMfNk2I6kzbXd",
+          "type": "Single line"
+        },
+        "title_escrow": {
+          "id": "OZ5HL6zMQRaOEoFHcyFC",
+          "type": "Single line"
+        },
+        "closing_instructions_reference": {
+          "id": "YTEYyEyKJWOPBorDWX0y",
+          "type": "Single line"
+        },
+        "sender_id": {
+          "id": "qcfTqKu34nMFXiGpcKGg",
+          "type": "Single line"
+        },
+        "delivery_consent_reference": {
+          "id": "fXYcPwzyfHT7RAg2DLKj",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_contract_signers": {
+      "id": "6ac6d4e9ac1e1f76b6f5ecfc",
+      "logicalKey": "signer_key",
+      "uiUnique": true,
+      "fields": {
+        "signer_key": {
+          "id": "L9oK51QFximj7FBH3Rtq",
+          "type": "Single line"
+        },
+        "contract_record_id": {
+          "id": "JEA73AqdF6fv3abn9R3p",
+          "type": "Single line"
+        },
+        "document_id": {
+          "id": "rWDvBztOdxZ6jkea841X",
+          "type": "Single line"
+        },
+        "document_revision": {
+          "id": "57Id5aZFGaOByUXJqTes",
+          "type": "Single line"
+        },
+        "signer_id": {
+          "id": "mjLpWl0h37LHwsFXZO3z",
+          "type": "Single line"
+        },
+        "role": {
+          "id": "jB1auXQqjWE9PTIBBbrk",
+          "type": "Single line"
+        },
+        "legal_name": {
+          "id": "xP2bpvglZAktUjQwaiUv",
+          "type": "Single line"
+        },
+        "authority_reference": {
+          "id": "CUyPUZgny64j6ir473Zt",
+          "type": "Single line"
+        },
+        "contact_id": {
+          "id": "GH7VTB2jfKuv57cCpo2F",
+          "type": "Single line"
+        },
+        "email": {
+          "id": "O3IrETVGTAia3YrAh8UB",
+          "type": "Single line"
+        },
+        "required": {
+          "id": "g9RVljIdFOkSX5yOiAzJ",
+          "type": "Single line"
+        },
+        "signed": {
+          "id": "gr0JxeChgdMnYR5oH9WK",
+          "type": "Single line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_lifecycle_events": {
+      "id": "6ac6d4faee91305eaa54f816",
+      "logicalKey": "event_key",
+      "uiUnique": true,
+      "fields": {
+        "event_key": {
+          "id": "fr4FBdoFeYBE2nPFcqUO",
+          "type": "Single line"
+        },
+        "contract_record_id": {
+          "id": "EF4w8bJDDD4sUs39BuZU",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "KBdOiDNGggFUlMn9o1MZ",
+          "type": "Single line"
+        },
+        "event_location_id": {
+          "id": "GO6FSZdUfFohCjsdLDeR",
+          "type": "Single line"
+        },
+        "provider_event_id": {
+          "id": "qiwbXAPiuAXWgx2iYUPc",
+          "type": "Single line"
+        },
+        "document_id": {
+          "id": "rYCcVU4exjN34GwZw1jl",
+          "type": "Single line"
+        },
+        "document_revision": {
+          "id": "rCmLeodK4Qs1ef1vqhMy",
+          "type": "Single line"
+        },
+        "occurred_at": {
+          "id": "54QkkX6PnZSqNB35Ende",
+          "type": "Single line"
+        },
+        "event_type": {
+          "id": "c28kDHHfw67d1KKP2LUv",
+          "type": "Single line"
+        },
+        "signer_id": {
+          "id": "RjQPN1FVZBz57tPo5evR",
+          "type": "Single line"
+        },
+        "conditions_satisfied": {
+          "id": "bjW9lFPfnM4fhWZNPbHQ",
+          "type": "Single line"
+        },
+        "reconciliation_reference": {
+          "id": "4wiI4DlKWcnUNNTFMXRb",
+          "type": "Single line"
+        },
+        "packet_revision": {
+          "id": "emKLzEKwxnWybbMjfKiF",
+          "type": "Number"
+        },
+        "canonical_event": {
+          "id": "R97MrXaYhHW8WnmwaAgD",
+          "type": "Multi line"
+        }
+      }
+    },
+    "custom_objects.jarvis_acq_sourced_ceilings": {
+      "id": "6ac6d509af19b2b02f0c31cd",
+      "logicalKey": "ceiling_key",
+      "uiUnique": true,
+      "fields": {
+        "ceiling_key": {
+          "id": "ZDnc6Vtn1qBySzAFHbrs",
+          "type": "Single line"
+        },
+        "source_reference": {
+          "id": "eHaktezHuDoDmIKuG6Km",
+          "type": "Single line"
+        },
+        "approved_by": {
+          "id": "qFtlSchqKWSPTsxLTdnC",
+          "type": "Single line"
+        },
+        "property_record_id": {
+          "id": "Pgq6C02sKDS6V9gMeeQH",
+          "type": "Single line"
+        },
+        "analysis_record_id": {
+          "id": "ZVIepZhoIa3wDdC92vSZ",
+          "type": "Single line"
+        },
+        "analysis_version": {
+          "id": "CG8knlkZbmFEKnPmOnl2",
+          "type": "Single line"
+        },
+        "policy_record_id": {
+          "id": "VP7HznLuKpRnzRXrm0DQ",
+          "type": "Single line"
+        },
+        "policy_version": {
+          "id": "SxLXdp9bB2U9EUSruJHh",
+          "type": "Single line"
+        },
+        "expires_at": {
+          "id": "VHcE8rtzKiGVS8wBTnky",
+          "type": "Single line"
+        },
+        "valuation_basis": {
+          "id": "IeLxRBDSzdvWNyN22ENw",
+          "type": "Single line"
+        },
+        "ceiling_usd": {
+          "id": "kmnGhJaaudNxN59E5SEO",
+          "type": "Number"
+        }
+      }
+    }
+  },
+  "associations": [
+    {
+      "label": "ACQ Contract Signer",
+      "childSchemaKey": "custom_objects.jarvis_acq_contract_signers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "observedRelationId": "6ac6da055d9e0d3230c48d6f",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Contract Event",
+      "childSchemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "observedRelationId": "6ac6da31a31985f618991810",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Event Completed Signer",
+      "childSchemaKey": "custom_objects.jarvis_acq_lifecycle_events",
+      "parentSchemaKey": "custom_objects.jarvis_acq_contract_signers",
+      "observedRelationId": "6ac6da4e0ba321fcf4d7db02",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Offer Contract",
+      "childSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentSchemaKey": "custom_objects.jarvis_acq_offers",
+      "observedRelationId": "6ac6da64fb7dc4d2c36187a8",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Property Contract",
+      "childSchemaKey": "custom_objects.jarvis_acq_contracts",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac6da76a499e373ff8e7932",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Property Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac6da7d4aa797c0619194cc",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Policy Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_policies",
+      "observedRelationId": "6ac6da875d9e0d3230c4befe",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Analysis Offer",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "observedRelationId": "6ac6da9d258c796142948063",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Offer Recipient",
+      "childSchemaKey": "custom_objects.jarvis_acq_offers",
+      "parentSchemaKey": null,
+      "observedRelationId": "6ac6daaba31985f618994674",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Property Policy",
+      "childSchemaKey": "custom_objects.jarvis_acq_policies",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac6dacfab12fccb564df01d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Property Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac6dad70ba321fcf4d811b3",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Analysis Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "observedRelationId": "6ac6dae8fb7dc4d2c361bd4d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Policy Ceiling",
+      "childSchemaKey": "custom_objects.jarvis_acq_sourced_ceilings",
+      "parentSchemaKey": "custom_objects.jarvis_acq_policies",
+      "observedRelationId": "6ac6daf50ba321fcf4d81eb3",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Property Analysis",
+      "childSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "parentSchemaKey": "custom_objects.jarvis_acq_properties",
+      "observedRelationId": "6ac5a61ada772f37a6b93410",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "ACQ Analysis Evidence",
+      "childSchemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows",
+      "parentSchemaKey": "custom_objects.jarvis_acq_analyses",
+      "observedRelationId": "6ac5a65510057ebf27eb264d",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    },
+    {
+      "label": "Seller",
+      "childSchemaKey": null,
+      "parentSchemaKey": null,
+      "observedRelationId": "6ac6d2b9e9b61f01dc34fe2e",
+      "apiAssociationDefinitionId": null,
+      "apiAssociationDefinitionIdVerified": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "repairModelVersion": "house-screening-2026-10-07-v2",
+  "repairRatesUsdPerSqft": {
+    "light": 20,
+    "medium": 40,
+    "heavy": 65
+  },
+  "contingencyBps": {
+    "light": 1000,
+    "medium": 1000,
+    "heavy": 1000
+  },
+  "repairRatesReference": "owner:Sentinel_2a28f276b34c819190825f5f22111122"
+}

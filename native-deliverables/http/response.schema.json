@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "anyOf": [
+    {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "const": "QUOTE_READY"
+        },
+        "quote_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "currency": {
+          "type": "string",
+          "const": "USD"
+        },
+        "offer_amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "speak_text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "calculator_version": {
+          "type": "string",
+          "const": "jarvis-native-quote-2026-10-08-v1"
+        }
+      },
+      "required": [
+        "status",
+        "quote_id",
+        "currency",
+        "offer_amount",
+        "speak_text",
+        "calculator_version"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "MISSING_INPUT",
+            "NEEDS_REVIEW",
+            "HELD",
+            "UNAUTHORIZED",
+            "UNAVAILABLE",
+            "INVALID_REQUEST",
+            "REPLAY_CONFLICT",
+            "IN_PROGRESS"
+          ]
+        },
+        "quote_id": {
+          "type": "null"
+        },
+        "currency": {
+          "type": "null"
+        },
+        "speak_text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "calculator_version": {
+          "type": "string",
+          "const": "jarvis-native-quote-2026-10-08-v1"
+        }
+      },
+      "required": [
+        "status",
+        "quote_id",
+        "currency",
+        "speak_text",
+        "calculator_version"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

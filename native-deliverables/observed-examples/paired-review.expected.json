@@ -1,0 +1,599 @@
+{
+  "status": "OBSERVED_PAIR_REQUIRES_BINDINGS",
+  "schemaRevision": "observed-2026-10-07",
+  "schemaVerifiedForObservedSample": true,
+  "address": {
+    "observationStatus": "ADDRESS_MATCHED_UNVERIFIED",
+    "providerPropertyId": "prop_125714946",
+    "canonicalAddress": "11311 Begonia Rock San Antonio, TX 78245",
+    "observations": {
+      "full_address": {
+        "presence": "VALUE",
+        "type": "string",
+        "value": "11311 Begonia Rock San Antonio, TX 78245"
+      },
+      "property_type": {
+        "presence": "VALUE",
+        "type": "string",
+        "value": "Single Family"
+      },
+      "living_area_sqft": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 2679
+      },
+      "lot_size_acres": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 0.243
+      },
+      "lot_size_sqft": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 10598
+      },
+      "num_bedrooms": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 4
+      },
+      "num_bathrooms": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 3
+      },
+      "num_units": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 0
+      },
+      "year_built": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 2014
+      },
+      "building_condition": {
+        "presence": "NULL",
+        "type": "null",
+        "value": null
+      },
+      "last_sale_doc_type": {
+        "presence": "VALUE",
+        "type": "string",
+        "value": "Vendor’s Lien"
+      },
+      "last_sale_price": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 384400
+      },
+      "last_sale_amount": {
+        "presence": "VALUE",
+        "type": "number",
+        "value": 384400
+      },
+      "last_sale_date": {
+        "presence": "VALUE",
+        "type": "string",
+        "value": "2021-05-28"
+      }
+    },
+    "source": {
+      "provider": "DealMachine",
+      "endpoint": "POST https://api.v2.dealmachine.com/v1/enrichment/address",
+      "responsePath": "$.data[0]",
+      "requestSentAt": "2026-10-07T22:36:13Z",
+      "observedAt": null,
+      "retrievedAt": null,
+      "providerSourceReference": null,
+      "providerUpdatedAt": null,
+      "expiresAt": null,
+      "independentVerificationReference": null
+    },
+    "contract": "jarvis.observed-dealmachine.v1",
+    "status": "NEEDS_REVIEW",
+    "synthetic": false,
+    "valuation": null,
+    "outboundEnabled": false,
+    "authorizationRecorded": false,
+    "reasons": [
+      "PROPERTY_IDENTITY_REQUIRES_BINDING",
+      "CATEGORY_MEANINGS_UNVERIFIED",
+      "SOURCE_PROVENANCE_INCOMPLETE"
+    ],
+    "matched": true,
+    "identityStatus": "PROVIDER_REPORTED_ONLY",
+    "credits": {
+      "used": 0,
+      "properties": 1,
+      "people": 0,
+      "deduplicated": 1,
+      "licensed": 0
+    }
+  },
+  "comps": {
+    "observationStatus": "VALIDATED_UNVERIFIED",
+    "subject": {
+      "providerPropertyId": "prop_125714946",
+      "observations": {
+        "address": {
+          "presence": "VALUE",
+          "type": "string",
+          "value": "11311 Begonia Rock"
+        },
+        "display_line_1": {
+          "presence": "VALUE",
+          "type": "string",
+          "value": "11311 Begonia Rock"
+        },
+        "display_line_2": {
+          "presence": "MISSING",
+          "type": "missing",
+          "value": null
+        },
+        "bedrooms": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 4
+        },
+        "bathrooms": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 3
+        },
+        "sqft": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 2679
+        },
+        "property_type": {
+          "presence": "VALUE",
+          "type": "string",
+          "value": "Single Family"
+        },
+        "year_built": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 2014
+        },
+        "lot_size": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 0.243
+        },
+        "last_sale_price": {
+          "presence": "VALUE",
+          "type": "number",
+          "value": 384400
+        },
+        "last_sale_date": {
+          "presence": "VALUE",
+          "type": "string",
+          "value": "2021-05-28T00:00:00.000Z"
+        }
+      },
+      "source": {
+        "provider": "DealMachine",
+        "endpoint": "POST https://api.v2.dealmachine.com/v1/comps",
+        "responsePath": "$.data[0]",
+        "requestSentAt": "2026-10-07T22:29:39Z",
+        "observedAt": null,
+        "retrievedAt": null,
+        "providerSourceReference": null,
+        "providerUpdatedAt": null,
+        "expiresAt": null,
+        "independentVerificationReference": null
+      },
+      "units": {
+        "sqft": null,
+        "lot_size": null,
+        "last_sale_price": null
+      }
+    },
+    "comps": [
+      {
+        "providerPropertyId": "prop_125715120",
+        "providerRowOrdinal": 0,
+        "responsePath": "$.data[0].comps[0]",
+        "priceKind": "ESTIMATED",
+        "observations": {
+          "address": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "5102 THYMUS DR"
+          },
+          "display_line_1": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "5102 Thymus Dr"
+          },
+          "display_line_2": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "San Antonio, TX, 78245"
+          },
+          "bedrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 3
+          },
+          "bathrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 3
+          },
+          "sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 3189
+          },
+          "property_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Single Family"
+          },
+          "year_built": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 2013
+          },
+          "lot_size": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.196
+          },
+          "type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "sale"
+          },
+          "sale_price": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 441000
+          },
+          "sale_date": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "2025-11-13T00:00:00.000Z"
+          },
+          "sale_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Estimated Sales Price"
+          },
+          "distance": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.02
+          },
+          "price_per_sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 138
+          },
+          "days_on_market": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 110
+          }
+        },
+        "source": {
+          "provider": "DealMachine",
+          "endpoint": "POST https://api.v2.dealmachine.com/v1/comps",
+          "responsePath": "$.data[0].comps[0]",
+          "requestSentAt": "2026-10-07T22:29:39Z",
+          "observedAt": null,
+          "retrievedAt": null,
+          "providerSourceReference": null,
+          "providerUpdatedAt": null,
+          "expiresAt": null,
+          "independentVerificationReference": null
+        },
+        "saleVerified": false,
+        "renovatedComparableVerified": false,
+        "eligibleForValuation": false,
+        "exclusionReasons": [
+          "UNITS_AND_CURRENCY_UNVERIFIED",
+          "SOURCE_PROVENANCE_INCOMPLETE",
+          "TENANT_POLICY_NOT_BOUND"
+        ],
+        "units": {
+          "sale_price": null,
+          "price_per_sqft": null,
+          "distance": null,
+          "sqft": null,
+          "lot_size": null
+        },
+        "eligibleForSelectedPricePolicy": true
+      },
+      {
+        "providerPropertyId": "prop_125714862",
+        "providerRowOrdinal": 1,
+        "responsePath": "$.data[0].comps[1]",
+        "priceKind": "ESTIMATED",
+        "observations": {
+          "address": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "11242 BUTTERFLY BUSH"
+          },
+          "display_line_1": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "11242 Butterfly Bush"
+          },
+          "display_line_2": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "San Antonio, TX, 78245"
+          },
+          "bedrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 3
+          },
+          "bathrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 3
+          },
+          "sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 2811
+          },
+          "property_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Single Family"
+          },
+          "year_built": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 2012
+          },
+          "lot_size": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.183
+          },
+          "type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "sale"
+          },
+          "sale_price": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 340749
+          },
+          "sale_date": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "2026-04-09T00:00:00.000Z"
+          },
+          "sale_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Estimated Sales Price"
+          },
+          "distance": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.07
+          },
+          "price_per_sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 121
+          },
+          "days_on_market": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 57
+          }
+        },
+        "source": {
+          "provider": "DealMachine",
+          "endpoint": "POST https://api.v2.dealmachine.com/v1/comps",
+          "responsePath": "$.data[0].comps[1]",
+          "requestSentAt": "2026-10-07T22:29:39Z",
+          "observedAt": null,
+          "retrievedAt": null,
+          "providerSourceReference": null,
+          "providerUpdatedAt": null,
+          "expiresAt": null,
+          "independentVerificationReference": null
+        },
+        "saleVerified": false,
+        "renovatedComparableVerified": false,
+        "eligibleForValuation": false,
+        "exclusionReasons": [
+          "UNITS_AND_CURRENCY_UNVERIFIED",
+          "SOURCE_PROVENANCE_INCOMPLETE",
+          "TENANT_POLICY_NOT_BOUND"
+        ],
+        "units": {
+          "sale_price": null,
+          "price_per_sqft": null,
+          "distance": null,
+          "sqft": null,
+          "lot_size": null
+        },
+        "eligibleForSelectedPricePolicy": true
+      },
+      {
+        "providerPropertyId": "prop_164477315",
+        "providerRowOrdinal": 2,
+        "responsePath": "$.data[0].comps[2]",
+        "priceKind": "ESTIMATED",
+        "observations": {
+          "address": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "4834 BLUE JASMINE"
+          },
+          "display_line_1": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "4834 Blue Jasmine"
+          },
+          "display_line_2": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "San Antonio, TX, 78245"
+          },
+          "bedrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 4
+          },
+          "bathrooms": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 4
+          },
+          "sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 2688
+          },
+          "property_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Single Family"
+          },
+          "year_built": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 2019
+          },
+          "lot_size": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.259
+          },
+          "type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "sale"
+          },
+          "sale_price": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 352055
+          },
+          "sale_date": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "2026-03-23T00:00:00.000Z"
+          },
+          "sale_type": {
+            "presence": "VALUE",
+            "type": "string",
+            "value": "Estimated Sales Price"
+          },
+          "distance": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 0.17
+          },
+          "price_per_sqft": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 131
+          },
+          "days_on_market": {
+            "presence": "VALUE",
+            "type": "number",
+            "value": 128
+          }
+        },
+        "source": {
+          "provider": "DealMachine",
+          "endpoint": "POST https://api.v2.dealmachine.com/v1/comps",
+          "responsePath": "$.data[0].comps[2]",
+          "requestSentAt": "2026-10-07T22:29:39Z",
+          "observedAt": null,
+          "retrievedAt": null,
+          "providerSourceReference": null,
+          "providerUpdatedAt": null,
+          "expiresAt": null,
+          "independentVerificationReference": null
+        },
+        "saleVerified": false,
+        "renovatedComparableVerified": false,
+        "eligibleForValuation": false,
+        "exclusionReasons": [
+          "UNITS_AND_CURRENCY_UNVERIFIED",
+          "SOURCE_PROVENANCE_INCOMPLETE",
+          "TENANT_POLICY_NOT_BOUND"
+        ],
+        "units": {
+          "sale_price": null,
+          "price_per_sqft": null,
+          "distance": null,
+          "sqft": null,
+          "lot_size": null
+        },
+        "eligibleForSelectedPricePolicy": true
+      }
+    ],
+    "completeness": {
+      "observedRowCount": 3,
+      "allReturnedRowsRepresented": true,
+      "marketCompletenessVerified": false,
+      "summaryCount": 3,
+      "totalCompsFound": 3
+    },
+    "contract": "jarvis.observed-dealmachine.v1",
+    "status": "NEEDS_REVIEW",
+    "synthetic": false,
+    "valuation": null,
+    "outboundEnabled": false,
+    "authorizationRecorded": false,
+    "reasons": [
+      "UNITS_AND_CURRENCY_UNVERIFIED",
+      "SOURCE_PROVENANCE_INCOMPLETE",
+      "TENANT_POLICY_NOT_BOUND"
+    ],
+    "counts": {
+      "estimated": 3,
+      "verified": 0,
+      "eligible": 0
+    },
+    "credits": {
+      "used": 1,
+      "properties": 1,
+      "deduplicated": 0
+    }
+  },
+  "pricingSelection": {
+    "basis": "provider_estimated_comps",
+    "acceptanceReference": "owner-2026-10-07T22:46:11Z-estimates-accepted"
+  },
+  "priceSelection": {
+    "estimatedCount": 3,
+    "acceptedPriceTypeCount": 3,
+    "verifiedRecordedSaleCount": 0,
+    "valuationEligibleCount": 0
+  },
+  "blockers": [
+    "TRUSTED_NATIVE_CONTEXT_REQUIRED",
+    "TENANT_SELECTION_AND_FRESHNESS_POLICY_REQUIRED",
+    "CURRENCY_AREA_DISTANCE_BINDINGS_REQUIRED",
+    "TRUSTED_CAPTURE_FRESHNESS_REQUIRED",
+    "HOUSE_CLASSIFICATION_BINDING_REQUIRED"
+  ],
+  "confidence": {
+    "label": "PROVIDER_ESTIMATED_PRICES",
+    "score": null,
+    "providerUpdatedAt": null,
+    "marketCoverage": "UNKNOWN"
+  },
+  "synthetic": false,
+  "valuation": null,
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

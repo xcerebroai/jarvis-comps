@@ -1,0 +1,56 @@
+{
+  "status": "WHOLESALE_FORMULA_CANDIDATE",
+  "propertyRecordId": "SYNTHETIC-A",
+  "providerPropertyId": "SYNTHETIC-provider-A",
+  "contactId": "SYNTHETIC-seller",
+  "analysisRecordId": "SYNTHETIC-analysis-A",
+  "analysisVersion": "v1",
+  "policyRecordId": "SYNTHETIC-policy",
+  "policyVersion": "v1",
+  "formula": "0.70*ARV-repairs",
+  "arvUsd": 300000,
+  "arvBasis": "house_provider_estimated_arv",
+  "confidence": {
+    "label": "PROVIDER_ESTIMATED_ARV",
+    "score": null,
+    "repairs": "PROVISIONAL_SCOPE_ESTIMATE"
+  },
+  "subjectSqft": 1000,
+  "repairScope": "medium",
+  "repairRateUsdPerSqft": 40,
+  "repairModelVersion": "house-screening-2026-10-07-v2",
+  "repairBudget": {
+    "wholeHouseBaseUsd": 40000,
+    "replacedAllowancesUsd": 0,
+    "knownExtrasUsd": 0,
+    "uncoveredProjectCostsUsd": 0,
+    "repairSubtotalUsd": 40000,
+    "contingencyBps": 1000,
+    "contingencyUsd": 4000,
+    "repairsUsd": 44000,
+    "totalCents": 4400000,
+    "separateDealCosts": {
+      "financingUsd": null,
+      "holdingUsd": null,
+      "sellingUsd": null,
+      "assignmentUsd": null
+    },
+    "provisional": true,
+    "scopeArea": "whole_house"
+  },
+  "repairsUsd": 44000,
+  "seventyPercentArvUsd": 210000,
+  "requestedOfferUsd": 166000,
+  "additionalDeductionsUsd": 0,
+  "expiresAt": "2026-10-08T08:00:00.000Z",
+  "sourceReferences": {
+    "analysis": "SYNTHETIC-analysis-readback",
+    "sqft": "SYNTHETIC-area",
+    "rates": "owner:Sentinel_2a28f276b34c819190825f5f22111122",
+    "scope": "SYNTHETIC-repair-intake"
+  },
+  "nextStep": "VALIDATE_EXACT_TERMS_STANDING_RANGE_AND_SOURCED_CEILING",
+  "sellerFacingPacket": null,
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

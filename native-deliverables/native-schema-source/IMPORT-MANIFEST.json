@@ -1,0 +1,21 @@
+{
+  "files": [
+    {
+      "path": "MACHINE-NATIVE-SCHEMA-HANDOFF.json",
+      "source": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/MACHINE-NATIVE-SCHEMA-HANDOFF.json",
+      "sha256": "26d8d51dda1c25a288fdb4bfac14f0e77691e52da810be51ff16e5c1353767ff"
+    },
+    {
+      "path": "GHL-MINIMUM-SCOPE-CHANGE-PROPOSAL.md",
+      "source": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/GHL-MINIMUM-SCOPE-CHANGE-PROPOSAL.md",
+      "sha256": "8122db59a9bdff1ab0b8c3820574898f6e21a084506080a9beb280da0d5a765b"
+    },
+    {
+      "path": "EXISTING-GHL-TRANSPORT-METADATA.json",
+      "source": "/Users/quentinflores/Documents/Codex/2026-10-07/task-3/EXISTING-GHL-TRANSPORT-METADATA.json",
+      "sha256": "8f7db6e5eec9eb63a40b27154d965ca53a534edfec0c35aefacdf74099479cc2"
+    }
+  ],
+  "credentialsIncluded": false,
+  "apiVerified": false
+}

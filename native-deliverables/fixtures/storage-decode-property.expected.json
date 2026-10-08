@@ -1,0 +1,21 @@
+{
+  "status": "NATIVE_PROPERTY_SNAPSHOT_DECODED",
+  "property": {
+    "recordId": "SYNTHETIC-A",
+    "propertyKey": "SYNTHETIC-key-A",
+    "providerPropertyId": "SYNTHETIC-provider-A",
+    "propertyVersion": "v1",
+    "canonicalAddress": "SYNTHETIC Property A",
+    "sourceIdentityReference": "SYNTHETIC-identity",
+    "asset": "house",
+    "currentAnalysisId": "SYNTHETIC-analysis-A",
+    "currentAnalysisVersion": "v1",
+    "held": "false",
+    "humanTakeover": "false",
+    "status": "READY",
+    "holdReason": ""
+  },
+  "verification": "NORMALIZED_READBACK_ONLY",
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

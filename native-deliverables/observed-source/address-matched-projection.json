@@ -1,0 +1,6 @@
+{
+  "evidence":{"httpStatus":200,"endpoint":"POST https://api.v2.dealmachine.com/v1/enrichment/address","sentAtUtc":"2026-10-07T22:36:13Z","responseLineCount":81,"completeRenderedResponseParsed":true,"unrequestedFinancialFieldsPresent":true,"financialValuesRetainedLocally":false},
+  "data":[{"input":{"street":"11311 Begonia Rock","city":"San Antonio","state":"TX","zip":"78245"},"matched":true,"dm_property_id":"prop_125714946","full_address":"11311 Begonia Rock San Antonio, TX 78245","address":"11311 Begonia Rock","city":"San Antonio","state":"TX","zip":"78245","year_built":2014,"living_area_sqft":2679,"lot_size_sqft":10598,"lot_size_acres":0.243,"num_bedrooms":4,"num_bathrooms":3,"num_units":0,"property_type":"Single Family","last_sale_date":"2021-05-28","last_sale_amount":384400,"last_sale_price":384400,"last_sale_doc_type":"Vendor’s Lien","building_condition":null}],
+  "totals":{"submitted":1,"matched":1,"unmatched":0},
+  "credits":{"used":0,"properties":1,"people":0,"deduplicated":1,"licensed":0}
+}

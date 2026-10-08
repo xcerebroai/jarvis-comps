@@ -1,0 +1,35 @@
+{
+  "status": "WITHIN_STANDING_RULES",
+  "packetKey": "11:SYNTHETIC-A20:SYNTHETIC-provider-A16:SYNTHETIC-seller20:SYNTHETIC-analysis-A2:v116:SYNTHETIC-policy2:v11:15:6500010:2026-11-014:10002:104:true14:SYNTHETIC-cash1:05:house9:wholesale2:v1",
+  "candidatePacket": {
+    "propertyRecordId": "SYNTHETIC-A",
+    "providerPropertyId": "SYNTHETIC-provider-A",
+    "propertyVersion": "v1",
+    "recipientId": "SYNTHETIC-seller",
+    "asset": "house",
+    "strategy": "wholesale",
+    "priceUsd": 65000,
+    "terms": {
+      "closingDate": "2026-11-01",
+      "depositUsd": 1000,
+      "inspectionDays": 10,
+      "assignmentAllowed": true,
+      "financing": "SYNTHETIC-cash",
+      "sellerConcessionsUsd": 0
+    },
+    "analysisRecordId": "SYNTHETIC-analysis-A",
+    "analysisVersion": "v1",
+    "policyRecordId": "SYNTHETIC-policy",
+    "policyVersion": "v1",
+    "revision": 1
+  },
+  "expiresAt": "2026-10-08T08:00:00.000Z",
+  "requiresRoutineHumanApproval": false,
+  "sellerFacingPacket": null,
+  "presentationBlockers": [
+    "NATIVE_POLICY_AUTHORITY_UNVERIFIED",
+    "ATOMIC_AUTHORIZATION_AND_DELIVERY_UNVERIFIED"
+  ],
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

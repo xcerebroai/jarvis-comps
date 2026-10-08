@@ -1,0 +1,22 @@
+{
+  "operation": "decode_property",
+  "request": {
+    "locationId": "SesCoVXlNu7qTSBol1gs",
+    "schemaKey": "custom_objects.jarvis_acq_properties",
+    "recordId": "SYNTHETIC-A",
+    "properties": {
+      "source_identity_ref": "SYNTHETIC-identity",
+      "asset": "house",
+      "canonical_address": "SYNTHETIC Property A",
+      "provider_property_id": "SYNTHETIC-provider-A",
+      "property_key": "SYNTHETIC-key-A",
+      "held": "false",
+      "property_version": "v1",
+      "current_analysis_id": "SYNTHETIC-analysis-A",
+      "hold_reason": "",
+      "human_takeover": "false",
+      "status": "READY",
+      "current_analysis_version": "v1"
+    }
+  }
+}

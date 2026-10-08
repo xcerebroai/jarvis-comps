@@ -1,0 +1,177 @@
+{
+  "status": "SYNTHETIC_DOCUMENTED_PROPERTY_OBSERVATION",
+  "operation": "address",
+  "sourceDocumentation": "https://api.docs.dealmachine.com/api-reference/enrichment/enrich-by-address",
+  "sourceReference": "SYNTHETIC-docs-fixture",
+  "retrievedAt": "2026-10-07T20:00:00.000Z",
+  "nativePropertyRecordId": "SYNTHETIC-native-property",
+  "providerPropertyId": "SYNTHETIC-provider-property",
+  "canonicalAddress": "SYNTHETIC-100 Property Road",
+  "identityStatus": "PROVIDER_REPORTED_ONLY",
+  "observations": [
+    {
+      "field": "living_area_sqft",
+      "path": "$.data[0].living_area_sqft",
+      "presence": "VALUE",
+      "value": 1200,
+      "unit": "sqft",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "lot_size_acres",
+      "path": "$.data[0].lot_size_acres",
+      "presence": "VALUE",
+      "value": 0.25,
+      "unit": "acre",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "num_units",
+      "path": "$.data[0].num_units",
+      "presence": "VALUE",
+      "value": 1,
+      "unit": "count",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "num_commercial_units",
+      "path": "$.data[0].num_commercial_units",
+      "presence": "VALUE",
+      "value": 0,
+      "unit": "count",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "num_bedrooms",
+      "path": "$.data[0].num_bedrooms",
+      "presence": "VALUE",
+      "value": 3,
+      "unit": "count",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "num_bathrooms",
+      "path": "$.data[0].num_bathrooms",
+      "presence": "VALUE",
+      "value": 1.5,
+      "unit": "count",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "year_built",
+      "path": "$.data[0].year_built",
+      "presence": "VALUE",
+      "value": 1988,
+      "unit": "year",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "last_sale_price",
+      "path": "$.data[0].last_sale_price",
+      "presence": "VALUE",
+      "value": 150000,
+      "unit": "provider_amount_currency_unverified",
+      "meaning": "PROVIDER_REPORTED_SALE_HISTORY",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "last_sale_date",
+      "path": "$.data[0].last_sale_date",
+      "presence": "VALUE",
+      "value": "2025-09-01",
+      "unit": "date",
+      "meaning": "PROVIDER_REPORTED_SALE_HISTORY",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "last_sale_doc_type",
+      "path": "$.data[0].last_sale_doc_type",
+      "presence": "VALUE",
+      "value": [
+        9003
+      ],
+      "unit": "option_ids",
+      "meaning": "PROVIDER_REPORTED_SALE_HISTORY",
+      "labels": [
+        "SYNTHETIC document category"
+      ],
+      "metadataReference": "SYNTHETIC-category-metadata"
+    },
+    {
+      "field": "estimated_value",
+      "path": "$.data[0].estimated_value",
+      "presence": "VALUE",
+      "value": 190000,
+      "unit": "provider_amount_currency_unverified",
+      "meaning": "PROVIDER_ESTIMATE",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "mls_current_listing_price",
+      "path": "$.data[0].mls_current_listing_price",
+      "presence": "VALUE",
+      "value": 205000,
+      "unit": "provider_amount_currency_unverified",
+      "meaning": "LIST_PRICE",
+      "labels": null,
+      "metadataReference": null
+    },
+    {
+      "field": "building_condition",
+      "path": "$.data[0].building_condition",
+      "presence": "VALUE",
+      "value": [
+        9002
+      ],
+      "unit": "option_ids",
+      "meaning": "CONDITION_CATEGORY_NOT_RENOVATION_PROOF",
+      "labels": [
+        "SYNTHETIC condition category"
+      ],
+      "metadataReference": "SYNTHETIC-category-metadata"
+    },
+    {
+      "field": "property_type",
+      "path": "$.data[0].property_type",
+      "presence": "VALUE",
+      "value": [
+        9001
+      ],
+      "unit": "option_ids",
+      "meaning": "PROPERTY_CHARACTERISTIC",
+      "labels": [
+        "SYNTHETIC property category"
+      ],
+      "metadataReference": "SYNTHETIC-category-metadata"
+    }
+  ],
+  "blockers": [
+    "REAL_COMPS_MAPPING_UNAVAILABLE",
+    "LIVE_PROPERTY_BINDING_UNVERIFIED"
+  ],
+  "saleVerified": false,
+  "renovatedComparable": false,
+  "assetClassification": null,
+  "comps": null,
+  "valuation": null,
+  "outboundEnabled": false,
+  "authorizationRecorded": false,
+  "synthetic": true
+}

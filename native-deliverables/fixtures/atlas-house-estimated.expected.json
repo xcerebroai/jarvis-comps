@@ -1,0 +1,642 @@
+{
+  "status": "SYNTHETIC_NORMALIZED_CANDIDATE",
+  "mode": "synthetic_fixture",
+  "context": {
+    "locationId": "SesCoVXlNu7qTSBol1gs",
+    "now": "2026-10-07T09:00:00.000Z",
+    "contactId": "SYNTHETIC-seller",
+    "associatedPropertyRecordIds": [
+      "SYNTHETIC-A",
+      "SYNTHETIC-B"
+    ],
+    "contactDnd": false,
+    "contactTakeover": false,
+    "property": {
+      "recordId": "SYNTHETIC-A",
+      "propertyKey": "SYNTHETIC-key-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "propertyVersion": "v1",
+      "canonicalAddress": "SYNTHETIC Property A",
+      "sourceIdentityReference": "SYNTHETIC-identity",
+      "asset": "house",
+      "currentAnalysisId": "SYNTHETIC-analysis-A",
+      "currentAnalysisVersion": "v1",
+      "held": "false",
+      "humanTakeover": "false",
+      "status": "READY",
+      "holdReason": ""
+    },
+    "analysisRecordId": "SYNTHETIC-analysis-A",
+    "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+    "analysisVersion": "v1",
+    "expectedPropertyVersion": "v1",
+    "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+    "expectedCurrentAnalysisVersion": "v1",
+    "policyRecordId": "SYNTHETIC-policy",
+    "policyVersion": "v1",
+    "sourceVersion": "v1",
+    "eventId": "SYNTHETIC-event"
+  },
+  "policy": {
+    "recordId": "SYNTHETIC-policy",
+    "version": "v1"
+  },
+  "sourceVersion": "v1",
+  "sourceReference": "SYNTHETIC-evidence",
+  "retrievedAt": "2026-10-07T08:00:00.000Z",
+  "expiresAt": "2026-10-08T08:00:00.000Z",
+  "valueUsd": 120000,
+  "basis": "house_provider_estimated_arv",
+  "confidence": {
+    "priceBasis": "provider_estimated_comps",
+    "recordedSalesVerified": false,
+    "score": null,
+    "limitations": [
+      "PROVIDER_ESTIMATES_NOT_RECORDED_SALES",
+      "RENOVATION_NOT_ESTABLISHED_BY_PRICE",
+      "MARKET_COVERAGE_NOT_ESTABLISHED"
+    ]
+  },
+  "estimateAcceptanceReference": "SYNTHETIC-estimate-acceptance",
+  "evidence": [
+    {
+      "key": "fact:source_contract_verification",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "source_contract_verification",
+        "value": "SYNTHETIC-fixture-schema-only",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:canonical_address",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "canonical_address",
+        "value": "SYNTHETIC Property A",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:identity_reference",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "identity_reference",
+        "value": "SYNTHETIC-identity",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:property_type",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "property_type",
+        "value": "house",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:comp_price_basis",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "comp_price_basis",
+        "value": "provider_estimated_comps",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:estimate_acceptance_reference",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "estimate_acceptance_reference",
+        "value": "SYNTHETIC-estimate-acceptance",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "fact:subject_sqft",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "subject_sqft",
+        "value": 1000,
+        "unit": "sqft"
+      }
+    },
+    {
+      "key": "sale:0:SYNTHETIC-comp-0",
+      "kind": "SALE",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "comp": {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0,
+        "displayAddress": "SYNTHETIC Comparable 0",
+        "propertyType": "house",
+        "salePriceUsd": null,
+        "estimatedPriceUsd": 110000,
+        "priceKind": "ESTIMATED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-Estimated Sales Price",
+        "saleVerified": false,
+        "renovatedComparable": false,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      }
+    },
+    {
+      "key": "sale-fact:0:SYNTHETIC-comp-0:price_kind",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0
+      },
+      "fact": {
+        "name": "price_kind",
+        "value": "ESTIMATED",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:0:SYNTHETIC-comp-0:sale_verified",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0
+      },
+      "fact": {
+        "name": "sale_verified",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:0:SYNTHETIC-comp-0:renovated_comparable",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0
+      },
+      "fact": {
+        "name": "renovated_comparable",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:0:SYNTHETIC-comp-0:provider_estimated_price",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0
+      },
+      "fact": {
+        "name": "provider_estimated_price",
+        "value": 110000,
+        "unit": "USD"
+      }
+    },
+    {
+      "key": "sale:1:SYNTHETIC-comp-1",
+      "kind": "SALE",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "comp": {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1,
+        "displayAddress": "SYNTHETIC Comparable 1",
+        "propertyType": "house",
+        "salePriceUsd": null,
+        "estimatedPriceUsd": 120000,
+        "priceKind": "ESTIMATED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-Estimated Sales Price",
+        "saleVerified": false,
+        "renovatedComparable": false,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      }
+    },
+    {
+      "key": "sale-fact:1:SYNTHETIC-comp-1:price_kind",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1
+      },
+      "fact": {
+        "name": "price_kind",
+        "value": "ESTIMATED",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:1:SYNTHETIC-comp-1:sale_verified",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1
+      },
+      "fact": {
+        "name": "sale_verified",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:1:SYNTHETIC-comp-1:renovated_comparable",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1
+      },
+      "fact": {
+        "name": "renovated_comparable",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:1:SYNTHETIC-comp-1:provider_estimated_price",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1
+      },
+      "fact": {
+        "name": "provider_estimated_price",
+        "value": 120000,
+        "unit": "USD"
+      }
+    },
+    {
+      "key": "sale:2:SYNTHETIC-comp-2",
+      "kind": "SALE",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "comp": {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2,
+        "displayAddress": "SYNTHETIC Comparable 2",
+        "propertyType": "house",
+        "salePriceUsd": null,
+        "estimatedPriceUsd": 130000,
+        "priceKind": "ESTIMATED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-Estimated Sales Price",
+        "saleVerified": false,
+        "renovatedComparable": false,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      }
+    },
+    {
+      "key": "sale-fact:2:SYNTHETIC-comp-2:price_kind",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2
+      },
+      "fact": {
+        "name": "price_kind",
+        "value": "ESTIMATED",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:2:SYNTHETIC-comp-2:sale_verified",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2
+      },
+      "fact": {
+        "name": "sale_verified",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:2:SYNTHETIC-comp-2:renovated_comparable",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2
+      },
+      "fact": {
+        "name": "renovated_comparable",
+        "value": "false",
+        "unit": "text"
+      }
+    },
+    {
+      "key": "sale-fact:2:SYNTHETIC-comp-2:provider_estimated_price",
+      "kind": "SALE_FACT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "originComp": {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2
+      },
+      "fact": {
+        "name": "provider_estimated_price",
+        "value": 130000,
+        "unit": "USD"
+      }
+    },
+    {
+      "key": "fact:confidence_price_basis",
+      "kind": "SUBJECT",
+      "selection": "ACCEPTED",
+      "codes": [],
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      },
+      "fact": {
+        "name": "confidence_price_basis",
+        "value": "provider_estimated_comps",
+        "unit": "text"
+      }
+    }
+  ],
+  "acceptedCount": 3,
+  "rejectedCount": 0,
+  "publicResult": {
+    "propertyRecordId": "SYNTHETIC-A",
+    "providerPropertyId": "SYNTHETIC-provider-A",
+    "analysisRecordId": "SYNTHETIC-analysis-A",
+    "analysisVersion": "v1",
+    "asset": "house",
+    "valueUsd": 120000,
+    "basis": "house_provider_estimated_arv",
+    "confidence": {
+      "priceBasis": "provider_estimated_comps",
+      "recordedSalesVerified": false,
+      "score": null,
+      "limitations": [
+        "PROVIDER_ESTIMATES_NOT_RECORDED_SALES",
+        "RENOVATION_NOT_ESTABLISHED_BY_PRICE",
+        "MARKET_COVERAGE_NOT_ESTABLISHED"
+      ]
+    },
+    "acceptedCompIds": [
+      "SYNTHETIC-comp-0",
+      "SYNTHETIC-comp-1",
+      "SYNTHETIC-comp-2"
+    ],
+    "rejectedComps": [],
+    "incomeExplanation": null,
+    "synthetic": true
+  },
+  "outboundEnabled": false,
+  "authorizationRecorded": false
+}

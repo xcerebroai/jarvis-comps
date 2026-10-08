@@ -1,0 +1,8 @@
+[
+  {
+    "name": "paired-review",
+    "workflow": "observed-provider",
+    "synthetic": false,
+    "source": "sanitized observed pair; no native/unit/policy binding"
+  }
+]

@@ -1,0 +1,397 @@
+{
+  "locationId": "SesCoVXlNu7qTSBol1gs",
+  "objects": [
+    {
+      "id": "6ac5a3fd9c2e1ab4b33524ca",
+      "singular": "JARVIS ACQ Property",
+      "fields": {
+        "source_identity_ref": {
+          "id": "sp2FtOvQKu4nxpMs7Rk6",
+          "key": "source_identity_ref",
+          "mergeKey": "custom_objects.jarvis_acq_properties.source_identity_ref",
+          "uiType": "Single line"
+        },
+        "asset": {
+          "id": "64r31cYAOedH54nY4zYX",
+          "key": "asset",
+          "mergeKey": "custom_objects.jarvis_acq_properties.asset",
+          "uiType": "Single line"
+        },
+        "canonical_address": {
+          "id": "pQikqcFEZRe5ncdj9r4g",
+          "key": "canonical_address",
+          "mergeKey": "custom_objects.jarvis_acq_properties.canonical_address",
+          "uiType": "Single line"
+        },
+        "provider_property_id": {
+          "id": "FalTmYl1iH2zutgJ2dhk",
+          "key": "provider_property_id",
+          "mergeKey": "custom_objects.jarvis_acq_properties.provider_property_id",
+          "uiType": "Single line"
+        },
+        "property_key": {
+          "id": "XplY0S33KIjn4ZwlSr8w",
+          "key": "property_key",
+          "mergeKey": "custom_objects.jarvis_acq_properties.property_key",
+          "uiType": "Single line"
+        },
+        "held": {
+          "id": "pfcckpDT5xFXC7khkQbE",
+          "key": "held",
+          "mergeKey": "custom_objects.jarvis_acq_properties.held",
+          "uiType": "Single line"
+        },
+        "property_version": {
+          "id": "sqvE7N1NuQvsrF743NO1",
+          "key": "property_version",
+          "mergeKey": "custom_objects.jarvis_acq_properties.property_version",
+          "uiType": "Single line"
+        },
+        "current_analysis_id": {
+          "id": "oDCuWEhoU4pZDVdOZC1L",
+          "key": "current_analysis_id",
+          "mergeKey": "custom_objects.jarvis_acq_properties.current_analysis_id",
+          "uiType": "Single line"
+        },
+        "hold_reason": {
+          "id": "18L9eOxChzVv732wzjkD",
+          "key": "hold_reason",
+          "mergeKey": "custom_objects.jarvis_acq_properties.hold_reason",
+          "uiType": "Single line"
+        },
+        "human_takeover": {
+          "id": "6TDefImbLCv40YFrKTON",
+          "key": "human_takeover",
+          "mergeKey": "custom_objects.jarvis_acq_properties.human_takeover",
+          "uiType": "Single line"
+        },
+        "status": {
+          "id": "GOnDKefMYe4zGPAg8H0Q",
+          "key": "status",
+          "mergeKey": "custom_objects.jarvis_acq_properties.status",
+          "uiType": "Single line"
+        },
+        "current_analysis_version": {
+          "id": "4pM4GJeQ4la0xj9hhjVu",
+          "key": "current_analysis_version",
+          "mergeKey": "custom_objects.jarvis_acq_properties.current_analysis_version",
+          "uiType": "Single line"
+        }
+      },
+      "schemaKey": "custom_objects.jarvis_acq_properties"
+    },
+    {
+      "id": "6ac5a4b55637e713b2f0bdaf",
+      "singular": "JARVIS ACQ Analysis",
+      "fields": {
+        "policy_version": {
+          "id": "srSo4MUj6HmCY3ytthUS",
+          "key": "policy_version",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.policy_version",
+          "uiType": "Single line"
+        },
+        "policy_id": {
+          "id": "KfTcLElwiJaeKjcFPr4P",
+          "key": "policy_id",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.policy_id",
+          "uiType": "Single line"
+        },
+        "property_key": {
+          "id": "UPVLGpFbJPl93tGRQ1pe",
+          "key": "property_key",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.property_key",
+          "uiType": "Single line"
+        },
+        "provider_property_id": {
+          "id": "KME6QRtlwJhHMVYUTPEf",
+          "key": "provider_property_id",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.provider_property_id",
+          "uiType": "Single line"
+        },
+        "property_record_id": {
+          "id": "FH7pkDmG1Nqa68HyAmx4",
+          "key": "property_record_id",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.property_record_id",
+          "uiType": "Single line"
+        },
+        "analysis_version": {
+          "id": "IPDx9algUW8G2H5mIJsV",
+          "key": "analysis_version",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.analysis_version",
+          "uiType": "Single line"
+        },
+        "analysis_key": {
+          "id": "4ngnzzVb8PIcV585IdZB",
+          "key": "analysis_key",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.analysis_key",
+          "uiType": "Single line"
+        },
+        "expected_evidence_count": {
+          "id": "DgFM3Cg6CuGxuFIJrGbE",
+          "key": "expected_evidence_count",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.expected_evidence_count",
+          "uiType": "Number"
+        },
+        "rejected_count": {
+          "id": "kG6PTxWMI5cRsMWjr2bd",
+          "key": "rejected_count",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.rejected_count",
+          "uiType": "Number"
+        },
+        "accepted_count": {
+          "id": "QcdSpALjPqJY88LlCe0u",
+          "key": "accepted_count",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.accepted_count",
+          "uiType": "Number"
+        },
+        "public_value_usd": {
+          "id": "TwKaKptIN3n8bBLuvRL4",
+          "key": "public_value_usd",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.public_value_usd",
+          "uiType": "Number"
+        },
+        "basis": {
+          "id": "Gu44XY0WM05KCisNbgw3",
+          "key": "basis",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.basis",
+          "uiType": "Single line"
+        },
+        "status": {
+          "id": "GLKO9LGcKDmXya8Ro4ok",
+          "key": "status",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.status",
+          "uiType": "Single line"
+        },
+        "expires_at": {
+          "id": "k7jl7YjsRPyrSWdL0dw7",
+          "key": "expires_at",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.expires_at",
+          "uiType": "Single line"
+        },
+        "retrieved_at": {
+          "id": "MtKxLD3wqk2bQ4K5FNzl",
+          "key": "retrieved_at",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.retrieved_at",
+          "uiType": "Single line"
+        },
+        "source_reference": {
+          "id": "CS0sgUOlmh0IifR64qNe",
+          "key": "source_reference",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.source_reference",
+          "uiType": "Single line"
+        },
+        "source_version": {
+          "id": "ZOagl0xtHgCXjhnkyqU1",
+          "key": "source_version",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.source_version",
+          "uiType": "Single line"
+        },
+        "completion_state": {
+          "id": "F09PLlynkfWkAuqDd6hI",
+          "key": "completion_state",
+          "mergeKey": "custom_objects.jarvis_acq_analyses.completion_state",
+          "uiType": "Single line"
+        }
+      },
+      "schemaKey": "custom_objects.jarvis_acq_analyses"
+    },
+    {
+      "id": "6ac5a54987e0869402700fa2",
+      "singular": "JARVIS ACQ Analysis Evidence",
+      "fields": {
+        "property_type": {
+          "id": "J15jlesvhSewkbbFVUcP",
+          "key": "property_type",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.property_type",
+          "uiType": "Single line"
+        },
+        "distance_miles": {
+          "id": "wJZy5sX1336EtaZPzCJV",
+          "key": "distance_miles",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.distance_miles",
+          "uiType": "Number"
+        },
+        "sqft": {
+          "id": "FAIcwiEL5JvBHqTzbIfH",
+          "key": "sqft",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.sqft",
+          "uiType": "Number"
+        },
+        "sale_price_usd": {
+          "id": "R7kGEPIGMVMw9G7dFit7",
+          "key": "sale_price_usd",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_price_usd",
+          "uiType": "Number"
+        },
+        "provider_row_ordinal": {
+          "id": "jSxrQKeafheGsEGVs3nH",
+          "key": "provider_row_ordinal",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.provider_row_ordinal",
+          "uiType": "Number"
+        },
+        "sale_date": {
+          "id": "rZiT8NUVTs3ThDX5DaLD",
+          "key": "sale_date",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_date",
+          "uiType": "Single line"
+        },
+        "sale_type": {
+          "id": "jAuPwb2neiyWKCwW9cm9",
+          "key": "sale_type",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.sale_type",
+          "uiType": "Single line"
+        },
+        "row_kind": {
+          "id": "T14PtwxwvU06sIMG8J83",
+          "key": "row_kind",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.row_kind",
+          "uiType": "Single line"
+        },
+        "exclusion_codes": {
+          "id": "dLxnzof4xdbc4wh4hAxN",
+          "key": "exclusion_codes",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.exclusion_codes",
+          "uiType": "Single line"
+        },
+        "selection": {
+          "id": "rYAZbgNCO6vlFWiuhcjT",
+          "key": "selection",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.selection",
+          "uiType": "Single line"
+        },
+        "source_property_id": {
+          "id": "cnsSoK0R37phmE97a8iR",
+          "key": "source_property_id",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.source_property_id",
+          "uiType": "Single line"
+        },
+        "endpoint_contract_version": {
+          "id": "ZVVux4Ce2zoo25fwHTHD",
+          "key": "endpoint_contract_version",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.endpoint_contract_version",
+          "uiType": "Single line"
+        },
+        "expires_at": {
+          "id": "BBZ3tikm0lKWeQgzd5ym",
+          "key": "expires_at",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.expires_at",
+          "uiType": "Single line"
+        },
+        "retrieved_at": {
+          "id": "4rseqx7ILvU9tXZ9zIec",
+          "key": "retrieved_at",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.retrieved_at",
+          "uiType": "Single line"
+        },
+        "source_reference": {
+          "id": "shwlxjIGNxVvRFWsjDUF",
+          "key": "source_reference",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.source_reference",
+          "uiType": "Single line"
+        },
+        "source_provider": {
+          "id": "tu3xOzoCw8BtCkNzqlz0",
+          "key": "source_provider",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.source_provider",
+          "uiType": "Single line"
+        },
+        "property_record_id": {
+          "id": "4jJIy9fT3m21rm00bf74",
+          "key": "property_record_id",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.property_record_id",
+          "uiType": "Single line"
+        },
+        "analysis_version": {
+          "id": "hvFz3V1FojYVdVWOfjZL",
+          "key": "analysis_version",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_version",
+          "uiType": "Single line"
+        },
+        "analysis_key": {
+          "id": "UQ5Xf2hI3OkNtNmKX9MV",
+          "key": "analysis_key",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_key",
+          "uiType": "Single line"
+        },
+        "analysis_record_id": {
+          "id": "ufoJOWUvacCFwxITYJcB",
+          "key": "analysis_record_id",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.analysis_record_id",
+          "uiType": "Single line"
+        },
+        "evidence_key": {
+          "id": "sxtKuYXx7WskpjD6oXAy",
+          "key": "evidence_key",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.evidence_key",
+          "uiType": "Single line"
+        },
+        "fact_value_text": {
+          "id": "QFQYs7J76DzgPhqsjuO4",
+          "key": "fact_value_text",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_value_text",
+          "uiType": "Single line"
+        },
+        "fact_unit": {
+          "id": "kfq2Qq4JszbFG1U4rnz8",
+          "key": "fact_unit",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_unit",
+          "uiType": "Single line"
+        },
+        "fact_value_number": {
+          "id": "RcASjvPqiHERksMa5hN4",
+          "key": "fact_value_number",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_value_number",
+          "uiType": "Number"
+        },
+        "fact_name": {
+          "id": "YK1FdFBvRo0TTPqX07cD",
+          "key": "fact_name",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.fact_name",
+          "uiType": "Single line"
+        },
+        "display_address": {
+          "id": "2P7k8aKSmjFJ5nW1GmY2",
+          "key": "display_address",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.display_address",
+          "uiType": "Single line"
+        },
+        "lot_unit": {
+          "id": "0M7Mg6Jn0czzov7R4DiD",
+          "key": "lot_unit",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.lot_unit",
+          "uiType": "Single line"
+        },
+        "lot_size": {
+          "id": "SdxIpJF565MO2ARkAzdi",
+          "key": "lot_size",
+          "mergeKey": "custom_objects.jarvis_acq_analysis_evidence_rows.lot_size",
+          "uiType": "Number"
+        }
+      },
+      "schemaKey": "custom_objects.jarvis_acq_analysis_evidence_rows"
+    }
+  ],
+  "associations": [
+    {
+      "label": "ACQ Property Analysis",
+      "from": "JARVIS ACQ Analysis",
+      "to": "JARVIS ACQ Property",
+      "fromToMax": 1,
+      "toFrom": "Many",
+      "id": null,
+      "idNote": "Not exposed in inspected visible UI"
+    },
+    {
+      "label": "ACQ Analysis Evidence",
+      "from": "JARVIS ACQ Analysis Evidence",
+      "to": "JARVIS ACQ Analysis",
+      "fromToMax": 1,
+      "toFrom": "Many",
+      "id": null,
+      "idNote": "Not exposed in inspected visible UI"
+    }
+  ],
+  "recordsCreated": 0,
+  "providerCalls": 0,
+  "additionalTests": 0
+}

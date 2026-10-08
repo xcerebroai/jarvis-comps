@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "principal": {
+      "type": "object",
+      "properties": {
+        "agency": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "location": {
+          "type": "string",
+          "const": "SesCoVXlNu7qTSBol1gs"
+        },
+        "actor": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        }
+      },
+      "required": [
+        "agency",
+        "location",
+        "actor"
+      ],
+      "additionalProperties": false
+    },
+    "compPolicy": {
+      "type": "object",
+      "properties": {
+        "recordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "approvalReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "approvedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "revoked": {
+          "type": "boolean"
+        },
+        "compPriceBasis": {
+          "type": "string",
+          "enum": [
+            "verified_recorded_sales",
+            "provider_estimated_comps"
+          ]
+        },
+        "estimateAcceptanceReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "estimatedSaleTypes": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "maxAgeDays": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "maxSourceAgeHours": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "radiusMiles": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "sizeTolerance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 0.999999
+        },
+        "minComps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "verifiedSaleTypes": {
+          "maxItems": 50,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          }
+        },
+        "houseBasis": {
+          "type": "string",
+          "enum": [
+            "comparable_market_value",
+            "renovated_arv",
+            "estimated_arv_proxy"
+          ]
+        },
+        "maxIncomeSalesDifference": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 0.999999
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "crosscheckApprovalReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "recordId",
+        "version",
+        "approvalReference",
+        "approvedBy",
+        "expiresAt",
+        "revoked",
+        "compPriceBasis",
+        "estimateAcceptanceReference",
+        "estimatedSaleTypes",
+        "maxAgeDays",
+        "maxSourceAgeHours",
+        "radiusMiles",
+        "sizeTolerance",
+        "minComps",
+        "verifiedSaleTypes",
+        "houseBasis",
+        "maxIncomeSalesDifference",
+        "crosscheckApprovalReference"
+      ],
+      "additionalProperties": false
+    },
+    "adoption": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "ADOPTED",
+            "PROPOSED"
+          ]
+        },
+        "policyRecordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "policyVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "approvalReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "approvedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "adoptedAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "revoked": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "status",
+        "policyRecordId",
+        "policyVersion",
+        "approvalReference",
+        "approvedBy",
+        "adoptedAt",
+        "revoked"
+      ],
+      "additionalProperties": false
+    },
+    "wholesalePolicy": {
+      "type": "object",
+      "properties": {
+        "recordId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "approvalReference": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 500
+        },
+        "approvedBy": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^(?:(?:\\d\\d[2468][048]|\\d\\d[13579][26]|\\d\\d0[48]|[02468][048]00|[13579][26]00)-02-29|\\d{4}-(?:(?:0[13578]|1[02])-(?:0[1-9]|[12]\\d|3[01])|(?:0[469]|11)-(?:0[1-9]|[12]\\d|30)|(?:02)-(?:0[1-9]|1\\d|2[0-8])))T(?:(?:[01]\\d|2[0-3]):[0-5]\\d(?::[0-5]\\d(?:\\.\\d+)?)?(?:Z))$"
+        },
+        "revoked": {
+          "type": "boolean"
+        },
+        "formula": {
+          "type": "string",
+          "const": "0.70*ARV-repairs"
+        },
+        "allowedArvBases": {
+          "minItems": 1,
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "house_verified_renovated_sales",
+              "house_provider_estimated_arv"
+            ]
+          }
+        },
+        "estimateAcceptanceReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "repairModelVersion": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200,
+          "pattern": "^[A-Za-z0-9_.:-]+$"
+        },
+        "repairRatesUsdPerSqft": {
+          "type": "object",
+          "properties": {
+            "light": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "medium": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "heavy": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "minimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "light",
+            "medium",
+            "heavy"
+          ],
+          "additionalProperties": false
+        },
+        "contingencyBps": {
+          "type": "object",
+          "properties": {
+            "light": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            "medium": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            },
+            "heavy": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 10000
+            }
+          },
+          "required": [
+            "light",
+            "medium",
+            "heavy"
+          ],
+          "additionalProperties": false
+        },
+        "repairRatesReference": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 500
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "recordId",
+        "version",
+        "approvalReference",
+        "approvedBy",
+        "expiresAt",
+        "revoked",
+        "formula",
+        "allowedArvBases",
+        "estimateAcceptanceReference",
+        "repairModelVersion",
+        "repairRatesUsdPerSqft",
+        "contingencyBps",
+        "repairRatesReference"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "principal",
+    "compPolicy",
+    "adoption",
+    "wholesalePolicy"
+  ],
+  "additionalProperties": false
+}

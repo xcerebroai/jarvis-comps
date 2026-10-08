@@ -1,0 +1,171 @@
+{
+  "operation": "prepare",
+  "request": {
+    "contract": "jarvis.normalized-analysis.v2",
+    "mode": "synthetic_fixture",
+    "context": {
+      "locationId": "SesCoVXlNu7qTSBol1gs",
+      "now": "2026-10-07T09:00:00.000Z",
+      "contactId": "SYNTHETIC-seller",
+      "associatedPropertyRecordIds": [
+        "SYNTHETIC-A",
+        "SYNTHETIC-B"
+      ],
+      "contactDnd": false,
+      "contactTakeover": false,
+      "property": {
+        "recordId": "SYNTHETIC-A",
+        "propertyKey": "SYNTHETIC-key-A",
+        "providerPropertyId": "SYNTHETIC-provider-A",
+        "propertyVersion": "v1",
+        "canonicalAddress": "SYNTHETIC Property A",
+        "sourceIdentityReference": "SYNTHETIC-identity",
+        "asset": "house",
+        "currentAnalysisId": "SYNTHETIC-analysis-A",
+        "currentAnalysisVersion": "v1",
+        "held": "false",
+        "humanTakeover": "false",
+        "status": "READY",
+        "holdReason": ""
+      },
+      "analysisRecordId": "SYNTHETIC-analysis-A",
+      "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+      "analysisVersion": "v1",
+      "expectedPropertyVersion": "v1",
+      "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+      "expectedCurrentAnalysisVersion": "v1",
+      "policyRecordId": "SYNTHETIC-policy",
+      "policyVersion": "v1",
+      "sourceVersion": "v1",
+      "eventId": "SYNTHETIC-event"
+    },
+    "policy": {
+      "recordId": "SYNTHETIC-policy",
+      "version": "v1",
+      "approvalReference": "SYNTHETIC-approval",
+      "approvedBy": "SYNTHETIC-client",
+      "expiresAt": "2026-10-08T08:00:00.000Z",
+      "revoked": false,
+      "compPriceBasis": "verified_recorded_sales",
+      "estimateAcceptanceReference": null,
+      "estimatedSaleTypes": [],
+      "maxAgeDays": 365,
+      "maxSourceAgeHours": 24,
+      "radiusMiles": 1,
+      "sizeTolerance": 0.3,
+      "minComps": 3,
+      "verifiedSaleTypes": [
+        "SYNTHETIC-recorded"
+      ],
+      "houseBasis": "comparable_market_value",
+      "maxIncomeSalesDifference": 0.2,
+      "crosscheckApprovalReference": "SYNTHETIC-crosscheck"
+    },
+    "sourceContract": {
+      "id": "SYNTHETIC-normalized-v1",
+      "verificationReference": "SYNTHETIC-fixture-schema-only"
+    },
+    "subject": {
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "identityReference": "SYNTHETIC-identity",
+      "canonicalAddress": "SYNTHETIC Property A",
+      "propertyType": "house",
+      "asset": "house",
+      "sqft": 1000,
+      "acres": null,
+      "units": null,
+      "parcel": null,
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    },
+    "comps": [
+      {
+        "id": "SYNTHETIC-comp-0",
+        "ordinal": 0,
+        "displayAddress": "SYNTHETIC Comparable 0",
+        "propertyType": "house",
+        "salePriceUsd": 110000,
+        "priceKind": "RECORDED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-recorded",
+        "saleVerified": true,
+        "renovatedComparable": true,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "SYNTHETIC-comp-1",
+        "ordinal": 1,
+        "displayAddress": "SYNTHETIC Comparable 1",
+        "propertyType": "house",
+        "salePriceUsd": 120000,
+        "priceKind": "RECORDED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-recorded",
+        "saleVerified": true,
+        "renovatedComparable": true,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      },
+      {
+        "id": "SYNTHETIC-comp-2",
+        "ordinal": 2,
+        "displayAddress": "SYNTHETIC Comparable 2",
+        "propertyType": "house",
+        "salePriceUsd": 130000,
+        "priceKind": "RECORDED",
+        "saleDate": "2026-09-01",
+        "saleType": "SYNTHETIC-recorded",
+        "saleVerified": true,
+        "renovatedComparable": true,
+        "distanceMiles": 0.3,
+        "sqft": 1000,
+        "acres": null,
+        "units": null,
+        "parcel": null,
+        "source": {
+          "provider": "SYNTHETIC-provider",
+          "reference": "SYNTHETIC-evidence",
+          "retrievedAt": "2026-10-07T08:00:00.000Z",
+          "expiresAt": "2026-10-08T08:00:00.000Z",
+          "contractVersion": "SYNTHETIC-normalized-v1",
+          "synthetic": true
+        }
+      }
+    ],
+    "facts": []
+  },
+  "fieldLimits": {
+    "verificationReference": "SYNTHETIC-NOT-A-GHL-LIMIT",
+    "maxTextBytes": 10000,
+    "maxKeyBytes": 10000
+  }
+}

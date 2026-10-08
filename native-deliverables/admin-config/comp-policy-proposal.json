@@ -1,0 +1,13 @@
+{
+  "status": "PROPOSED_NOT_ADOPTED",
+  "active": false,
+  "radiusMiles": 1,
+  "maxAgeDays": 365,
+  "sizeTolerance": 0.3,
+  "minComps": 3,
+  "maxSourceAgeHours": 24,
+  "approvalReference": null,
+  "approvedBy": null,
+  "policyRecordId": null,
+  "note": "Administrative proposal only. No runtime default. Native adopted policy and exact approval evidence are required."
+}

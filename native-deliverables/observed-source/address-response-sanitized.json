@@ -1,0 +1,9 @@
+{
+  "httpStatus": 200,
+  "endpoint": "POST https://api.v2.dealmachine.com/v1/enrichment/address",
+  "sentAtUtc": "2026-10-07T22:26:36Z",
+  "data": [{"input":{"full_address":"11311 Begonia Rock San Antonio, TX 78245"},"matched":false,"match_failure":{"code":"no_match","reason":"No property found at this address"}}],
+  "totals": {"submitted":1,"matched":0,"unmatched":1},
+  "credits": {"used":0,"properties":0,"people":0,"deduplicated":0,"licensed":0},
+  "interpretation": "Provider address-matching failure. This is not evidence the property does not exist."
+}

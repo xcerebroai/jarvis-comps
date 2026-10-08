@@ -1,0 +1,153 @@
+{
+  "contract": "jarvis.normalized-analysis.v2",
+  "mode": "synthetic_fixture",
+  "context": {
+    "locationId": "SesCoVXlNu7qTSBol1gs",
+    "now": "2026-10-07T09:00:00.000Z",
+    "contactId": "SYNTHETIC-seller",
+    "associatedPropertyRecordIds": [
+      "SYNTHETIC-A",
+      "SYNTHETIC-B"
+    ],
+    "contactDnd": false,
+    "contactTakeover": false,
+    "property": {
+      "recordId": "SYNTHETIC-A",
+      "propertyKey": "SYNTHETIC-key-A",
+      "providerPropertyId": "SYNTHETIC-provider-A",
+      "propertyVersion": "v1",
+      "canonicalAddress": "SYNTHETIC Property A",
+      "sourceIdentityReference": "SYNTHETIC-identity",
+      "asset": "commercial_multifamily",
+      "currentAnalysisId": "SYNTHETIC-analysis-A",
+      "currentAnalysisVersion": "v1",
+      "held": "false",
+      "humanTakeover": "false",
+      "status": "READY",
+      "holdReason": ""
+    },
+    "analysisRecordId": "SYNTHETIC-analysis-A",
+    "analysisKey": "20:SesCoVXlNu7qTSBol1gs11:SYNTHETIC-A20:SYNTHETIC-provider-A2:v12:v116:SYNTHETIC-policy2:v12:v115:SYNTHETIC-event",
+    "analysisVersion": "v1",
+    "expectedPropertyVersion": "v1",
+    "expectedCurrentAnalysisId": "SYNTHETIC-analysis-A",
+    "expectedCurrentAnalysisVersion": "v1",
+    "policyRecordId": "SYNTHETIC-policy",
+    "policyVersion": "v1",
+    "sourceVersion": "v1",
+    "eventId": "SYNTHETIC-event"
+  },
+  "policy": {
+    "recordId": "SYNTHETIC-policy",
+    "version": "v1",
+    "approvalReference": "SYNTHETIC-approval",
+    "approvedBy": "SYNTHETIC-client",
+    "expiresAt": "2026-10-08T08:00:00.000Z",
+    "revoked": false,
+    "compPriceBasis": "verified_recorded_sales",
+    "estimateAcceptanceReference": null,
+    "estimatedSaleTypes": [],
+    "maxAgeDays": 365,
+    "maxSourceAgeHours": 24,
+    "radiusMiles": 1,
+    "sizeTolerance": 0.3,
+    "minComps": 3,
+    "verifiedSaleTypes": [
+      "SYNTHETIC-recorded"
+    ],
+    "houseBasis": "comparable_market_value",
+    "maxIncomeSalesDifference": 0.2,
+    "crosscheckApprovalReference": "SYNTHETIC-crosscheck"
+  },
+  "sourceContract": {
+    "id": "SYNTHETIC-normalized-v1",
+    "verificationReference": "SYNTHETIC-fixture-schema-only"
+  },
+  "subject": {
+    "providerPropertyId": "SYNTHETIC-provider-A",
+    "identityReference": "SYNTHETIC-identity",
+    "canonicalAddress": "SYNTHETIC Property A",
+    "propertyType": "commercial_multifamily",
+    "asset": "commercial_multifamily",
+    "sqft": 1000,
+    "acres": null,
+    "units": 6,
+    "parcel": null,
+    "source": {
+      "provider": "SYNTHETIC-provider",
+      "reference": "SYNTHETIC-evidence",
+      "retrievedAt": "2026-10-07T08:00:00.000Z",
+      "expiresAt": "2026-10-08T08:00:00.000Z",
+      "contractVersion": "SYNTHETIC-normalized-v1",
+      "synthetic": true
+    }
+  },
+  "comps": [],
+  "facts": [
+    {
+      "name": "grossScheduledAnnualRent",
+      "value": 20000,
+      "unit": "USD/year",
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    },
+    {
+      "name": "vacancyRate",
+      "value": 0.1,
+      "unit": "ratio",
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    },
+    {
+      "name": "annualOperatingExpenses",
+      "value": 6000,
+      "unit": "USD/year",
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    },
+    {
+      "name": "capRate",
+      "value": 0.1,
+      "unit": "ratio",
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    },
+    {
+      "name": "immediateCapitalWork",
+      "value": 0,
+      "unit": "USD",
+      "source": {
+        "provider": "SYNTHETIC-provider",
+        "reference": "SYNTHETIC-evidence",
+        "retrievedAt": "2026-10-07T08:00:00.000Z",
+        "expiresAt": "2026-10-08T08:00:00.000Z",
+        "contractVersion": "SYNTHETIC-normalized-v1",
+        "synthetic": true
+      }
+    }
+  ]
+}

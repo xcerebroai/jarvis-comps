@@ -1,0 +1,79 @@
+{
+  "observedDateUtc": "2026-10-08",
+  "targetLocationId": "SesCoVXlNu7qTSBol1gs",
+  "targetLocationName": "Jarvis Premium",
+  "credentialValuesReadOrStored": false,
+  "credentialsCreatedOrRotated": false,
+  "permissionsChanged": false,
+  "privateIntegrations": [
+    {
+      "name": "XCEREBRO",
+      "integrationId": "6a027ade378de9461aec8276",
+      "createdOnUi": "May 11 2026, 07:57 PM",
+      "updatedAtUi": "May 11 2026, 07:57 PM",
+      "lastUsedUi": "Jun 10 2026, 06:01 PM",
+      "selectedScopesObserved": [
+        "contacts.write",
+        "contacts.readonly",
+        "locations.readonly"
+      ],
+      "appropriateForCustomObjectAdapter": false,
+      "reason": "Existing scope selection does not include custom-object schema, record or association access.",
+      "verification": "List metadata and existing edit-form selected scope chips; edit cancelled without Update. Token not copied, revealed, rotated, read or stored.",
+      "evidence": "existing-xcerebro-scopes.png"
+    }
+  ],
+  "connectedOfficialMcp": {
+    "toolPrefix": "mcp__codex_apps__highlevel_official_mcp_",
+    "connectionName": "Official LeadConnector connection for the Quentin Flores CRM sub-account",
+    "listLocationsJarvisQuery": "No matching locations",
+    "observedLocation": {
+      "name": "Quentin Flores",
+      "locationId": "zsODNuiVWJqICpsgxCNF"
+    },
+    "customObjectReadSearch": {
+      "results": 0,
+      "candidateCount": 11,
+      "scopeFilteredCount": 11,
+      "zeroResultReason": "scope_filtered"
+    },
+    "customObjectWriteSearch": {
+      "results": 0,
+      "candidateCount": 29,
+      "scopeFilteredCount": 29,
+      "zeroResultReason": "scope_filtered"
+    },
+    "appropriateForTargetAdapter": false,
+    "reason": "Available connection targets a different location and filters out custom-object operations. No execute_operation was called."
+  },
+  "backendReusableCredentialBinding": "Not established; browser login and MCP availability are not credentials for an external deployed service.",
+  "oauthInstalledAppInspection": {
+    "observedInstalledAppNamesAndStatuses": [
+      {
+        "name": "LC GPT Connector",
+        "status": "Active"
+      },
+      {
+        "name": "WAVV Dialer",
+        "status": "Active"
+      }
+    ],
+    "viewCaveat": "Marketplace returned Agency View for installed-app detail; selecting Sub-Account View on LC GPT Connector reports Sub-accounts cannot view this app. Do not infer a backend-usable OAuth binding for the target location.",
+    "lcGptConnectorAppId": "68dd203adf92e94935f8c302",
+    "declaredPermissionCount": 10,
+    "declaredPermissionFamilies": [
+      "Contacts (1)",
+      "Calendars (3)",
+      "Companies (1)",
+      "Blogs (1)",
+      "Campaigns (1)",
+      "Businesses (1)",
+      "Conversations (1)",
+      "Opportunities (1)"
+    ],
+    "customObjectOrAssociationPermissionsListed": false,
+    "appropriateForNativeAdapterEstablished": false,
+    "noInstallOrConsentOrPermissionChange": true
+  },
+  "conclusion": "No currently inspected transport is verified and sufficiently scoped for the target native custom-object adapter. Existing XCEREBRO private integration is location-correct but limited to contacts/location. Connected official MCP is location-mismatched and scope-filtered. Installed app metadata does not establish a reusable backend credential."
+}

@@ -1,0 +1,72 @@
+{
+  "baseCommit": "3924814",
+  "locationId": "SesCoVXlNu7qTSBol1gs",
+  "providerMappingAvailable": false,
+  "observedSampleSchemaVerified": true,
+  "observedBindingAdapterAvailable": true,
+  "documentedPropertyMappingAvailable": true,
+  "livePropertyBindingVerified": false,
+  "liveVerified": false,
+  "outboundEnabled": false,
+  "repairModelSelectionPending": false,
+  "activeRepairModelVersion": "house-screening-2026-10-07-v2",
+  "schemaSha256": "b361076746a0e443ba497744b89489c3520469fc4d8c1b1844fffb7c431a235f",
+  "bundles": [
+    {
+      "name": "property-adapter",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 338814,
+      "sha256": "76b1a4e06cdb8017d49a185a32ee3d4a9acda260cafdaadf3403e539e9e27674"
+    },
+    {
+      "name": "observed-provider",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 379109,
+      "sha256": "8795a0e79ee7d07f35dc9cda862c220e211a573c66da8bd76c0018643fb91f98"
+    },
+    {
+      "name": "acquisition-policy",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 342253,
+      "sha256": "ae655d1ace067f46dcd157607662cfbc4dd28f6ff85bc69e12fd88ed5f852623"
+    },
+    {
+      "name": "atlas",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 342943,
+      "sha256": "32a371ec5c6919ee53e2dc6c12c70ff5b88d41014aeb91e889cd894e1b43bd46"
+    },
+    {
+      "name": "storage",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 363375,
+      "sha256": "f1fa7177b5c1dd434ecf2b975528b338dbd7bfd399b612fcf13b0b966eb1c1e8"
+    },
+    {
+      "name": "offers",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 357163,
+      "sha256": "1796118efd92d5659d9223a8dc64c0e0784cebd787cca466f622409f5a8d5c9b"
+    },
+    {
+      "name": "mason",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 364793,
+      "sha256": "2af5742a5dfabdf3a38dd1612eb6ebc5e444342a162e2feea920b35c99f19b97"
+    },
+    {
+      "name": "routing",
+      "input": "inputData.requestJson (JSON string)",
+      "output": "output assignment",
+      "bytes": 333933,
+      "sha256": "61b36d1c679e71cccf87ff7f12eb4684d98a45b4c96341995bdae20fd08de484"
+    }
+  ]
+}

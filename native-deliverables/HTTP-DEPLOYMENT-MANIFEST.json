@@ -1,0 +1,133 @@
+{
+  "baseCommit": "39248149252def9de874219838b1cd1b70443642",
+  "route": "POST /api/acquisitions/quote",
+  "productionAdditions": [
+    {
+      "file": "src/app/api/acquisitions/quote/route.ts",
+      "bytes": 545,
+      "sha256": "eaecff850ad1da9668fd992da4def91394e17d44369c34066203ecdb0092ae41"
+    },
+    {
+      "file": "src/lib/acquisition-machine-auth.ts",
+      "bytes": 1467,
+      "sha256": "f96dd94ba991d25ad45682f77a639184d48c42605415703e1d1320fba086a12d"
+    },
+    {
+      "file": "src/lib/headless-native-quote.ts",
+      "bytes": 10950,
+      "sha256": "dc4660f94a98503dfef8221e5b4c2b35fa796c03529ef19198f7655fded607d3"
+    },
+    {
+      "file": "src/lib/native-quote-contract.ts",
+      "bytes": 3797,
+      "sha256": "c1698921ab999260a211119e2312ec93be8fdf649c77ee23c65fb6920f181de1"
+    },
+    {
+      "file": "src/lib/native-quote-runtime.ts",
+      "bytes": 1332,
+      "sha256": "99f0591ca3404bf389364ba1bfdf2f958f30cce6d248be96fba8fbd07d5ceea3"
+    },
+    {
+      "file": "src/lib/ghl-native-quote.ts",
+      "bytes": 19363,
+      "sha256": "a4b167a7ff85a17c961aa8f0a9e00475b7782ac870ae553931ca00e6849f6422"
+    },
+    {
+      "file": "src/lib/native-installed-fields.ts",
+      "bytes": 5261,
+      "sha256": "f486891668204e9c6e5d428eb3b04cb4159094db07ba8992204ff9d71659544c"
+    },
+    {
+      "file": "src/lib/ghl-native-transport.ts",
+      "bytes": 4860,
+      "sha256": "cd97ccc770de0f6122df7b528653d10831fff9565d64e26d6d9d56ba77db3126"
+    }
+  ],
+  "nativePrerequisites": [
+    {
+      "file": "src/lib/native/contracts.ts",
+      "bytes": 7314,
+      "sha256": "d40a57af3b611365485971ec4c3f230b0ca4f6a2764822721dbe040f674ec053"
+    },
+    {
+      "file": "src/lib/native/observed-provider.ts",
+      "bytes": 12707,
+      "sha256": "72d58c8fa2cd35e7675acc7ef6e2e9e6e02843c388d25f7edb6d40eac4216a22"
+    },
+    {
+      "file": "src/lib/native/atlas.ts",
+      "bytes": 12236,
+      "sha256": "f2a274cb8a180fa1486b058a92ddc9c64fd81c226cde0cd2d90cb5161c0d841e"
+    },
+    {
+      "file": "src/lib/native/storage.ts",
+      "bytes": 10751,
+      "sha256": "fba0496284d3941333b70fdea82d09309d0ca9e4539aebc135aba1a2b535f5ff"
+    },
+    {
+      "file": "src/lib/native/native-fields.ts",
+      "bytes": 4465,
+      "sha256": "f1b0011ada089f4fccbc549443c96686e93d4607778c2de33d483d848be02f1e"
+    },
+    {
+      "file": "src/lib/native/acquisition-policy.ts",
+      "bytes": 6839,
+      "sha256": "a1dc327423167347069a341d0088ebab69228d634609aedd5c042813fd886233"
+    },
+    {
+      "file": "src/lib/native/repair-model.ts",
+      "bytes": 5399,
+      "sha256": "28ac30d3a40d7cea93916512c89a794a2e0fd685ed836ff11d974e7997265d9b"
+    },
+    {
+      "file": "src/lib/native/offers.ts",
+      "bytes": 5613,
+      "sha256": "7fd11be0f9f69a13f3883be4bb528ee8e6c89cd5d9d72638dc71973d2fabdee2"
+    },
+    {
+      "file": "native-deliverables/schema-manifest.json",
+      "bytes": 14412,
+      "sha256": "b361076746a0e443ba497744b89489c3520469fc4d8c1b1844fffb7c431a235f"
+    },
+    {
+      "file": "native-deliverables/native-installed-schema.json",
+      "bytes": 26617,
+      "sha256": "b7b481123cc128b57668597341494cfd57e19d7b7bab165ff766f7bcc0a971a1"
+    },
+    {
+      "file": "native-deliverables/observed-source/provider-mapping/observed-provider-adapter.mjs",
+      "bytes": 12563,
+      "sha256": "ae31a7aae5b5ff208ef3231f01c57e1080e117782ad2804bea3b83ed9fa3664e"
+    },
+    {
+      "file": "native-deliverables/observed-source/provider-mapping/observed-provider-adapter.d.mts",
+      "bytes": 290,
+      "sha256": "21eab529718fba6877fad25375a5d09c2d730ce99ef260d56964a81e227da192"
+    }
+  ],
+  "existingRuntimeDependencies": [
+    "src/lib/db.ts",
+    "existing generated Prisma client",
+    "existing machine-auth tables",
+    "existing DATABASE_URL binding",
+    "zod",
+    "Next.js Node route runtime"
+  ],
+  "newPackageDependencies": [],
+  "newMigrations": [],
+  "existingRoutesModified": false,
+  "nativeTransportInstalled": false,
+  "localSyntheticAdapterE2EPassed": true,
+  "liveE2EPassed": false,
+  "consistency": "Unique immutable native event plus sequential rereads; not a multi-record transaction or exactly-once speech",
+  "runtimeFactoryWired": true,
+  "nativeRuntimeConfigured": false,
+  "newServerSettings": [
+    "JARVIS_NATIVE_QUOTE_ENABLED",
+    "JARVIS_NATIVE_QUOTE_BINDINGS_JSON",
+    "JARVIS_GHL_PRIVATE_INTEGRATION_TOKEN"
+  ],
+  "legacyEnableFlagChanged": false,
+  "configuration": "Node route composes fixed-origin transport and concrete native adapter from server-only settings; inactive worksheet is rejected; secret and verified bindings remain absent",
+  "remainingAccess": "Owner scope expansion applied and reload-verified by browser per parent; owner secure token binding and verified nonsecret native settings remain pending; no credential values included"
+}

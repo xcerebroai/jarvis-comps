@@ -1,0 +1,82 @@
+[
+  {
+    "name": "atlas-house",
+    "workflow": "atlas",
+    "synthetic": true
+  },
+  {
+    "name": "atlas-land",
+    "workflow": "atlas",
+    "synthetic": true
+  },
+  {
+    "name": "atlas-small_multifamily",
+    "workflow": "atlas",
+    "synthetic": true
+  },
+  {
+    "name": "atlas-commercial_multifamily",
+    "workflow": "atlas",
+    "synthetic": true
+  },
+  {
+    "name": "atlas-house-estimated",
+    "workflow": "atlas",
+    "synthetic": true
+  },
+  {
+    "name": "house-wholesale-formula",
+    "workflow": "acquisition-policy",
+    "synthetic": true
+  },
+  {
+    "name": "house-wholesale-approved-defaults",
+    "workflow": "acquisition-policy",
+    "synthetic": true
+  },
+  {
+    "name": "property-address",
+    "workflow": "property-adapter",
+    "synthetic": true
+  },
+  {
+    "name": "property-get_property",
+    "workflow": "property-adapter",
+    "synthetic": true
+  },
+  {
+    "name": "storage-decode-property",
+    "workflow": "storage",
+    "synthetic": true
+  },
+  {
+    "name": "storage-allocate",
+    "workflow": "storage",
+    "synthetic": true
+  },
+  {
+    "name": "storage-prepare",
+    "workflow": "storage",
+    "synthetic": true
+  },
+  {
+    "name": "offers-opening",
+    "workflow": "offers",
+    "synthetic": true
+  },
+  {
+    "name": "offers-counter",
+    "workflow": "offers",
+    "synthetic": true
+  },
+  {
+    "name": "mason-draft",
+    "workflow": "mason",
+    "synthetic": true
+  },
+  {
+    "name": "routing-jessica-offer",
+    "workflow": "routing",
+    "synthetic": true
+  }
+]

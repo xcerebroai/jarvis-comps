@@ -1,0 +1,59 @@
+{
+  "selectionPending": false,
+  "activeModel": {
+    "version": "house-screening-2026-10-07-v2",
+    "selectionStatus": "OWNER_APPROVED",
+    "approvalReference": "owner:Sentinel_2a28f276b34c819190825f5f22111122",
+    "ratesUsdPerSqft": {
+      "light": 20,
+      "medium": 40,
+      "heavy": 65
+    },
+    "contingencyBps": {
+      "light": 1000,
+      "medium": 1000,
+      "heavy": 1000
+    },
+    "provisional": true,
+    "scopePackages": {
+      "light": "Whole-house paint, flooring, fixtures, minor patching and cleanup.",
+      "medium": "Light scope plus basic kitchen/bath updates and limited mechanical/electrical/plumbing repairs; unchanged layout.",
+      "heavy": "Extensive interior replacement with structure retained; full gut, structural work and additions excluded."
+    },
+    "sources": [
+      "https://arvcalc.com/rehab-cost-estimator",
+      "https://asremodelingsa.com/whole-home-remodel-cost-san-antonio/",
+      "https://flipperforce.com/how-to-flip-houses-curriculum"
+    ],
+    "sourceReviewDate": "2026-10-07"
+  },
+  "supersededModelVersions": [
+    "house-screening-2026-10-07",
+    "house-screening-proposed-2026-10-07-2300"
+  ],
+  "previousProposal": {
+    "version": "house-screening-2026-10-07",
+    "provisional": true,
+    "ratesUsdPerSqft": {
+      "light": 25,
+      "medium": 50,
+      "heavy": 80
+    },
+    "contingencyBps": {
+      "light": 1500,
+      "medium": 1500,
+      "heavy": 2000
+    },
+    "scopePackages": {
+      "light": "Whole-house paint, flooring, fixtures, minor patching and cleanup.",
+      "medium": "Light scope plus basic kitchen/bath updates and limited mechanical/electrical/plumbing repairs; unchanged layout.",
+      "heavy": "Extensive interior replacement with structure retained; full gut, structural work and additions excluded."
+    },
+    "sources": [
+      "https://arvcalc.com/rehab-cost-estimator",
+      "https://asremodelingsa.com/whole-home-remodel-cost-san-antonio/",
+      "https://flipperforce.com/how-to-flip-houses-curriculum"
+    ],
+    "sourceReviewDate": "2026-10-07"
+  }
+}
